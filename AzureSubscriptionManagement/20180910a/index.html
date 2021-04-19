@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Azure の各サービスの使用量とクォータを確認する方法 | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure の各サービスの使用量とクォータを確認する方法について以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 事前に行う共通作業について Virtual Machines の使用量とクォータを確認する方法 ネットワークの使用量とクォータを確認する方法 サブネットの使用量とクォータ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure の各サービスの使用量とクォータを確認する方法">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180910a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure の各サービスの使用量とクォータを確認する方法について以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 事前に行う共通作業について Virtual Machines の使用量とクォータを確認する方法 ネットワークの使用量とクォータを確認する方法 サブネットの使用量とクォータ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180910a/001.png">
+<meta property="article:published_time" content="2018-09-09T16:50:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.077Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="Virtual Machine">
+<meta property="article:tag" content="Network">
+<meta property="article:tag" content="Storage Account">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180910a/001.png">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20180910a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure の各サービスの使用量とクォータを確認する方法
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2018-09-09T16:50:00.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+5de77556-6839-5436-bb1d-204557d5e9d9%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+%E3%81%AE%E5%90%84%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E4%BD%BF%E7%94%A8%E9%87%8F%E3%81%A8%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20180910a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20180910a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20180910a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180910a/" data-id="cknogeiwm001soop4d7rg1phl" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
+<p>Azure の各サービスの使用量とクォータを確認する方法について以下をご案内させていただきます。</p>
+<p>ご参考になりましたら幸いです。</p>
+<ul>
+<li>本記事の目的</li>
+<li>事前に行う共通作業について</li>
+<li>Virtual Machines の使用量とクォータを確認する方法</li>
+<li>ネットワークの使用量とクォータを確認する方法</li>
+<li>サブネットの使用量とクォータを確認する方法</li>
+<li>ストレージ アカウントの使用量とクォータを確認する方法</li>
+<li>Content Delivery Network の使用量とクォータを確認する方法</li>
+<li>関連する弊社公開情報</li>
+</ul>
+<h3 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h3><hr>
+<p>本記事では、PowerShell を使って Azure の各サービスの使用量とクォータを確認する方法をご案内いたします。</p>
+<p>お客様から「現在のリソースの使用量を確認したい」「クォータ増加後の上限を確認したい」といったお問い合わせをいただくことがあります。</p>
+<p>もちろん、Azure ポータルでは以下の画面で使用量とクォータを確認できます。</p>
+<p> <img src="/blog/AzureSubscriptionManagement/20180910a/001.png" alt=""></p>
+<p>本記事ではこの使用量とクォータを PowerShell で確認する方法をご案内します。</p>
+<p><strong>!! 注意事項 !!</strong><br>全てのサービスについてご案内するものではありません。<br>今後、少しずつご案内内容を増やしていければと思います。</p>
+<p>また本記事内に記載する PowerShell の結果は弊社検証環境の結果です。<br>お客様環境で同じ結果が得られること、または同じ結果を得られるようにすることをお約束するものではありません。</p>
+<h3 id="事前に行う共通作業について"><a href="#事前に行う共通作業について" class="headerlink" title="事前に行う共通作業について"></a>事前に行う共通作業について</h3><hr>
+<p>各サービスの使用量とクォータを確認するために事前に行う共通作業についてご案内します。</p>
+<p>まずは、以下の手順を実施します。</p>
+<ol>
+<li><p>以下の弊社技術ブログに沿って、リソース マネージャー デプロイ モデルの Azure PowerShell をインストールする</p>
+<p>Azure PowerShell インストール手順<br><a href="https://blogs.technet.microsoft.com/jpaztech/2017/05/02/azure-powershell-3-8-0-install/" target="_blank" rel="noopener">https://blogs.technet.microsoft.com/jpaztech/2017/05/02/azure-powershell-3-8-0-install/</a><br>   ※ 既にインストール済みの場合、実施は必須ではありません。</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>PowerShell を管理者として起動する</p>
+</li>
+<li><p>以下のコマンドを実行して Azure に接続する<br>Connect-AzureRmAccount<br>※ 認証が発生するので、ID とパスワードを入力して認証を終えます。</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>以下のコマンドを実行して対象の Azure サブスクリプションを指定する<br>Select-AzureRmSubscription -SubscriptionObject “&lt;サブスクリプション ID&gt;”</p>
+<p>&lt;サブスクリプション ID&gt; には、対象の Azure サブスクリプションのサブスクリプション ID を入れます。<br>サブスクリプション ID は以下の弊社公開情報に沿ってご確認いただけます。</p>
+<p>サブスクリプション ID とデプロイ ID を確認する方法について<br><a href="https://blogs.msdn.microsoft.com/dsazurejp/2013/12/06/id-id/" target="_blank" rel="noopener">https://blogs.msdn.microsoft.com/dsazurejp/2013/12/06/id-id/</a><br>※ 「■ サブスクリプション ID の確認方法」をご参照ください。</p>
+<p>例)<br>Select-AzureRmSubscription -SubscriptionObject “aabbccdd-eeaa-bbcc-ddee-aabbccddeeaa”</p>
+</li>
+</ol>
+<h3 id="Virtual-Machines-の使用量とクォータを確認する方法"><a href="#Virtual-Machines-の使用量とクォータを確認する方法" class="headerlink" title="Virtual Machines の使用量とクォータを確認する方法"></a>Virtual Machines の使用量とクォータを確認する方法</h3><hr>
+<p>Virtual Machines のクォータと使用量を確認する方法をご案内します。<br>上記の「事前に行う共通作業について」を実施してから、以下の手順を実施します。</p>
+<ol>
+<li><p>以下のコマンドを実行して、Virtual Machines のクォータと使用量を取得する   </p>
+<p>Get-AzureRmVMUsage -Location:’&lt;リージョン&gt;’<br> &lt;リージョン&gt; には、対象のリージョンを入れます。</p>
+<p>「Get-AzureRmVMUsage -Location:」まで入力していただいて、Tab キーを押下することで順にリージョンが表示されます。</p>
+<p>例)<br>Get-AzureRmVMUsage -Location:’Japan East’</p>
+</li>
+<li><p>コマンドの結果を確認する<br>Current Value が現在の使用量です。</p>
+<p>Limit がクォータです。<br>例)<br>Name                             Current Value Limit  Unit<br>-—                             ————- —–  —-</p>
+<p>Availability Sets                           10  2000 Count</p>
+<p>Total Regional vCPUs                        62   190 Count</p>
+<p>Virtual Machines                            31 10000 Count</p>
+<p>Virtual Machine Scale Sets                   0  2000 Count</p>
+<p>Standard BS Family vCPUs                    62   100 Count</p>
+<p>Basic A Family vCPUs                         0   100 Count</p>
+<p>Standard A0-A7 Family vCPUs                  0   100 Count</p>
+<p>Standard A8-A11 Family vCPUs                 0   100 Count</p>
+<p>Standard D Family vCPUs                      0   100 Count</p>
+<p>Standard Dv2 Family vCPUs                    0   100 Count</p>
+<p>Standard DS Family vCPUs                     0   100 Count</p>
+<p>Standard DSv2 Family vCPUs                   0   100 Count</p>
+<p>Standard G Family vCPUs                      0   100 Count</p>
+<p>Standard GS Family vCPUs                     0   100 Count</p>
+<p>Standard F Family vCPUs                      0   100 Count</p>
+<p>Standard FS Family vCPUs                     0   100 Count</p>
+<p>Standard NV Family vCPUs                     0    24 Count</p>
+<p>Standard NC Family vCPUs                     0    48 Count</p>
+<p>Standard H Family vCPUs                      0     8 Count</p>
+<p>Standard Av2 Family vCPUs                    0   100 Count</p>
+<p>Standard LS Family vCPUs                     0   100 Count</p>
+<p>Standard Dv2 Promo Family vCPUs              0   100 Count</p>
+<p>Standard DSv2 Promo Family vCPUs             0   100 Count</p>
+<p>Standard MS Family vCPUs                     0     0 Count</p>
+<p>Standard Dv3 Family vCPUs                    0   100 Count</p>
+<p>Standard DSv3 Family vCPUs                   0   100 Count</p>
+<p>Standard Ev3 Family vCPUs                    0   100 Count</p>
+<p>Standard ESv3 Family vCPUs                   0   100 Count</p>
+<p>Standard FSv2 Family vCPUs                   0   100 Count</p>
+<p>Standard NDS Family vCPUs                    0     0 Count</p>
+<p>Standard NCSv2 Family vCPUs                  0     0 Count</p>
+<p>Standard NCSv3 Family vCPUs                  0     0 Count</p>
+<p>Standard LSv2 Family vCPUs                   0     0 Count</p>
+<p>Standard EIv3 Family vCPUs                   0   100 Count</p>
+<p>Standard EISv3 Family vCPUs                  0   100 Count</p>
+<p>Standard Storage Managed Disks               0 10000 Count</p>
+<p>Premium Storage Managed Disks               31 10000 Count</p>
+<p>StandardSSDStorageDisks                      0 10000 Count</p>
+<p>DirectDriveDisks                             0 10000 Count</p>
+<p>StandardStorageSnapshots                     3 10000 Count</p>
+<p>PremiumStorageSnapshots                      0 10000 Count</p>
+<p>ZrsStorageSnapshots                          0 10000 Count</p>
+</li>
+</ol>
+<h3 id="ネットワークの使用量とクォータを確認する方法"><a href="#ネットワークの使用量とクォータを確認する方法" class="headerlink" title="ネットワークの使用量とクォータを確認する方法"></a>ネットワークの使用量とクォータを確認する方法</h3><hr>
+<p>ネットワークのクォータと使用量を確認する方法をご案内します。</p>
+<p>上記の「事前に行う共通作業について」を実施してから、以下の手順を実施します。</p>
+<ol>
+<li><p>以下のコマンドを実行して、ネットワークのクォータと使用量を取得する</p>
+<p>Get-AzureRmNetworkUsage -Location:’&lt;リージョン&gt;’<br>&lt;リージョン&gt; には、対象のリージョンを入れます。<br>「Get-AzureRmNetworkUsage -Location:」まで入力していただいて、Tab キーを押下することで順にリージョンが表示されます。</p>
+<p>ただし、このコマンドの Location では自動保管されたリージョンからスペースを削除する必要があります。<br>例えば、自動保管されたリージョンが ‘Japan East’ である場合、間にあるスペースを削除して ‘JapanEast’ にする必要があります。</p>
+<p>例)<br>Get-AzureRmNetworkUsage -Location:’JapanEast’</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>コマンドの結果を確認する</p>
+<p>Current Value が現在の使用量です。</p>
+<p>Limit がクォータです。</p>
+<p>例)</p>
+<p>CurrentValue Limit      Name</p>
+<p>-———– —–      —-</p>
+<p>6            1000       Virtual Networks</p>
+<p>4            200        Static Public IP Addresses</p>
+<p>18           5000       Network Security Groups</p>
+<p>35           200        Public IP Addresses</p>
+<p>0            2147483647 Public Ip Prefixes</p>
+<p>31           24000      Network Interfaces</p>
+<p>8            100        Load Balancers</p>
+<p>0            50         Application Gateways</p>
+<p>0            200        Route Tables</p>
+<p>0            1000       Route Filters</p>
+<p>0            1          Network Watchers</p>
+<p>0            100        Packet Captures</p>
+<p>0            3000       Application Security Groups.</p>
+<p>0            1          DDoS Protection Plans.</p>
+<p>0            500        Service Endpoint Policies</p>
+<p>0            200        Network Intent Policies</p>
+<p>0            25         DNS servers per Virtual Network</p>
+<p>0            3000       Subnets per Virtual Network</p>
+<p>0            65536      IP Configurations per Virtual Network</p>
+<p>0            100        Peerings per Virtual Network</p>
+<p>0            1000       Security rules per Network Security Group</p>
+<p>0            100        Security rules per Network Intent Policy</p>
+<p>0            100        Routes per Network Intent Policy</p>
+<p>0            4000       Security rules addresses or ports per Network Security Group</p>
+<p>0            250        Inbound Rules per Load Balancer</p>
+<p>0            10         Frontend IP Configurations per Load Balancer</p>
+<p>0            5          Outbound Rules per Load Balancer</p>
+<p>0            400        Routes per Route Table</p>
+<p>0            256        Secondary IP Configurations per Network Interface</p>
+<p>0            500        Inbound rules per Network Interface</p>
+<p>0            1          Route filter rules per Route Filter</p>
+<p>0            1          Route filters per Express route BGP Peering</p>
+</li>
+</ol>
+<h3 id="サブネットの使用量とクォータを確認する方法"><a href="#サブネットの使用量とクォータを確認する方法" class="headerlink" title="サブネットの使用量とクォータを確認する方法"></a>サブネットの使用量とクォータを確認する方法</h3><hr>
+<p>サブネットのクォータと使用量を確認する方法をご案内します。</p>
+<p>上記の「事前に行う共通作業について」を実施してから、以下の手順を実施します。</p>
+<ol>
+<li><p>以下のコマンドを実行して、サブネットのクォータと使用量を取得する</p>
+<p>Get-AzureRmVirtualNetworkUsageList -ResourceGroupName:&lt;リソース グループ名&gt; -Name:&lt;仮想ネットワーク名&gt; | fl</p>
+<p>&lt;リソース グループ名&gt; には、対象のリソース グループ名を入れます。</p>
+<p>「Get-AzureRmVirtualNetworkUsageList -ResourceGroupName:」まで入力していただいて、Tab キーを押下することで順にリソース グループ名が表示されます。</p>
+<p>&lt;仮想ネットワーク名&gt; には、対象の仮想ネットワーク名を入れます。</p>
+<p>例)</p>
+<p>Get-AzureRmVirtualNetworkUsageList -ResourceGroupName:rg01 -Name:vn01 | fl</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>コマンドの結果を確認する</p>
+<p>Current Value が現在の使用量です。</p>
+<p>Limit がクォータです。</p>
+<p>例)</p>
+<p>Name         : Subnet size and usage</p>
+<p>Id           : /subscriptions/aabbccdd-eeaa-bbcc-ddee-aabbccddeeaa/resourceGroups/rg01/providers/Microsoft.Network/virtualNetworks/vn01/subnets/sn01</p>
+<p>CurrentValue : 4</p>
+<p>Limit        : 251</p>
+<p>Unit         : Count</p>
+<p>Name         : Subnet size and usage</p>
+<p>Id           : /subscriptions/aabbccdd-eeaa-bbcc-ddee-aabbccddeeaa/resourceGroups/rg01/providers/Microsoft.Network/virtualNetworks/vn01/subnets/sn02</p>
+<p>CurrentValue : 3</p>
+<p>Limit        : 251</p>
+<p>Unit         : Count</p>
+<p>Name         : Subnet size and usage</p>
+<p>Id           : /subscriptions/aabbccdd-eeaa-bbcc-ddee-aabbccddeeaa/resourceGroups/rg01/providers/Microsoft.Network/virtualNetworks/vn01/subnets/sn03</p>
+<p>CurrentValue : 2</p>
+<p>Limit        : 251</p>
+<p>Unit         : Count</p>
+</li>
+</ol>
+<h3 id="ストレージ-アカウントの使用量とクォータを確認する方法"><a href="#ストレージ-アカウントの使用量とクォータを確認する方法" class="headerlink" title="ストレージ アカウントの使用量とクォータを確認する方法"></a>ストレージ アカウントの使用量とクォータを確認する方法</h3><hr>
+<p>ストレージ アカウントのクォータと使用量を確認する方法をご案内します。</p>
+<p>上記の「事前に行う共通作業について」を実施してから、以下の手順を実施します。</p>
+<ol>
+<li><p>以下のコマンドを実行して、ストレージ アカウントのクォータと使用量を取得する</p>
+<p>Get-AzureRmStorageUsage</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>コマンドの結果を確認する</p>
+<p>Current Value が現在の使用量です。</p>
+<p>Limit がクォータです。</p>
+<p>例)</p>
+<p>LocalizedName : Storage Accounts</p>
+<p>Name          : StorageAccounts</p>
+<p>Unit          : Count</p>
+<p>CurrentValue  : 0</p>
+<p>Limit         : 200</p>
+</li>
+</ol>
+<h3 id="Content-Delivery-Network-の使用量とクォータを確認する方法"><a href="#Content-Delivery-Network-の使用量とクォータを確認する方法" class="headerlink" title="Content Delivery Network の使用量とクォータを確認する方法"></a>Content Delivery Network の使用量とクォータを確認する方法</h3><hr>
+<p>Content Delivery Network のクォータと使用量を確認する方法をご案内します。</p>
+<p>上記の「事前に行う共通作業について」を実施してから、以下の手順を実施します。</p>
+<ol>
+<li><p>以下のコマンドを実行して、Content Delivery Network のクォータと使用量を取得する</p>
+<p>Get-AzureRmCdnSubscriptionResourceUsage | fl</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>コマンドの結果を確認する</p>
+<p>Current Value が現在の使用量です。</p>
+<p>Limit がクォータです。</p>
+<p>例)</p>
+<p>ResourceType : profile</p>
+<p>Unit         : count</p>
+<p>CurrentValue : 0</p>
+<p>Limit        : 25</p>
+</li>
+</ol>
+<h3 id="関連する弊社公開情報"><a href="#関連する弊社公開情報" class="headerlink" title="関連する弊社公開情報"></a>関連する弊社公開情報</h3><hr>
+<p>本記事に関連する弊社公開情報をご案内します。</p>
+<p>Azure サブスクリプションとサービスの制限、クォータ、制約</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/azure-subscription-service-limits" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/azure-subscription-service-limits</a></p>
+<p>Get-AzureRmVMUsage</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/get-azurermvmusage" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/get-azurermvmusage</a></p>
+<p>Get-AzureRmNetworkUsage</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermnetworkusage" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermnetworkusage</a></p>
+<p>Get-AzureRmVirtualNetworkUsageList</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermvirtualnetworkusagelist" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermvirtualnetworkusagelist</a></p>
+<p>Get-AzureRmStorageUsage</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.storage/get-azurermstorageusage" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/azurerm.storage/get-azurermstorageusage</a></p>
+<p>Get-AzureRmCdnSubscriptionResourceUsage</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.cdn/get-azurermcdnsubscriptionresourceusage" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/azurerm.cdn/get-azurermcdnsubscriptionresourceusage</a></p>
+<p>以上の通りご案内いたします。</p>
+<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
+<p>よろしくお願いします。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20180910a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20181108a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          Microsoft アカウントと組織アカウントについて
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20180710a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Azure Import/Export にかかる日数について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190226c/">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Azure の請求書をメールで送信する機能について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 本記事で、弊社によくお問い合わせをいただきます Azure の請求書をメールで送信する機能について、その注意点をご案内させていただきます。本情報が少しでもお客様のお役に立つものとなりましたら幸いです。  Azure の請求書をメールで送信する機能について ご注意事項 Azure の請求書が発行されたことをメールで通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure の請求書をメールで送信する機能について">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 本記事で、弊社によくお問い合わせをいただきます Azure の請求書をメールで送信する機能について、その注意点をご案内させていただきます。本情報が少しでもお客様のお役に立つものとなりましたら幸いです。  Azure の請求書をメールで送信する機能について ご注意事項 Azure の請求書が発行されたことをメールで通">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/20171012005.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/20171012006.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/20171012007.png">
+<meta property="article:published_time" content="2017-10-11T21:46:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.023Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Invoice">
+<meta property="article:tag" content="Subscription">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/20171012005.png">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20171012a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure の請求書をメールで送信する機能について
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2017-10-11T21:46:00.000Z" itemprop="datePublished">2017-10-12</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+2a7a5e2e-0d07-5ffd-8f65-b8076bee00aa%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+%E3%81%AE%E8%AB%8B%E6%B1%82%E6%9B%B8%E3%82%92%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%A7%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B%E6%A9%9F%E8%83%BD%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20171012a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20171012a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20171012a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20171012a/" data-id="cknogeiw20014oop4776k0ft9" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
+<p>本記事で、弊社によくお問い合わせをいただきます Azure の請求書をメールで送信する機能について、その注意点をご案内させていただきます。<br>本情報が少しでもお客様のお役に立つものとなりましたら幸いです。</p>
+<ol>
+<li>Azure の請求書をメールで送信する機能について</li>
+<li>ご注意事項</li>
+<li>Azure の請求書が発行されたことをメールで通知する機能について</li>
+</ol>
+<h3 id="1-Azure-の請求書をメールで送信する機能について"><a href="#1-Azure-の請求書をメールで送信する機能について" class="headerlink" title="1. Azure の請求書をメールで送信する機能について"></a>1. Azure の請求書をメールで送信する機能について</h3><hr>
+<p>以下公開情報でご案内をさせていただいている Azure の請求書をメールで<strong>送信</strong>する機能は、サポート プランの請求書ではご利用いただけません。</p>
+<p>この点について本記事でご案内をさせていただきます。</p>
+<p>Azure の請求書と毎日の使用状況データをダウンロードまたは表示する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/billing/billing-download-azure-invoice-daily-usage-date" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/billing/billing-download-azure-invoice-daily-usage-date</a><br>※ 「メールで請求書を入手する (.pdf)」に記載されている機能についてです。<br>​</p>
+<h3 id="2-ご注意事項"><a href="#2-ご注意事項" class="headerlink" title="2. ご注意事項"></a>2. ご注意事項</h3><p>​</p>
+<hr>
+<p>​<br>上記の機能とは別に、Azure の請求書が発行されたことをメールで<strong>通知</strong>する機能がございます。<br>​<br>請求書をメールで送信するわけではなく、発行されたことを通知する機能となります。<br>​※ 後述でご案内をさせていただきます。<br>​<br>この機能はサポート プランでもご利用をいただけます。<br>​この Azure の請求書が発行されたことを通知するメールは以下のようなフォーマットで届きます。<br>​<br><img src="/blog/AzureSubscriptionManagement/20171012a/20171012005.png" alt=""><br>​<br>これは Azure の請求書が発行されたことを通知するメールの例ですが、サポート プランの請求書が発行されたことを通知するメールも同フォーマットになります。<br>​<br>同フォーマットでお送りしていることから、サポート プランの請求書が発行されたことを通知するメール内にも以下の記載が含まれてしまっております。<br>​<br><img src="/blog/AzureSubscriptionManagement/20171012a/20171012006.png" alt=""><br>​<br>弊社サービスのご利用におきまして混乱を招きまして誠に申し訳ございません。<br>​<br>サポート プランの請求書が発行されたことを通知するメール内に含まれる上記記載の「こちら」のリンクをクリックしていただきましても、サポート プランにつきましては請求書をメールで送信する機能はご利用いただけませんのでご注意くださいますと幸いです。<br>​</p>
+<h3 id="3-Azure-の請求書が発行されたことをメールで通知する機能について"><a href="#3-Azure-の請求書が発行されたことをメールで通知する機能について" class="headerlink" title="3. Azure の請求書が発行されたことをメールで通知する機能について"></a>3. Azure の請求書が発行されたことをメールで通知する機能について</h3><p>​</p>
+<hr>
+<p>​<br>Azure の請求書が発行されたことを通知するメールは、以下に設定されているメールアドレスに届きます。<br>​</p>
+<ol>
+<li><p>以下の URL にアクセスをする<br><a href="https://account.azure.com/Profile/" target="_blank" rel="noopener">https://account.azure.com/Profile/</a></p>
+</li>
+<li><p>対象 Azure サブスクリプションのアカウント管理者 (Azure アカウント) でサインインをする</p>
+</li>
+<li><p>[詳細の編集] をクリックする</p>
+</li>
+<li><p>[連絡先の電子メール] に設定されているメールアドレスを確認する</p>
+<p><img src="/blog/AzureSubscriptionManagement/20171012a/20171012007.png" alt=""></p>
+<p>※ [連絡先の電子メール] にご登録いただけるメールアドレスは 1 つまでとなります。複数名で通知メールを確認されたい場合は、グループアドレスのご利用についてご検討ください。</p>
+</li>
+</ol>
+<p>​<br>以上の通りご案内いたします。<br>​<br>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。<br>​<br>よろしくお願いします。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20171012a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20171113a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          EA 契約における Azure の使用状況レポートについて
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20171012b/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Azure アカウントの削除について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190226c/">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

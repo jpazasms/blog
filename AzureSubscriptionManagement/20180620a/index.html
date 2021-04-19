@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CSP サブスクリプションに関する移行について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。 いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。 ご参考になりましたら幸いです。  CSP の概要に関する情報について オンプレミス ワークロードから CSP への移">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSP サブスクリプションに関する移行について">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180620a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。 いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。 ご参考になりましたら幸いです。  CSP の概要に関する情報について オンプレミス ワークロードから CSP への移">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2018-06-19T21:29:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.046Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="CSP">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20180620a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSP サブスクリプションに関する移行について
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2018-06-19T21:29:00.000Z" itemprop="datePublished">2018-06-20</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+feb65838-df7b-5b4c-8d09-6d4825e7cd64%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BCSP+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E7%A7%BB%E8%A1%8C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20180620a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20180620a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20180620a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180620a/" data-id="cknogeiwe001ioop47t6y1l9c" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。</p>
+<p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
+<p>CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。</p>
+<p>ご参考になりましたら幸いです。</p>
+<ol>
+<li>CSP の概要に関する情報について</li>
+<li>オンプレミス ワークロードから CSP への移行に関する情報について</li>
+<li>従量課金プランから CSP への移行について</li>
+<li>エンタープライズ アグリーメント（以下、EA ）から CSP への移行について</li>
+<li>参考情報</li>
+</ol>
+<h2 id="1-CSP-の概要に関する情報について"><a href="#1-CSP-の概要に関する情報について" class="headerlink" title="1. CSP の概要に関する情報について"></a>1. CSP の概要に関する情報について</h2><p>Azure CSP は、Microsoft パートナー向けのプログラムで、さまざまな Microsoft クラウド サービスへのライセンス チャネルでもあります。</p>
+<p>パートナー様が、お客様に付加価値を提供するための新しい方法であり、エンドツーエンドの関係を築いて、Azure を含むさまざまな Microsoft クラウド サービスの信頼できるアドバイザーになることができます。</p>
+<p>詳細については、以下のドキュメントをご参照ください。</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-overview" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-overview</a></p>
+<h2 id="2-オンプレミス-ワークロードから-CSP-への移行に関する情報について"><a href="#2-オンプレミス-ワークロードから-CSP-への移行に関する情報について" class="headerlink" title="2. オンプレミス ワークロードから CSP への移行に関する情報について"></a>2. オンプレミス ワークロードから CSP への移行に関する情報について</h2><p>オンプレミス ワークロードから CSP への移行については、以下のドキュメントをご参照ください。</p>
+<p>オンプレミス ワークロードを Azure CSP に移行する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-on-premises-to-azure-csp" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-on-premises-to-azure-csp</a></p>
+<h2 id="3-従量課金プランから-CSP-への移行について"><a href="#3-従量課金プランから-CSP-への移行について" class="headerlink" title="3. 従量課金プランから CSP への移行について"></a>3. 従量課金プランから CSP への移行について</h2><p>すでにご利用中の従量課金プランから CSP に移行する場合、事前の評価や、必要に応じ Azure Resource Manager へのアップグレード作業を経て、リソースを移行いただく必要があります。</p>
+<p>詳細については、以下のドキュメントをご参照ください。</p>
+<p>※ Azure In Open から CSP の移行についても同様の手順となります。</p>
+<p>Azure サブスクリプションを従量課金から Azure CSP に移行する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-payg-to-csp" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-payg-to-csp</a></p>
+<p>※ 上記サイトに記載がございます「Azure サブスクリプションの所有権を別のアカウントに譲渡する」につきましては、移行元および移行先サブスクリプションに紐づくディレクトリを統一するための操作となります。</p>
+<h2 id="4-エンタープライズ-アグリーメント（以下、EA）からCSP-への移行について"><a href="#4-エンタープライズ-アグリーメント（以下、EA）からCSP-への移行について" class="headerlink" title="4. エンタープライズ アグリーメント（以下、EA）からCSP への移行について"></a>4. エンタープライズ アグリーメント（以下、EA）からCSP への移行について</h2><p>EA から CSP に移行する場合、対象 EA の種別によって、2 通りの方法がございます。</p>
+<p>また、共通の事項といたしまして、事前の評価や、必要に応じ Azure Resource Manager への</p>
+<p>アップグレード作業を経て、リソースを移行いただく必要があります。</p>
+<p>詳細については、以下のドキュメントをご参照ください。</p>
+<p>Enterprise Agreement から Cloud Solution Provider に Azure サブスクリプションを移行する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-ea-to-csp" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-ea-to-csp</a></p>
+<p>パートナー EA から Azure CSP への Azure サブスクリプションの移行</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/partner-ea-to-csp" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/partner-ea-to-csp</a></p>
+<p>顧客の Enterprise Agreement から Azure CSP に Azure サブスクリプションを移行する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/customer-ea-to-csp" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/customer-ea-to-csp</a><br>※ 上記 3 サイトに記載がございますサブスクリプション譲渡に関する内容につきましては、移行元および移行先サブスクリプションに紐づくディレクトリを統一するための操作となります。</p>
+<h2 id="5-参考情報"><a href="#5-参考情報" class="headerlink" title="5. 参考情報"></a>5. 参考情報</h2><p>各手順において不明点が生じた場合、お手数をおかけしますが、各担当窓口にお問い合わせくださいますようお願いいたします。</p>
+<p>■ パートナーセンターの操作に関するお問い合わせ</p>
+<p>以下のいずれかの方法でお問い合わせくださいますようお願いいたします。</p>
+<p>[1] パートナーセンターからの問い合わせ方法（電話もしくはメール対応希望の場合）</p>
+<p>1. パートナーセンター （ <a href="http://partnercenter.microsoft.com）" target="_blank" rel="noopener">http://partnercenter.microsoft.com）</a> のダッシュボードに アクセスいただき、</p>
+<p>左側 [ サービスの要求 ] から [ パートナー センターの要求 ] を選択します。</p>
+<p>2. [ 新しい要求 ] をクリックし、リクエストの作成をお願いします。</p>
+<p>■ 移行対象の各サービスに関する問い合わせ方法</p>
+<p>Azure の管理ポータルより、技術の問い合わせを作成くださいますようお願いいたします。<br>事前の評価や、Azure Resource Manager へのアップグレード作業、各リソースにおける移行可否に関するご質問については技術の問い合わせとなります。</p>
+<p>サポートにお問い合わせする方法について - 4. ご契約後のお問い合わせ方法<br><a href="https://blogs.msdn.microsoft.com/dsazurejp/2013/10/30/213/" target="_blank" rel="noopener">https://blogs.msdn.microsoft.com/dsazurejp/2013/10/30/213/</a></p>
+<p>■ EA ポータルの操作に関する問い合わせ方法</p>
+<ol>
+<li><p>EA ポータル <a href="https://ea.azure.com" target="_blank" rel="noopener">https://ea.azure.com</a> にサインインし、画面下部の [サポート] から、<br>[エンタープライズポータル] をクリックします。</p>
+</li>
+<li><p>画面に表示される内容に沿って、お問い合わせを作成します。</p>
+</li>
+</ol>
+<p>以上の通りご案内いたします。</p>
+<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
+<p>よろしくお願いします。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20180620a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20180627a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          CSP で Azure サブスクリプションを作成してから利用開始するまで
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20180614a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Azure の EA 契約で MC (Azure 年額コミットメント) とは別請求となるサービスについて</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190226c/">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

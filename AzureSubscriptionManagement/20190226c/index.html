@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ストレージ アカウントの課金について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事ではストレージ アカウントについて、その概要と課金に関する点をご案内します。特に課金については複雑であり、本件でも全てを網羅できているわけではありませんが、少しでも参考になれば幸いです。  ストレージ アカウントの概要  ストレージ アカウントの種類 ストレージ アカウントで利用できるストレージ サービス   ストレ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ストレージ アカウントの課金について">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事ではストレージ アカウントについて、その概要と課金に関する点をご案内します。特に課金については複雑であり、本件でも全てを網羅できているわけではありませんが、少しでも参考になれば幸いです。  ストレージ アカウントの概要  ストレージ アカウントの種類 ストレージ アカウントで利用できるストレージ サービス   ストレ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/strage-image01.png">
+<meta property="article:published_time" content="2019-02-25T16:21:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.094Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="Storage Account">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/strage-image01.png">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20190226c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ストレージ アカウントの課金について
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2019-02-25T16:21:00.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+526291a3-06c2-59e8-a025-3ae07337d619%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8+%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190226c%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190226c.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190226c.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/" data-id="cknogeiwy002boop48pusegss" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>皆さん こんにちは。Microsoft Azure サポート チームです。</p>
+<p>本記事ではストレージ アカウントについて、その概要と課金に関する点をご案内します。特に課金については複雑であり、本件でも全てを網羅できているわけではありませんが、少しでも参考になれば幸いです。</p>
+<ul>
+<li><p>ストレージ アカウントの概要</p>
+<ol>
+<li>ストレージ アカウントの種類</li>
+<li>ストレージ アカウントで利用できるストレージ サービス</li>
+</ol>
+</li>
+<li><p>ストレージ アカウントの料金の考え方</p>
+<ol>
+<li>基本的な課金要素について</li>
+<li>各種課金対象の使用量の算出の考え方について</li>
+</ol>
+</li>
+<li><p>参考情報</p>
+</li>
+</ul>
+<h3 id="ストレージ-アカウントの概要"><a href="#ストレージ-アカウントの概要" class="headerlink" title="ストレージ アカウントの概要"></a>ストレージ アカウントの概要</h3><hr>
+<p>ストレージ アカウントとは Azure 上で利用するデータを取り扱うにあたって、冗長性やデータの利用頻度、パフォーマンスなどを設定し、それに基づいた複数の種類のストレージ サービスを用いてデータの保持や課金を取りまとめて扱うサービスの一種です。</p>
+<p>新たにファイルや Blob などデータを保存するストレージを作成したい場合は、管理ディスクを利用する場合を除き、新規もしくは既存のストレージ アカウントと紐づけて各種ストレージ サービスを作成する必要があります。</p>
+<p>考え方としては Web Apps 等が属する App Service プランのイメージに近いかと思います。</p>
+<p><img src="/blog/AzureSubscriptionManagement/20190226c/strage-image01.png" alt=""> </p>
+<h4 id="1-ストレージ-アカウントの種類"><a href="#1-ストレージ-アカウントの種類" class="headerlink" title="1. ストレージ アカウントの種類"></a><strong>1. ストレージ アカウントの種類</strong></h4><p>ストレージ アカウントは、その汎用性により３つの種類が用意されています。</p>
+<p>汎用 (General Purpose) v2 アカウント<br>　・・・　基本的なストレージ アカウントの種類です。Azure Resource Manager （ 以下 ARM ）モデルにおいて ストレージを使用するほとんどのシナリオにお勧めします。</p>
+<p>汎用 v1 アカウント<br>　・・・　ARM モデル以前の従来のアカウントの種類です。 ARM モデルの場合は、ご利用可能であれば汎用 v2 アカウントを代わりに使用してください。クラシックモデルをご利用の場合はこちらのストレージアカウントのみ利用可能です。</p>
+<p>BLOB ストレージ アカウント<br>　・・・　データをブロック BLOB として格納するために特化したストレージ アカウントです。<br>　<br>　<br>各種類によって利用できるストレージや、選択できるパフォーマンスレベル / 冗長性（レプリケーション）/ アクセス層が異なります。　アカウントの種類やそれぞれ選択できる項目の詳細については以下のサイトをご覧ください。</p>
+<p>- Azure ストレージ アカウントの概要</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#types-of-storage-accounts" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#types-of-storage-accounts</a>
+　
+　</p>
+<h4 id="2-ストレージ-アカウントで利用できるストレージ-サービス"><a href="#2-ストレージ-アカウントで利用できるストレージ-サービス" class="headerlink" title="2. ストレージ アカウントで利用できるストレージ サービス"></a><strong>2. ストレージ アカウントで利用できるストレージ サービス</strong></h4><p>前述のストレージ アカウントの種類によって異なりますが、実際のデータの格納には以下のストレージ サービスを利用することができます。</p>
+<ul>
+<li>ブロック BLOB / ファイル / ディスク（ページ BLOB) / キュー / テーブル</li>
+</ul>
+<p>1 つのストレージ アカウントから利用できるストレージの種類や格納するデータの数には制限はありません。ただし、ストレージ アカウント全体での 500 TB までのサイズの制限や、アカウントごとの最大要求レートや最大送受信速度の制限があります。また、それぞれのストレージ サービスに対しても制限があります。</p>
+<p>詳細につきましては以下のサイトをご覧ください。</p>
+<p>- Azure Storage のスケーラビリティおよびパフォーマンスのターゲット - ストレージ アカウントのスケーラビリティ ターゲット</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-scalability-targets#scalability-targets-for-a-storage-account" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-scalability-targets#scalability-targets-for-a-storage-account</a>
+　
+　
+　</p>
+<h3 id="ストレージ-アカウントの料金の考え方"><a href="#ストレージ-アカウントの料金の考え方" class="headerlink" title="ストレージ アカウントの料金の考え方"></a>ストレージ アカウントの料金の考え方</h3><hr>
+<p>ストレージ アカウントを利用する際の料金についてはいろいろな要素があります。</p>
+<h4 id="1-基本的な課金要素について"><a href="#1-基本的な課金要素について" class="headerlink" title="1.基本的な課金要素について"></a><strong>1.基本的な課金要素について</strong></h4><p>まず各種ストレージに対して、以下の使用量に対して課金が発生します。</p>
+<ol>
+<li>データ保存量</li>
+<li>トランザクション量</li>
+<li>データ転送量</li>
+</ol>
+<p>さらにストレージ アカウントを作成した際に選択した項目（ストレージ アカウントの種類、リージョン、アクセス層、冗長性）によって、データ保存量や転送量に対する基本料金が変わったり、追加の料金が発生することがあります（ 例 ： XX リージョンでのクール アクセス層は 10 円/GB だが OO リージョンでのホット アクセス層は 20 円 /GB など）。</p>
+<p>冗長性も GRS や RA-GRS などのリージョン間のレプリケーションが必須となるものを選択すると、その分の追加のデータ転送料金が発生します。</p>
+<h4 id="2-各種課金対象の使用量の算出の考え方について"><a href="#2-各種課金対象の使用量の算出の考え方について" class="headerlink" title="2.各種課金対象の使用量の算出の考え方について"></a><strong>2.各種課金対象の使用量の算出の考え方について</strong></h4><h5 id="a-データ保存量"><a href="#a-データ保存量" class="headerlink" title="a) データ保存量"></a>a) データ保存量</h5><p>Standard ストレージアカウントの場合は、実際に保存されているデータの利用状況を日割り（どの月であっても 1 か月 = 31 日）で算出します。またデータ保存量に増減があった場合、その日の内の最大保存量が対象となります。</p>
+<p>例えば、あるストレージに 10 日間 100 GB のデータを置いておいた場合は、1 か月で考えると 10 日間 100 GB を保存し、21 日間 0 GB を保存していたことになります。そのため一日あたりの平均利用量は ( 100 GB * 10 日 / 31 日+ 0GB * 21 日 / 31 日) = 32.25806GB になります。それにより実際の料金は (32.25806 * 1 か月分の料金 ) となります。</p>
+<p>ただし、Premium ストレージアカウントに保存されたディスクの使用料金は、実際の利用料ではなくディスクのサイズにより決定されます。（ 例 ： 128 GB のディスクの 10 GB のデータが保存されている場合、Premium ストレージアカウントでは 128 GB 分の課金が発生します。Standard ストレージアカウントでは 10 GB 分の課金となります。）</p>
+<p>※Premium ストレージアカウントの使用料金については、管理ディスクの記事を参考にしてください。</p>
+<p>なお、課金対象となるディスクの利用状況のサイズと、仮想マシンの Explorer から確認できるサイズに違いが出る場合があります。これは最適化処理時の一時ディスクの利用によるものであったり、ディスクのデータ保存時の割り当てのサイズによる影響が考えられます。</p>
+<h5 id="b-トランザクション量"><a href="#b-トランザクション量" class="headerlink" title="b)トランザクション量"></a>b)トランザクション量</h5><p>トランザクションは主にストレージに対する書き込み操作および読み込み操作 (I/O) が該当します。</p>
+<p>具体的なトランザクション量ですが、こちらは対象となるデータをいくつのブロックサイズで処理するかによって変わってきます。</p>
+<p>例えば 4KB 単位で I/O を行うアプリケーションがあったとしますと、1 GB （ = 1,048,576 KB) を書き込む場合のトランザクションは以下のようになります。</p>
+<p>・ 1,048,576 KiB / 4KiB = 262,144 トランザクション</p>
+<p>512KB 単位で I/O が行われた場合、1GB 書き込み時のトランザクションは以下のようになります。</p>
+<p>・ 1,048,576 KiB / 512KiB = 2,048 トランザクション</p>
+<p>上記トランザクション数に、例えば「トランザクション 10,000 回あたり \0.01 」を乗算すると、トランザクション料金となります。</p>
+<p>実際のブロックサイズは、ディスク I/O を要求するアプリケーションの実装に依存します。また同一の 仮想マシンによるディスク I/O であっても様々なサイズでのトランザクションが行われますので、具体的なサイズのご案内は困難であることをご了承ください。</p>
+<p>また I/O 以外にもいくつかトランザクションに該当するものがあります。詳細につきましては以下のサイトをご覧ください。</p>
+<p>- Understanding Windows Azure Storage Billing – Bandwidth, Transactions, and Capacity</p>
+<p><a href="https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/" target="_blank" rel="noopener">https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/</a></p>
+<h5 id="c-データ転送量"><a href="#c-データ転送量" class="headerlink" title="c) データ転送量"></a>c) データ転送量</h5><p>該当のストレージ アカウントを経由して異なるリージョンや Azure の外へ送信されたデータ量が課金対象となります。受信データや、同一リージョン内への送信データについては課金対象となりません。</p>
+<p>例えば該当のストレージに Web 情報が格納されていて、そのサイトの１か月のページビューが 60,000 PV であり、ページ当たりの平均バイト数が 500 K バイトの場合には、60,000 PV x 500 KB = 30.0 GB/月 かかることになります。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>参考情報</p>
+<hr>
+<p>ストレージ アカウントと各ストレージの詳細や課金情報については以下の情報を参考にしてください。</p>
+<p>〇 Azure ストレージ アカウントの概要</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-overview" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-account-overview</a></p>
+<p>〇 ブロック BLOB の料金</p>
+<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/storage/blobs/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/storage/blobs/</a></p>
+<p>〇 Azure ページ BLOB の価格</p>
+<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/storage/page-blobs/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/storage/page-blobs/</a></p>
+<p>〇 Azure Files の料金</p>
+<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/storage/files/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/storage/files/</a></p>
+<p>〇 Azure Table Storage の料金</p>
+<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/storage/tables/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/storage/tables/</a></p>
+<p>〇 Azure Queue Storage の価格</p>
+<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/storage/queues/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/storage/queues/</a></p>
+<p>〇 Windows Azure 計算ツールの使い方</p>
+<p><a href="https://blogs.msdn.microsoft.com/dsazurejp/2014/03/26/windows-azure/" target="_blank" rel="noopener">https://blogs.msdn.microsoft.com/dsazurejp/2014/03/26/windows-azure/</a></p>
+<p>ご案内内容は以上となります。</p>
+<p>併せて「管理ディスクの課金について」もご覧いただければ幸いです。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20190226c.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20190226b/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          管理ディスクの課金について
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20190125a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Azure サブスクリプションと Azure AD について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

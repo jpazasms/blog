@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CSP で Azure サブスクリプションを作成してから利用開始するまで | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP の Azure サブスクリプションについて以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 大まかな流れ  Azure サブスクリプションを作成    Azure サブスクリプションを確認    必要に応じて、再作成   お困りの時は・・・  本記事の目的 本記事は CSP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSP で Azure サブスクリプションを作成してから利用開始するまで">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP の Azure サブスクリプションについて以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 大まかな流れ  Azure サブスクリプションを作成    Azure サブスクリプションを確認    必要に応じて、再作成   お困りの時は・・・  本記事の目的 本記事は CSP">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0011.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0022.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0031.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0041.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0051.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0011.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0061.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0071.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0081.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0091.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0101.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0111.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0011.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0061.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/012.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/013.png">
+<meta property="article:published_time" content="2018-06-27T00:54:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.061Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="CSP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/0011.png">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20180627a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSP で Azure サブスクリプションを作成してから利用開始するまで
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2018-06-27T00:54:00.000Z" itemprop="datePublished">2018-06-27</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+7d0322db-99c5-57d7-a718-fa00e23678e3%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BCSP+%E3%81%A7+Azure+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6%E3%81%8B%E3%82%89%E5%88%A9%E7%94%A8%E9%96%8B%E5%A7%8B%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20180627a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20180627a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20180627a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180627a/" data-id="cknogeiwf001koop4dgw964c0" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
+<p>CSP の Azure サブスクリプションについて以下をご案内させていただきます。</p>
+<p>ご参考になりましたら幸いです。</p>
+<ul>
+<li>本記事の目的</li>
+<li>大まかな流れ</li>
+<li><ol>
+<li>Azure サブスクリプションを作成</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>Azure サブスクリプションを確認</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>必要に応じて、再作成</li>
+</ol>
+</li>
+<li>お困りの時は・・・</li>
+</ul>
+<h3 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h3><hr>
+<p>本記事は CSP パートナー様向けの記事になります。</p>
+<p>エンドユーザー様が CSP の Azure サブスクリプションを利用開始するまでに行っていただく CSP パートナー様の作業についてご案内することを目的としています。</p>
+<p><strong>!! 注意事項 !!</strong></p>
+<p>CSP パートナーセンターや CSP の Azure サブスクリプションについて全てをご案内するものではありません。</p>
+<p>以下情報も併せてご参照いただけますと幸いです。</p>
+<p>Microsoft パートナー サポートへようこそ</p>
+<p><a href="https://partnercenter.microsoft.com/ja-jp/partner/support" target="_blank" rel="noopener">https://partnercenter.microsoft.com/ja-jp/partner/support</a></p>
+<h3 id="大まかな流れ"><a href="#大まかな流れ" class="headerlink" title="大まかな流れ"></a>大まかな流れ</h3><hr>
+<p>エンドユーザー様が CSP の Azure サブスクリプションを利用開始するまでに行っていただく CSP パートナー様の作業について、大まかな流れをご案内します。</p>
+<p>以下の流れで作業を行っていただきます。</p>
+<ol>
+<li>Azure サブスクリプションを作成</li>
+<li>Azure サブスクリプションを確認</li>
+<li>必要に応じて、再作成</li>
+</ol>
+<p>それぞれの作業について後述に詳細をご説明します。</p>
+<h3 id="1-Azure-サブスクリプションを作成"><a href="#1-Azure-サブスクリプションを作成" class="headerlink" title="1. Azure サブスクリプションを作成"></a>1. Azure サブスクリプションを作成</h3><hr>
+<p>CSP パートナーセンターで、Azure のサブスクリプションを作成していただきます。</p>
+<p>CSP パートナー様の作業になります。</p>
+<p>詳細な手順についてご案内します。</p>
+<ol>
+<li><p>CSP パートナーセンターにサインインする</p>
+</li>
+<li><p>画面左から [CSP] - [顧客] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0011.png" alt=""> </p>
+</li>
+<li><p>一覧から対象の顧客をクリックする</p>
+</li>
+<li><p>[サブスクリプション] - [サブスクリプションの追加] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0022.png" alt=""> </p>
+</li>
+<li><p>カタログ内から [Microsoft Azure] にチェックを入れる</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0031.png" alt=""></p>
+</li>
+<li><p>画面一番下にスクロールし、[次へ : レビュー] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0041.png" alt=""></p>
+</li>
+<li><p>[送信] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0051.png" alt=""></p>
+</li>
+</ol>
+<p>以上で、CSP パートナーセンターで、Azure のサブスクリプションを作成する手順は終了です。</p>
+<h3 id="2-Azure-サブスクリプションを確認"><a href="#2-Azure-サブスクリプションを確認" class="headerlink" title="2. Azure サブスクリプションを確認"></a>2. Azure サブスクリプションを確認</h3><hr>
+<p>CSP パートナーセンターで Azure のサブスクリプションが作成されたら、その Azure サブスクリプションが Azure ポータル上に反映されているかを確認します。</p>
+<p>CSP パートナー様の作業になります。</p>
+<p>詳細な手順についてご案内します。</p>
+<ol>
+<li><p>CSP パートナーセンターにサインインする</p>
+</li>
+<li><p>画面左から [CSP] - [顧客] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0011.png" alt=""> </p>
+</li>
+<li><p>一覧から対象の顧客をクリックする</p>
+</li>
+<li><p>[サブスクリプション] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0061.png" alt=""></p>
+</li>
+<li><p>画面をスクロールし、Microsoft Azure の一覧の中から先ほど追加した Microsoft Azure を展開して、そのサブスクリプション ID を確認する</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0071.png" alt=""></p>
+</li>
+<li><p>[サービス管理] - [Microsoft Azure Management Portal] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0081.png" alt=""></p>
+</li>
+<li><p>対象の顧客の Azure ポータルが開くことを確認する</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0091.png" alt=""></p>
+</li>
+<li><p>画面左から [すべてのサービス] - [サブスクリプション] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0101.png" alt=""></p>
+</li>
+<li><p>サブスクリプションの一覧から、上記 5. で確認したサブスクリプション ID が存在していることを確認する</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0111.png" alt=""></p>
+</li>
+</ol>
+<p>以上で Azure サブスクリプションが Azure ポータル上に反映されているか確認する手順は終了です。</p>
+<p>この手順で Azure ポータル上で作成したサブスクリプションが確認できない場合、次の「3. 必要に応じて、再作成」もご確認ください。</p>
+<h3 id="3-必要に応じて、再作成"><a href="#3-必要に応じて、再作成" class="headerlink" title="3. 必要に応じて、再作成"></a>3. 必要に応じて、再作成</h3><hr>
+<p>まれに、上記「2. Azure サブスクリプションを確認」の手順で、作成をした Azure サブスクリプションが Azure ポータルで確認できないことがあります。</p>
+<p>その際は、Azure サブスクリプションを一旦削除して、同手順にて再作成・再確認します。</p>
+<p>CSP パートナー様の作業になります。</p>
+<p>Azure サブスクリプションを削除する詳細な手順についてご案内します。</p>
+<p>なお、削除後の再作成・再確認は上記の「1. Azure サブスクリプションを作成」「[2. Azure サブスクリプションを確認」を再度行っていただきます。</p>
+<ol>
+<li><p>CSP パートナーセンターにサインインする</p>
+</li>
+<li><p>画面左から [CSP] - [顧客] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0011.png" alt=""></p>
+</li>
+<li><p>一覧から対象の顧客をクリックする</p>
+</li>
+<li><p>[サブスクリプション] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/0061.png" alt=""></p>
+</li>
+<li><p>画面をスクロールし、Microsoft Azure の一覧の中から先ほど追加したものの Azure ポータル上で確認ができない Microsoft Azure をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/012.png" alt=""></p>
+</li>
+<li><p>[中断] を選択して [送信] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20180627a/013.png" alt=""></p>
+</li>
+</ol>
+<p>以上で Azure サブスクリプション削除する手順は終了です。</p>
+<p>削除後、上記の「1. Azure サブスクリプションを作成」「2. Azure サブスクリプションを確認」を再度行って、Azure サブスクリプションを再作成してください。</p>
+<h3 id="お困りの時は・・・"><a href="#お困りの時は・・・" class="headerlink" title="お困りの時は・・・"></a>お困りの時は・・・</h3><hr>
+<p>上記内容についてお困りのことがございましたら、是非私たちサポート サービスがご支援をさせていただければと思います。</p>
+<p>上記ご説明の通り、この手順は CSP パートナーセンター上の操作と、Azure ポータル上の操作が含まれています。</p>
+<p>それぞれの専門チームがお客様のお手伝いをさせていただきますので、その内容に応じて各担当窓口にご相談ください。</p>
+<p>窓口が複数ありお客様にはご不便をおかけしますが、どうぞよろしくお願いします。</p>
+<h4 id="CSP-パートナーセンター上の操作でお困りの時"><a href="#CSP-パートナーセンター上の操作でお困りの時" class="headerlink" title="CSP パートナーセンター上の操作でお困りの時"></a>CSP パートナーセンター上の操作でお困りの時</h4><p>以下の手順で私たちサポート サービスにお問い合わせください。</p>
+<p>パートナー センターに関する問題の報告</p>
+<p><a href="https://docs.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center</a></p>
+<h4 id="Azure-ポータル上の操作でお困りの時"><a href="#Azure-ポータル上の操作でお困りの時" class="headerlink" title="Azure ポータル上の操作でお困りの時"></a>Azure ポータル上の操作でお困りの時</h4><p>以下の手順で私たちサポート サービスにお問い合わせください。</p>
+<p>Azure サポート要求を作成する方法</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/azure-supportability/how-to-create-azure-support-request" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/azure-supportability/how-to-create-azure-support-request</a></p>
+<p>以上の通りご案内いたします。</p>
+<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
+<p>よろしくお願いします。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20180627a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20180704a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          Microsoft Azure サブスクリプション新規購入時のサポートプランの選択・購入方法について
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20180620a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">CSP サブスクリプションに関する移行について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190226c/">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

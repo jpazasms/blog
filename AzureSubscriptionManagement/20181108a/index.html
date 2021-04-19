@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Microsoft アカウントと組織アカウントについて | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Microsoft アカウントと組織アカウントについて以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 Microsoft アカウントとは 組織アカウントとは 両アカウントの注意事項 自分が使っているアカウントはどっち ? 問題がある時に試すこと 関連する弊社公開情報  本記事の目的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Microsoft アカウントと組織アカウントについて">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Microsoft アカウントと組織アカウントについて以下をご案内させていただきます。 ご参考になりましたら幸いです。  本記事の目的 Microsoft アカウントとは 組織アカウントとは 両アカウントの注意事項 自分が使っているアカウントはどっち ? 問題がある時に試すこと 関連する弊社公開情報  本記事の目的">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/001.jpg">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/002.jpg">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/001.jpg">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/0031.jpg">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/0031.jpg">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/004.jpg">
+<meta property="article:published_time" content="2018-11-08T03:21:00.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:26:54.077Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="Account">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/001.jpg">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20181108a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Microsoft アカウントと組織アカウントについて
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="" class="article-date-single">
+  <time datetime="2018-11-08T03:21:00.000Z" itemprop="datePublished">2018-11-08</time>
+</a>
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+184830d5-90c0-5b67-b447-2a2caffbfd2b%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BMicrosoft+%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%A8%E7%B5%84%E7%B9%94%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20181108a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20181108a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20181108a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181108a/" data-id="cknogeiwn001uoop4grzuh9g5" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
+<p>Microsoft アカウントと組織アカウントについて以下をご案内させていただきます。</p>
+<p>ご参考になりましたら幸いです。</p>
+<ul>
+<li>本記事の目的</li>
+<li>Microsoft アカウントとは</li>
+<li>組織アカウントとは</li>
+<li>両アカウントの注意事項</li>
+<li>自分が使っているアカウントはどっち ?</li>
+<li>問題がある時に試すこと</li>
+<li>関連する弊社公開情報</li>
+</ul>
+<h3 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h3><hr>
+<p>本記事では、Microsoft アカウントと組織アカウントについてご案内いたします。</p>
+<p>お客様から「Azure ポータル上でリソースが見えない」「Azure ポータルでサブスクリプションが出てこなくなった」といったお問い合わせをいただくことがあります。</p>
+<p>時に、これらがサインインの際にご利用をいただいているアカウント (Microsoft アカウント・組織アカウント) の違いによって発生していることがあります。</p>
+<p>本記事では、そのような事象に合った時にお客様にお試しいただきたい点、また、Microsoft アカウント・組織アカウントについてご参考になる情報のご提供を目的としています。</p>
+<p><strong>!! 注意事項 !!</strong></p>
+<p>Microsoft アカウント・組織アカウントについて全てをご案内するものではありません。</p>
+<p>是非、「関連する弊社公開情報」も併せてご参照いただけたら幸いです。</p>
+<h3 id="Microsoft-アカウントとは"><a href="#Microsoft-アカウントとは" class="headerlink" title="Microsoft アカウントとは"></a>Microsoft アカウントとは</h3><hr>
+<p>Microsoft アカウントについてご案内します。</p>
+<p>Microsoft アカウントとは、コンシューマー向けのサービス (Outlook.com、OneDrive、Xbox LIVE など) をご利用いただく際のアカウントです。</p>
+<p>個人が作成することができます。</p>
+<p>「outlook.jp」や Yahoo!、Gmail のアドレスなどで作成することができます。</p>
+<p>Microsoft アカウントは「個人アカウント」とも呼ばれます。</p>
+<p>Microsoft アカウントで Azure のサブスクリプションを作成することが可能です。</p>
+<p>Microsoft アカウントは以下の手順で作成することができます。</p>
+<ol>
+<li><p><a href="https://account.microsoft.com/" target="_blank" rel="noopener">https://account.microsoft.com/</a> にアクセスする</p>
+</li>
+<li><p>[Microsoft アカウントでサインイン] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/001.jpg" alt=""></p>
+</li>
+<li><p>[作成] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/002.jpg" alt=""></p>
+</li>
+<li><p>手順に沿って作成を終える</p>
+</li>
+</ol>
+<h3 id="組織アカウントとは"><a href="#組織アカウントとは" class="headerlink" title="組織アカウントとは"></a>組織アカウントとは</h3><hr>
+<p>組織アカウントについてご案内します。</p>
+<p>組織アカウントとは、Microsoft のクラウド サービス (Azure、Office 365、Intune など) をご利用いただく際のアカウントです。</p>
+<p>組織の管理者が、Azure AD 内に作成することができます。</p>
+<p>会社でご利用のドメイン「contoso.com」などで作成することができます。</p>
+<p>組織アカウントは「職場または学校アカウント」とも呼ばれます。</p>
+<p>組織アカウントで Azure のサブスクリプションを作成することが可能です。</p>
+<p>組織アカウントは以下のような手順で作成することができます。</p>
+<p>方法: Azure Active Directory を使用してユーザーを追加または削除する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/add-users-azure-active-directory" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/add-users-azure-active-directory</a></p>
+<p>Office 365 にユーザーを個別に、またはまとめて追加する - 管理者向けヘルプ</p>
+<p><a href="https://docs.microsoft.com/ja-jp/office365/admin/add-users/add-users" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/office365/admin/add-users/add-users</a></p>
+<h3 id="両アカウントの注意事項"><a href="#両アカウントの注意事項" class="headerlink" title="両アカウントの注意事項"></a>両アカウントの注意事項</h3><hr>
+<p>Microsoft アカウントと組織アカウントの注意事項についてご案内します。</p>
+<p>ある 1 つのメールアドレスが、Microsoft アカウントであり、かつ組織アカウントであるという状況が起こり得ます。</p>
+<p>つまり、お客様が <a href="mailto:user@contoso.com">user@contoso.com</a> というメールアドレスを持っている場合、そのメールアドレスが Microsoft アカウントとして登録されていて、かつ、同メールアドレスが UPN (User Principal Name) になっているユーザーが Azure AD 内に組織アカウントとして存在しているという状況です。</p>
+<p>この場合、お客様は Microsoft アカウントとしての <a href="mailto:user@contoso.com">user@contoso.com</a> と、組織アカウントとしての <a href="mailto:user@contoso.com">user@contoso.com</a> を適宜使い分けていただく必要がありますので、ご注意ください。</p>
+<h3 id="自分が使っているアカウントはどっち"><a href="#自分が使っているアカウントはどっち" class="headerlink" title="自分が使っているアカウントはどっち ?"></a>自分が使っているアカウントはどっち ?</h3><hr>
+<p>では、自分が使っているアカウントが Microsoft アカウントと組織アカウントのどちらであるか、またはその両方であるかをどのように確認するかについてご案内します。</p>
+<h4 id="Microsoft-アカウントであるかを確認する方法"><a href="#Microsoft-アカウントであるかを確認する方法" class="headerlink" title="Microsoft アカウントであるかを確認する方法"></a>Microsoft アカウントであるかを確認する方法</h4><p>以下の手順で自分のアカウントが Microsoft アカウントであるかを確認します。</p>
+<ol>
+<li><p>すべてのブラウザーを閉じる</p>
+<p>セッションが残っていることで、意図しないアカウントでサインインをしてしまうことを避けるために、必ずすべてのブラウザーを閉じてください。</p>
+</li>
+<li><p>InPrivate ブラウザーを起動する</p>
+<p>同様に、意図しないアカウントでサインインをしてしまうことを避けるために、必ず InPrivate ブラウザーでお試しください。</p>
+</li>
+<li><p><a href="https://account.microsoft.com/" target="_blank" rel="noopener">https://account.microsoft.com/</a> にアクセスする</p>
+</li>
+<li><p>[Microsoft アカウントでサインイン] をクリックする</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/001.jpg" alt=""></p>
+</li>
+<li><p>サインイン画面が表示されるので、自分のアカウントとパスワードでサインインを試みる</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/0031.jpg" alt=""></p>
+</li>
+</ol>
+<p>上記でサインインが行える場合、お試しいただいたアカウントは Microsoft アカウントとして存在しています。</p>
+<h4 id="組織アカウントであるかを確認する方法"><a href="#組織アカウントであるかを確認する方法" class="headerlink" title="組織アカウントであるかを確認する方法"></a>組織アカウントであるかを確認する方法</h4><p>以下の手順で自分のアカウントが組織アカウントであるかを確認します。</p>
+<ol>
+<li><p>すべてのブラウザーを閉じる</p>
+<p>セッションが残っていることで、意図しないアカウントでサインインをしてしまうことを避けるために、必ずすべてのブラウザーを閉じてください。</p>
+</li>
+<li><p>InPrivate ブラウザーを起動する</p>
+<p>同様に、意図しないアカウントでサインインをしてしまうことを避けるために、必ず InPrivate ブラウザーでお試しください。</p>
+</li>
+<li><p><a href="https://portal.azure.com/" target="_blank" rel="noopener">https://portal.azure.com/</a> にアクセスする</p>
+</li>
+<li><p>サインイン画面が表示されるので、自分のアカウントとパスワードでサインインを試みる</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/0031.jpg" alt=""></p>
+</li>
+<li><p>もし、以下の画面が表示される場合、[職場または学校アカウント] を選択してサインインを試みる</p>
+<p><img src="/blog/AzureSubscriptionManagement/20181108a/004.jpg" alt=""></p>
+<p>この画面は、以下の状況の時に表示されます。</p>
+<p>・該当アカウントが Microsoft アカウントとして存在している</p>
+<p>・かつ、該当アカウントのドメインが、Azure AD に登録されている</p>
+<p>そのため、この画面が出た時点で、該当アカウントが Microsoft アカウントとして存在していることは確定しますが、組織アカウントとして存在していることが確定するわけではありません。</p>
+<p>また逆に、この画面が出ないから Microsoft アカウントとして存在していない、というわけでもありません。</p>
+<p>Microsoft アカウントとして存在しているものの、そのドメインが Azure AD に登録されていない場合は、この画面が表示されないためです。</p>
+<p>Microsoft アカウントとして存在しているかの確認は、必ず上記「Microsoft アカウントであるかを確認する方法」の手順でご確認ください。</p>
+<p>なお、Microsoft アカウントとしても組織アカウントとしても存在しているアカウントの場合は、必ずこの画面が表示されます。</p>
+</li>
+</ol>
+<p>上記でサインインが行える場合、お試しいただいたアカウントは組織アカウントとして存在しています。</p>
+<h3 id="問題がある時に試すこと"><a href="#問題がある時に試すこと" class="headerlink" title="問題がある時に試すこと"></a>問題がある時に試すこと</h3><hr>
+<p>Azure ポータル上で、「今まで見えていたリソースやサブスクリプションが見えなくなった」などの事象が発生した場合、まずは以下をお試しいただけますと幸いです。</p>
+<ol>
+<li><p>上記「自分が使っているアカウントはどっち ?」で、ご利用のアカウントが Microsoft アカウント、組織アカウントの両方として存在しているかを確認する</p>
+</li>
+<li><p>もし両方として存在している場合、上記「自分が使っているアカウントはどっち ? 」 - 「組織アカウントであるかを確認する方法」の手順で「5.」まで進める</p>
+<p>Microsoft アカウント、組織アカウントの両方として存在している場合、必ずこの画面が表示されます。</p>
+</li>
+<li><p>その画面で [職場または学校アカウント] を選択してサインインをして、事象の改善に繋がるか確認する</p>
+</li>
+<li><p>事象の改善に繋がらない場合、同画面で今度は [個人のアカウント] を選択してサインインをして、事象の改善に繋がるか確認する</p>
+</li>
+</ol>
+<p>この手順で事象の改善に至らない場合、または、そもそもご利用のアカウントが Microsoft アカウント、組織アカウントの両方として存在していない場合は、別の要因による事象である可能性があります。</p>
+<p>その際は是非私たちサポート サービスのご利用をご検討いただけましたら幸いです。</p>
+<p>お客様のお力になれるようがんばらせていただきます。</p>
+<h3 id="関連する弊社公開情報"><a href="#関連する弊社公開情報" class="headerlink" title="関連する弊社公開情報"></a>関連する弊社公開情報</h3><hr>
+<p>Microsoft アカウント、組織アカウントについて、弊社の様々な公開情報を以下にご案内します。</p>
+<p>併せてご利用ください。</p>
+<p>Microsoft アカウント</p>
+<p><a href="https://account.microsoft.com/account?lang=ja-JP" target="_blank" rel="noopener">https://account.microsoft.com/account?lang=ja-JP</a></p>
+<p>Microsoft アカウントにサインインする方法</p>
+<p><a href="https://support.microsoft.com/ja-jp/help/4028195/microsoft-account-how-to-sign-in" target="_blank" rel="noopener">https://support.microsoft.com/ja-jp/help/4028195/microsoft-account-how-to-sign-in</a></p>
+<p>Microsoft アカウントに関するヘルプ</p>
+<p><a href="https://support.microsoft.com/ja-jp/hub/4294457/microsoft-account-help" target="_blank" rel="noopener">https://support.microsoft.com/ja-jp/hub/4294457/microsoft-account-help</a></p>
+<p>Microsoft FAQ</p>
+<p><a href="https://account.microsoft.com/account/faq" target="_blank" rel="noopener">https://account.microsoft.com/account/faq</a></p>
+<p>指定した Microsoft アカウントは登録されていません</p>
+<p><a href="https://support.microsoft.com/ja-jp/help/13811/microsoft-account-doesnt-exist" target="_blank" rel="noopener">https://support.microsoft.com/ja-jp/help/13811/microsoft-account-doesnt-exist</a></p>
+<p>方法: Azure Active Directory を使用してユーザーを追加または削除する</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/add-users-azure-active-directory" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/add-users-azure-active-directory</a></p>
+<p>Office 365 にユーザーを個別に、またはまとめて追加する - 管理者向けヘルプ</p>
+<p><a href="https://docs.microsoft.com/ja-jp/office365/admin/add-users/add-users" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/office365/admin/add-users/add-users</a></p>
+<p>以上の通りご案内いたします。</p>
+<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
+<p>よろしくお願いします。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20181108a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../20181112a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">次の記事</strong>
+      <div class="article-nav-title">
+        
+          既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="../20180910a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Azure の各サービスの使用量とクォータを確認する方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../20190226a/">CSP パートナー切り替えについて</a>
+          </li>
+        
+          <li>
+            <a href="../20190226b/">管理ディスクの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190226c/">ストレージ アカウントの課金について</a>
+          </li>
+        
+          <li>
+            <a href="../20190125a/">Azure サブスクリプションと Azure AD について</a>
+          </li>
+        
+          <li>
+            <a href="../20190110a/">CSP のパートナー センター PowerShell を使ってみよう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Security/" rel="tag">Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">39</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Security">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/07/">2017 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/12/">2013 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/09/">2013 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/08/">2013 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013 / 06</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 10px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 11.67px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 15px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Security/" style="font-size: 10px;">Security</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
