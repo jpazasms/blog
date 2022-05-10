@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190110a/010.jpg">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190110a/011.jpg">
 <meta property="article:published_time" content="2019-01-10T00:25:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T10:26:54.077Z">
+<meta property="article:modified_time" content="2022-05-10T05:13:14.656Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="CSP">
@@ -51,7 +51,7 @@
   
 <link rel="stylesheet" href="../../css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -69,7 +69,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -115,9 +115,9 @@
 </a>
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+6295473b-8f31-5e52-b00b-08084846e8c5%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BCSP+%E3%81%AE%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC+%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+PowerShell+%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190110a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190110a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190110a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+6295473b-8f31-5e52-b00b-08084846e8c5%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BCSP+%E3%81%AE%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC+%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+PowerShell+%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190110a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190110a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190110a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190110a/" data-id="cknogeiws0021oop4a20u5je3" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190110a/" data-id="cl2zp61d4001w0ml6h0qv2qj9" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -130,8 +130,8 @@
 <p>本記事は、CSP パートナー様向けにパートナー センター PowerShell の使用例やその他情報をご案内することを目的にしております。</p>
 <p>CSP パートナー様の管理業務は主に以下のような方法で行っていただきます。</p>
 <ul>
-<li>CSP パートナー センターの Web UI を使用する</li>
-<li>PowerShell を使用する</li>
+<li>  CSP パートナー センターの Web UI を使用する</li>
+<li>  PowerShell を使用する</li>
 </ul>
 <p>後者の PowerShell をご利用いただくことで、一部管理業務の自動化などをご検討いただけることがございます。</p>
 <p>この際にご利用をいただくのが CSP のパートナー センター PowerShell です。</p>
@@ -145,14 +145,14 @@
 <p>これらを総称してパートナー センター PowerShell と呼んでいます。</p>
 <p>パートナー センター PowerShell の全コマンドは以下の弊社公開情報からご確認をいただけます。</p>
 <p>PartnerCenter</p>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/partnercenter/" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/partnercenter/</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/partnercenter/">https://docs.microsoft.com/en-us/powershell/module/partnercenter/</a></p>
 <p>このページに全コマンドがリストされています。</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/001.jpg" alt=""></p>
+<p><img src="/blog/AzureSubscriptionManagement/20190110a/001.jpg"></p>
 <p>各コマンドをクリックしていただくと、そのコマンドの詳細ページに遷移いたします。</p>
 <p>このページから</p>
 <ul>
-<li>「現在、パートナー センター PowerShell にはどのような処理を行うコマンドが存在しているか」</li>
-<li>「自分が実現をしたい処理を行えるコマンドがあるか」</li>
+<li>  「現在、パートナー センター PowerShell にはどのような処理を行うコマンドが存在しているか」</li>
+<li>  「自分が実現をしたい処理を行えるコマンドがあるか」</li>
 </ul>
 <p>などを CSP パートナー様に探していただいてご利用をいただくものとなります。</p>
 <h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><hr>
@@ -163,7 +163,7 @@
 <p>そのため、CSP のパートナー センター PowerShell をご利用の際は「関連する公開情報」にご案内をしております各種情報や、その他インターネット上の各種フォーラムの場などを CSP パートナー様でご活用いただくことをご検討いただけましたら幸いです。</p>
 <p>以下にこれを示す弊社公開情報も併せてご案内いたします。</p>
 <p>Azure CSP 管理オプション</p>
-<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options</a></p>
 <blockquote>
 <p><strong>重要</strong></p>
 <p>パートナー センターの PowerShell モジュールは、Microsoft で正式にはサポートされていないオープン ソース プロジェクトです。</p>
@@ -172,78 +172,47 @@
 <p>CSP のパートナー センター PowerShell をご利用いただくにあたり、事前の準備をご案内します。</p>
 <p>パートナー センター PowerShell をご利用いただく前に以下をご実施ください。</p>
 <ol>
-<li>パートナー センター PowerShell のインストール</li>
-<li>Application Id を取得</li>
-<li>Customer Id を取得</li>
-<li>Subscription Id を取得</li>
+<li> パートナー センター PowerShell のインストール</li>
+<li> Application Id を取得</li>
+<li> Customer Id を取得</li>
+<li> Subscription Id を取得</li>
 </ol>
 <p>それぞれ詳細をご案内します。</p>
 <h4 id="1-パートナー-センター-PowerShell-のインストール"><a href="#1-パートナー-センター-PowerShell-のインストール" class="headerlink" title="1. パートナー センター PowerShell のインストール"></a>1. パートナー センター PowerShell のインストール</h4><p>以下の手順で、クライアント PC にパートナー センター PowerShell のモジュールをインストールします。</p>
 <ol>
-<li><p>PowerShell を管理者として実行する</p>
-</li>
-<li><p>以下のコマンドを実行してパートナー センター PowerShell モジュールをインストールする</p>
-<p>Install-Module -Name PartnerCenter</p>
-</li>
-<li><p>すでにインストールされている場合は、以下のコマンドを実行して最新版にアップデートする</p>
-<p>Update-Module -Name PartnerCenter</p>
-</li>
+<li> PowerShell を管理者として実行する</li>
+<li>以下のコマンドを実行してパートナー センター PowerShell モジュールをインストールする Install-Module -Name PartnerCenter</li>
+<li>すでにインストールされている場合は、以下のコマンドを実行して最新版にアップデートする Update-Module -Name PartnerCenter</li>
 </ol>
 <p>以上でパートナー センター PowerShell のインストールは終了です。</p>
 <h4 id="2-Application-Id-を取得"><a href="#2-Application-Id-を取得" class="headerlink" title="2. Application Id を取得"></a>2. Application Id を取得</h4><p>以下の手順で Application Id を取得します。</p>
 <p>ここで取得した Application Id は、パートナー センター PowerShell のコマンドを実行する際に使用します。</p>
 <ol>
-<li><p>CSP パートナー アカウントで CSP パートナー センターにサインインする</p>
-</li>
-<li><p>画面右上の歯車のアイコンから [パートナーの設定] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/002.jpg" alt=""></p>
-</li>
-<li><p>[アプリ管理] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/003.jpg" alt=""></p>
-</li>
-<li><p>画面を下にスクロールして、[新しいネイティブ アプリの追加] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/004.jpg" alt=""></p>
-</li>
-<li><p>新しく追加されたネイティブ アプリの [アプリ ID] を確認する</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/005.jpg" alt=""></p>
-</li>
+<li> CSP パートナー アカウントで CSP パートナー センターにサインインする</li>
+<li>画面右上の歯車のアイコンから [パートナーの設定] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/002.jpg"></li>
+<li>[アプリ管理] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/003.jpg"></li>
+<li>画面を下にスクロールして、[新しいネイティブ アプリの追加] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/004.jpg"></li>
+<li>新しく追加されたネイティブ アプリの [アプリ ID] を確認する <img src="/blog/AzureSubscriptionManagement/20190110a/005.jpg"></li>
 </ol>
 <p>以上で Application Id の取得は終了です。</p>
 <h4 id="3-Customer-Id-を取得"><a href="#3-Customer-Id-を取得" class="headerlink" title="3. Customer Id を取得"></a>3. Customer Id を取得</h4><p>以下の手順で対象顧客の Customer Id を取得します。</p>
 <p>ここで取得した Customer Id は、パートナー センター PowerShell のコマンドを実行する際に使用します。</p>
 <ol>
-<li><p>CSP パートナー アカウントで CSP パートナー センターにサインインする</p>
-</li>
-<li><p>画面左から [顧客] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/006.jpg" alt=""></p>
-</li>
-<li><p>顧客の一覧から対象の顧客をクリックする</p>
-</li>
-<li><p>[アカウント] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/007.jpg" alt=""></p>
-</li>
-<li><p>[顧客アカウント情報] の [Microsoft ID] を確認する</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/008.jpg" alt=""></p>
-<p>※ [Microsoft ID] が [Customer Id] になります。</p>
-</li>
+<li> CSP パートナー アカウントで CSP パートナー センターにサインインする</li>
+<li>画面左から [顧客] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/006.jpg"></li>
+<li> 顧客の一覧から対象の顧客をクリックする</li>
+<li>[アカウント] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/007.jpg"></li>
+<li>[顧客アカウント情報] の [Microsoft ID] を確認する <img src="/blog/AzureSubscriptionManagement/20190110a/008.jpg"> ※ [Microsoft ID] が [Customer Id] になります。</li>
 </ol>
 <p>以上で Customer Id の取得は終了です。</p>
 <h4 id="4-Subscription-Id-を取得"><a href="#4-Subscription-Id-を取得" class="headerlink" title="4. Subscription Id を取得"></a>4. Subscription Id を取得</h4><p>以下の手順で対象顧客の対象サブスクリプションの Subscription Id を取得します。</p>
 <p>ここで取得した Subscription Id は、パートナー センター PowerShell のコマンドを実行する際に使用します。</p>
 <ol>
-<li><p>CSP パートナー アカウントで CSP パートナー センターにサインインする</p>
-</li>
-<li><p>画面左から [顧客] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/006.jpg" alt=""></p>
-</li>
-<li><p>顧客の一覧から対象の顧客をクリックする</p>
-</li>
-<li><p>[サブスクリプション] をクリックする</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/009.jpg" alt=""></p>
-</li>
-<li><p>画面を下にスクロールして、対象の Azure サブスクリプションを展開して [サブスクリプション ID] を確認する</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/010.jpg" alt=""></p>
-</li>
+<li> CSP パートナー アカウントで CSP パートナー センターにサインインする</li>
+<li>画面左から [顧客] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/006.jpg"></li>
+<li> 顧客の一覧から対象の顧客をクリックする</li>
+<li>[サブスクリプション] をクリックする <img src="/blog/AzureSubscriptionManagement/20190110a/009.jpg"></li>
+<li>画面を下にスクロールして、対象の Azure サブスクリプションを展開して [サブスクリプション ID] を確認する <img src="/blog/AzureSubscriptionManagement/20190110a/010.jpg"></li>
 </ol>
 <p>以上で Subscription Id の取得は終了です。</p>
 <h3 id="パートナー-センター-PowerShell-で使用状況を取得"><a href="#パートナー-センター-PowerShell-で使用状況を取得" class="headerlink" title="パートナー センター PowerShell で使用状況を取得"></a>パートナー センター PowerShell で使用状況を取得</h3><hr>
@@ -251,24 +220,12 @@
 <p>この例では、パートナー センター PowerShell の Get-PartnerCustomerSubscriptionUtilization コマンドを使用します。</p>
 <p>上記「事前の準備」をご実施いただいてから、以下の手順をご実施ください。</p>
 <ol>
-<li><p>PowerShell を管理者として実行する</p>
-</li>
-<li><p>以下のコマンドを実行して、CSP パートナー アカウントの資格情報を入力する<br>　<br>　　 Connect-PartnerCenter<br>　<br>　　　※ApplicationId の入力を求められるので、「事前の準備」で確認した Application Id を入力して Enter を押下します。<br>　　　　その後、認証が発生するので、CSP パートナー アカウントの資格情報で認証を行います。
-　</p>
-</li>
-<li><p>以下のコマンドを実行して、CSP パートナー センターにサインインする</p>
-<p>Connect-PartnerCenter -ApplicationId “＜事前の準備で確認した Application Id ＞” -Credential $cred</p>
-<p>例)</p>
-<p>Connect-PartnerCenter -ApplicationId “3e25xxxx-35xx-4fxx-87xx-d4e8a19cxxxx” -Credential $cred</p>
-</li>
-<li><p>以下のコマンドを実行して、対象顧客・対象サブスクリプションの使用状況詳細データを出力する</p>
-<p>Get-PartnerCustomerSubscriptionUtilization -CustomerId “＜事前の準備で確認した Customer Id ＞” -SubscriptionId “＜事前の準備で確認した Subscription Id ＞” -StartDate “＜開始日時 ( UTC ) ＞” -EndDate “＜終了日時 ( UTC ) ＞” -ShowDetails | Export-Csv -Path “＜出力パス＞”</p>
-<p>例)</p>
-<p>Get-PartnerCustomerSubscriptionUtilization -CustomerId “3cfcxxxx-7fxx-4fxx-8bxx-5e76d7c7xxxx” -SubscriptionId “AA21xxxx-EBxx-48xx-ADxx-B00A08D0xxxx” -StartDate “2019/01/01 00:00:00” -EndDate “2019/01/10 00:00:00” -ShowDetails | Export-Csv -Path “c:\temp\util.csv”</p>
-</li>
-<li><p>上記 4. で以下のような CSV ファイルが出力されていることを確認する</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190110a/011.jpg" alt=""></p>
-</li>
+<li> PowerShell を管理者として実行する</li>
+<li> 以下のコマンドを実行して、CSP パートナー アカウントの資格情報を入力する<br>　<br>　　 Connect-PartnerCenter<br>　<br>　　　※ApplicationId の入力を求められるので、「事前の準備」で確認した Application Id を入力して Enter を押下します。<br>　　　　その後、認証が発生するので、CSP パートナー アカウントの資格情報で認証を行います。
+　</li>
+<li>以下のコマンドを実行して、CSP パートナー センターにサインインする Connect-PartnerCenter -ApplicationId “＜事前の準備で確認した Application Id ＞” -Credential $cred 例) Connect-PartnerCenter -ApplicationId “3e25xxxx-35xx-4fxx-87xx-d4e8a19cxxxx” -Credential $cred</li>
+<li>以下のコマンドを実行して、対象顧客・対象サブスクリプションの使用状況詳細データを出力する Get-PartnerCustomerSubscriptionUtilization -CustomerId “＜事前の準備で確認した Customer Id ＞” -SubscriptionId “＜事前の準備で確認した Subscription Id ＞” -StartDate “＜開始日時 ( UTC ) ＞” -EndDate “＜終了日時 ( UTC ) ＞” -ShowDetails | Export-Csv -Path “＜出力パス＞” 例) Get-PartnerCustomerSubscriptionUtilization -CustomerId “3cfcxxxx-7fxx-4fxx-8bxx-5e76d7c7xxxx” -SubscriptionId “AA21xxxx-EBxx-48xx-ADxx-B00A08D0xxxx” -StartDate “2019/01/01 00:00:00” -EndDate “2019/01/10 00:00:00” -ShowDetails | Export-Csv -Path “c:\temp\util.csv”</li>
+<li>上記 4. で以下のような CSV ファイルが出力されていることを確認する <img src="/blog/AzureSubscriptionManagement/20190110a/011.jpg"></li>
 </ol>
 <p>以上で CSP のパートナー センター PowerShell をご利用いただき、対象顧客・対象サブスクリプションの使用状況詳細データを取得する手順は終了です。</p>
 <p>他のコマンドについても、同じ要領でご利用いただけますので色々お試しいただけましたら幸いです。</p>
@@ -276,15 +233,15 @@
 <p>CSP のパートナー センター PowerShell について、様々な公開情報を以下にご案内します。</p>
 <p>併せてご利用ください。</p>
 <p>Microsoft Partner Center PowerShell</p>
-<p><a href="https://github.com/Microsoft/Partner-Center-PowerShell" target="_blank" rel="noopener">https://github.com/Microsoft/Partner-Center-PowerShell</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Microsoft/Partner-Center-PowerShell">https://github.com/Microsoft/Partner-Center-PowerShell</a></p>
 <p>Microsoft Partner Center PowerShell - ReadMe</p>
 <p><a href="/blog/master/README/">https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/README.md</a></p>
 <p>PartnerCenter</p>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/partnercenter/" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/partnercenter/</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/partnercenter/">https://docs.microsoft.com/en-us/powershell/module/partnercenter/</a></p>
 <p>Azure CSP 管理オプション</p>
-<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-management-options</a></p>
 <p>Azure CSP API 統合オプション</p>
-<p><a href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/available-apis-overview" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/available-apis-overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/available-apis-overview">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/available-apis-overview</a></p>
 <p>以上の通りご案内いたします。</p>
 <p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
 <p>よろしくお願いします。</p>
@@ -404,7 +361,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Japan<br>
+      &copy; 2022 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

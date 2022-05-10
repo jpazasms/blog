@@ -6,16 +6,16 @@
   
   <title>管理ディスクの課金について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事では管理ディスクについて、その概要と課金に関する点をご案内します。ぜひ ストレージ アカウントの記事と合わせてご覧ください。  管理ディスクの概要  管理ディスクの種類   管理ディスクの料金の考え方  基本的な課金要素について データ保持に関する課金について 各課金要素の使用量の算出の考え方について   参考情報">
+  <meta name="description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事では管理ディスクについて、その概要と課金に関する点をご案内します。ぜひ ストレージ アカウントの記事と合わせてご覧ください。  管理ディスクの概要 1.  管理ディスクの種類   管理ディスクの料金の考え方 1.  基本的な課金要素について 2.  データ保持に関する課金について 3.  各課金要素の使用量の算出の考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="管理ディスクの課金について">
 <meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事では管理ディスクについて、その概要と課金に関する点をご案内します。ぜひ ストレージ アカウントの記事と合わせてご覧ください。  管理ディスクの概要  管理ディスクの種類   管理ディスクの料金の考え方  基本的な課金要素について データ保持に関する課金について 各課金要素の使用量の算出の考え方について   参考情報">
+<meta property="og:description" content="皆さん こんにちは。Microsoft Azure サポート チームです。 本記事では管理ディスクについて、その概要と課金に関する点をご案内します。ぜひ ストレージ アカウントの記事と合わせてご覧ください。  管理ディスクの概要 1.  管理ディスクの種類   管理ディスクの料金の考え方 1.  基本的な課金要素について 2.  データ保持に関する課金について 3.  各課金要素の使用量の算出の考">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/managed-image01.png">
 <meta property="article:published_time" content="2019-02-25T16:22:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T10:26:54.094Z">
+<meta property="article:modified_time" content="2022-05-10T05:13:14.668Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Virtual Machine">
@@ -40,7 +40,7 @@
   
 <link rel="stylesheet" href="../../css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -58,7 +58,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -104,9 +104,9 @@
 </a>
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+4d90e35a-11b8-5f55-95c5-f0c2057256bc%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E7%AE%A1%E7%90%86%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190226b%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190226b.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190226b.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+4d90e35a-11b8-5f55-95c5-f0c2057256bc%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E7%AE%A1%E7%90%86%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190226b%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190226b.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190226b.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/" data-id="cknogeiww0029oop48v1fgqyx" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/" data-id="cl2zp61d600210ml63yzq1j5x" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -115,18 +115,16 @@
 <p>本記事では管理ディスクについて、その概要と課金に関する点をご案内します。ぜひ ストレージ アカウントの記事と合わせてご覧ください。</p>
 <ul>
 <li><p>管理ディスクの概要</p>
-<ol>
-<li>管理ディスクの種類</li>
-</ol>
+<pre><code>1.  管理ディスクの種類
+</code></pre>
 </li>
 <li><p>管理ディスクの料金の考え方</p>
-<ol>
-<li>基本的な課金要素について</li>
-<li>データ保持に関する課金について</li>
-<li>各課金要素の使用量の算出の考え方について</li>
-</ol>
+<pre><code>1.  基本的な課金要素について
+2.  データ保持に関する課金について
+3.  各課金要素の使用量の算出の考え方について
+</code></pre>
 </li>
-<li><p>参考情報</p>
+<li><p>  参考情報</p>
 </li>
 </ul>
 <h3 id="管理ディスクの概要"><a href="#管理ディスクの概要" class="headerlink" title="管理ディスクの概要"></a>管理ディスクの概要</h3><hr>
@@ -135,7 +133,7 @@
 <p>何よりオンプレミスの HDD のような単独での取り扱いのしやすさを求める利用者の声も多く、それを実現するものとして管理ディスク（ Managed Disk ）が用意されました。</p>
 <p>管理ディスクはこれまでお客様が作成、管理しなければいけなかった ストレージ アカウントの仕組みの部分を Azure 側が管理するようになっています。</p>
 <p>ユーザーは Azure ポータルからリソースとして “ディスク” を選択することで管理ディスクを作成できます。そうして作成した管理ディスクを既存の VM のデータディスクとして利用することも可能です。また現在では VM を新規作成する際には、 OS 用ディスクとして最初から管理ディスクを作成して利用することができます。</p>
-<p><img src="/blog/AzureSubscriptionManagement/20190226b/managed-image01.png" alt=""> </p>
+<p><img src="/blog/AzureSubscriptionManagement/20190226b/managed-image01.png"> </p>
 <h4 id="1-管理ディスクの種類"><a href="#1-管理ディスクの種類" class="headerlink" title="1.管理ディスクの種類"></a><strong>1.管理ディスクの種類</strong></h4><p>管理ディスクには以下の 4 つの種類があります。</p>
 <p>Premium SSD ・・・　ミッション クリティカルな運用環境をホストしている VM 向けの高パフォーマンスなディスク</p>
 <p>Standard SSD　・・・　一般的なアプリ利用や開発向けのバランスのよいディスク</p>
@@ -146,9 +144,9 @@
 <p>ディスクの種類にもよりますが、ストレージ アカウントに比べて分かりやすくなっています。</p>
 <h4 id="1-基本的な課金要素について"><a href="#1-基本的な課金要素について" class="headerlink" title="1. 基本的な課金要素について"></a><strong>1. 基本的な課金要素について</strong></h4><p>管理ディスクは以下の使用量に対して課金が発生します。</p>
 <ol>
-<li>トランザクション量</li>
-<li>データ転送量</li>
-<li>スナップショット</li>
+<li> トランザクション量</li>
+<li> データ転送量</li>
+<li> スナップショット</li>
 </ol>
 <p>また、管理ディスクを作成した際に選択した項目（ディスクの種類、ディスク サイズ）により基本料金が異なります。</p>
 <h4 id="2-データ保持に関する課金について"><a href="#2-データ保持に関する課金について" class="headerlink" title="2.データ保持に関する課金について"></a><strong>2.データ保持に関する課金について</strong></h4><p>保存しているデータに対する課金ですが、管理ディスクの場合には、作成時に選択されたディスクのサイズによって料金が異なります。そのディスク中に保存しているデータ量が多くても少なくても料金は変わりません。</p>
@@ -159,7 +157,7 @@
 <p>なお、ディスクサイズの料金は月額になります。もし利用期間が 1 か月未満の場合には、月額をベースとして時間単位で課金されます。</p>
 <p>管理ディスクの種類や用意されているディスクサイズ、それぞれの料金などについては以下のサイトご覧ください。</p>
 <p>- Managed Disks の価格</p>
-<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/</a></p>
+<p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/">https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/</a></p>
 <h4 id="3-各課金要素の使用量の算出の考え方について"><a href="#3-各課金要素の使用量の算出の考え方について" class="headerlink" title="3. 各課金要素の使用量の算出の考え方について"></a><strong>3. 各課金要素の使用量の算出の考え方について</strong></h4><h5 id="a-トランザクション量"><a href="#a-トランザクション量" class="headerlink" title="a) トランザクション量"></a>a) トランザクション量</h5><p> こちらは管理ディスクの種類によって異なります。</p>
 <p>ⅰ) Premium SSD</p>
 <p>トランザクション量に対する課金はありません</p>
@@ -177,11 +175,11 @@
 <p>なお、Standard HDD は HDD のみ選択可能です。</p>
 <h3 id="参考情報"><a href="#参考情報" class="headerlink" title="参考情報"></a>参考情報</h3><hr>
 <p>〇 Azure ディスクストレージの種類 ( 2018 年 6 月現在 )</p>
-<p><a href="https://apac01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fblogs.technet.microsoft.com%2Fjpaztech%2F2018%2F06%2F11%2Fchoose_azure_disk%2F&data=02%7C01%7C%7Cd5a3ef8fb0ea427bc2da08d681107a5b%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636838305111268321&sdata=GmWjzCwHbQJVUODBsi5Kg5a8kS%2BnTAzIXTD%2FKC5%2F3T4%3D&reserved=0" target="_blank" rel="noopener">https://blogs.technet.microsoft.com/jpaztech/2018/06/11/choose_azure_disk/</a></p>
-<p>〇 What disk types are available in Azure?</p>
-<p><a href="https://docs.microsoft.com/ja-jp/azure/virtual-machines/windows/disks-types" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/virtual-machines/windows/disks-types</a></p>
+<p><a target="_blank" rel="noopener" href="https://apac01.safelinks.protection.outlook.com/?url=https://blogs.technet.microsoft.com/jpaztech/2018/06/11/choose_azure_disk/&data=02%7C01%7C%7Cd5a3ef8fb0ea427bc2da08d681107a5b%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636838305111268321&sdata=GmWjzCwHbQJVUODBsi5Kg5a8kS+nTAzIXTD/KC5/3T4=&reserved=0">https://blogs.technet.microsoft.com/jpaztech/2018/06/11/choose_azure_disk/</a></p>
+<p>〇 What disk types are available in Azure?</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/virtual-machines/windows/disks-types">https://docs.microsoft.com/ja-jp/azure/virtual-machines/windows/disks-types</a></p>
 <p>〇 Managed Disks の価格</p>
-<p><a href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/" target="_blank" rel="noopener">https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/</a></p>
+<p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/">https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/</a></p>
 <p>ご案内内容は以上です。</p>
 <p>こちらの情報が少しでも皆様のお役に立てれば幸いです。</p>
 
@@ -300,7 +298,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Japan<br>
+      &copy; 2022 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

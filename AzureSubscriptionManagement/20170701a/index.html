@@ -6,16 +6,16 @@
   
   <title>Microsoft Azure での侵入テスト (ペネトレーションテスト) について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、Azure サービスの侵入テスト通知の送信 をご参照ください。 Web アプリケーションのリリースやインターネットに接続した環境の脆弱性診断のために、侵入テストを実施されることがあるかと思います。パブリッククラウド (Microsoft Azure など) に、アプリケーションを配置した際にも、侵入テストを実施">
+  <meta name="description" content="※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、Azure サービスの侵入テスト通知の送信 をご参照ください。 Web アプリケーションのリリースやインターネットに接続した環境の脆弱性診断のために、侵入テストを実施されることがあるかと思います。パブリッククラウド (Microsoft Azure など) に、アプリケーションを配置した際にも、侵入テストを実施">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Microsoft Azure での侵入テスト (ペネトレーションテスト) について">
 <meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20170701a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、Azure サービスの侵入テスト通知の送信 をご参照ください。 Web アプリケーションのリリースやインターネットに接続した環境の脆弱性診断のために、侵入テストを実施されることがあるかと思います。パブリッククラウド (Microsoft Azure など) に、アプリケーションを配置した際にも、侵入テストを実施">
+<meta property="og:description" content="※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、Azure サービスの侵入テスト通知の送信 をご参照ください。 Web アプリケーションのリリースやインターネットに接続した環境の脆弱性診断のために、侵入テストを実施されることがあるかと思います。パブリッククラウド (Microsoft Azure など) に、アプリケーションを配置した際にも、侵入テストを実施">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20170701a/Pen.jpg">
 <meta property="article:published_time" content="2017-07-01T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T10:26:54.023Z">
+<meta property="article:modified_time" content="2022-05-10T05:13:14.628Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Security">
@@ -39,7 +39,7 @@
   
 <link rel="stylesheet" href="../../css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -57,7 +57,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -103,17 +103,17 @@
 </a>
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+023f935c-7b72-5c2a-a591-de8a5ff8a432%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BMicrosoft+Azure+%E3%81%A7%E3%81%AE%E4%BE%B5%E5%85%A5%E3%83%86%E3%82%B9%E3%83%88+%28%E3%83%9A%E3%83%8D%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%29+%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20170701a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20170701a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20170701a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+023f935c-7b72-5c2a-a591-de8a5ff8a432%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BMicrosoft+Azure+%E3%81%A7%E3%81%AE%E4%BE%B5%E5%85%A5%E3%83%86%E3%82%B9%E3%83%88+%28%E3%83%9A%E3%83%8D%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%29+%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20170701a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20170701a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20170701a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20170701a/" data-id="cknogeivw0012oop4h780hq0b" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20170701a/" data-id="cl2zp61ce000z0ml68stbfpgs" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、<a href="https://portal.msrc.microsoft.com/ja-jp/engage/pentest" target="_blank" rel="noopener">Azure サービスの侵入テスト通知の送信</a> をご参照ください。</p>
+        <p>※ 2017 年 7 月時点の情報です。予告なく変更される可能性があります。最新情報は、<a target="_blank" rel="noopener" href="https://portal.msrc.microsoft.com/ja-jp/engage/pentest">Azure サービスの侵入テスト通知の送信</a> をご参照ください。</p>
 <p>Web アプリケーションのリリースやインターネットに接続した環境の脆弱性診断のために、侵入テストを実施されることがあるかと思います。パブリッククラウド (Microsoft Azure など) に、アプリケーションを配置した際にも、侵入テストを実施したいというご要望があるかと思います。</p>
-<p><strong>Microsoft Azure では、侵入テストのルール事項 (<a href="https://technet.microsoft.com/ja-jp/mt784683" target="_blank" rel="noopener">Microsoft Cloud Unified Penetration Testing Rules of Engagement</a> ) を順守頂き、侵入テストを実施頂く必要があります。**</strong>例外的なルールは適用外です。**</p>
-<p>また、申請フォーム（<a href="https://portal.msrc.microsoft.com/ja-jp/engage/pentest" target="_blank" rel="noopener">Azure サービスの侵入テスト通知の送信</a>）での申請は任意です。もし、申請する場合は以下をご参照の上、内容を英語で記載し申請ください。</p>
+<p><strong>Microsoft Azure では、侵入テストのルール事項 (<a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/mt784683">Microsoft Cloud Unified Penetration Testing Rules of Engagement</a> ) を順守頂き、侵入テストを実施頂く必要があります。****例外的なルールは適用外です。</strong></p>
+<p>また、申請フォーム（<a target="_blank" rel="noopener" href="https://portal.msrc.microsoft.com/ja-jp/engage/pentest">Azure サービスの侵入テスト通知の送信</a>）での申請は任意です。もし、申請する場合は以下をご参照の上、内容を英語で記載し申請ください。</p>
 <p><strong>&lt;注意事項&gt;</strong></p>
 <p><strong>本申請は、プラットフォームのセキュリティ診断の無効化や有効化をするためや、セキュリティ検出を変更するための申請ではありません。</strong></p>
 <h2 id="必要な情報"><a href="#必要な情報" class="headerlink" title="必要な情報"></a>必要な情報</h2><p>・ ご連絡先のメールアドレス</p>
@@ -126,20 +126,12 @@
 <p>・脆弱性やポートスキャンの警告</p>
 <p>・オンプレミスのリソースに対するテストの警告</p>
 <p>・ Azure サブスクリプション ID がない Azure Active Directory、Microsoft アカウント、 Office 365 やその他資産に対するテストの警告</p>
-<h2 id="申請フォーム"><a href="#申請フォーム" class="headerlink" title="申請フォーム"></a>申請フォーム</h2><p><img src="/blog/AzureSubscriptionManagement/20170701a/Pen.jpg" alt=""></p>
+<h2 id="申請フォーム"><a href="#申請フォーム" class="headerlink" title="申請フォーム"></a>申請フォーム</h2><p><img src="/blog/AzureSubscriptionManagement/20170701a/Pen.jpg"></p>
 <p>侵入テストの通知プロセス</p>
 <ol>
-<li><p><strong>侵入テストの申請フォーム送信完了</strong></p>
-<p>※申請フォーム内 [連絡先の電子メールアドレス] に登録できるメールアドレスは 1 つのみです。複数登録はできません。</p>
-</li>
-<li><p><strong>Azure チームからの受付</strong></p>
-<p>申請が受理されましたら、ご登録いただいた連絡先の電子メールアドレス宛に自動配信メールが送信されます。</p>
-<p>※ メール件名は [Microsoft Azure Penetration Testing Acknowledgement] となります。</p>
-<p>もし追加情報が必要な場合は、Azure チームは申請フォームで提供された情報を利用してメールでご連絡いたします。</p>
-</li>
-<li><p><strong>テスト完了</strong></p>
-<p>Azure チームにて申請が受理されましたら、メールに特定された条件でテストを実施します。テストの実行時間を延長、または変更する場合については、テスト内容が変更されない限り再申請は不要です。</p>
-</li>
+<li><strong>侵入テストの申請フォーム送信完了</strong> ※申請フォーム内 [連絡先の電子メールアドレス] に登録できるメールアドレスは 1 つのみです。複数登録はできません。</li>
+<li><strong>Azure チームからの受付</strong> 申請が受理されましたら、ご登録いただいた連絡先の電子メールアドレス宛に自動配信メールが送信されます。 ※ メール件名は [Microsoft Azure Penetration Testing Acknowledgement] となります。 もし追加情報が必要な場合は、Azure チームは申請フォームで提供された情報を利用してメールでご連絡いたします。</li>
+<li><strong>テスト完了</strong> Azure チームにて申請が受理されましたら、メールに特定された条件でテストを実施します。テストの実行時間を延長、または変更する場合については、テスト内容が変更されない限り再申請は不要です。</li>
 </ol>
 <p>[禁止されている行為]</p>
 <p>・ほかのマイクロソフト クラウドの顧客情報に属しているリソースへのスキャン、もしくはテストを実施すること。</p>
@@ -163,9 +155,9 @@
 <p>※ テストにより制限を超えることができた場合、即座にテストを終了して、弊社へ調査を依頼することを推奨します。</p>
 <p>※ 意図的にほかの顧客のデータにアクセスすることは規約違反となります。</p>
 <p>・ Microsoft Intune の条件付きアクセス、もしくはモバイル アプリケーション管理 (MAM) ポリシーを適用して、ポリシーが正常動作することを確認すること。</p>
-<p>もし、Azure や他の Microsoft サービスに関連する潜在的なセキュリティの欠陥を見つけられた場合、<a href="https://technet.microsoft.com/ja-jp/security/ff852094" target="_blank" rel="noopener">手順</a> に沿って速やかにご報告ください。</p>
+<p>もし、Azure や他の Microsoft サービスに関連する潜在的なセキュリティの欠陥を見つけられた場合、<a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/security/ff852094">手順</a> に沿って速やかにご報告ください。</p>
 <p>侵入テストや通知の状態に関するその他ご質問は、サポートまでお問い合わせください。</p>
-<p>もし、オンラインサービスバグ報奨金に該当すると思われる潜在的なセキュリティの欠陥を見つけられた場合、<a href="https://technet.microsoft.com/en-us/security/dn800983/" target="_blank" rel="noopener">バグ報奨金規約</a>をご参照ください。</p>
+<p>もし、オンラインサービスバグ報奨金に該当すると思われる潜在的なセキュリティの欠陥を見つけられた場合、<a target="_blank" rel="noopener" href="https://technet.microsoft.com/en-us/security/dn800983/">バグ報奨金規約</a>をご参照ください。</p>
 <p>＊＊</p>
 <p>Microsoft Azure サポートチーム</p>
 
@@ -284,7 +276,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Japan<br>
+      &copy; 2022 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

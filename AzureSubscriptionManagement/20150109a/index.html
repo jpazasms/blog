@@ -14,7 +14,7 @@
 <meta property="og:description" content="Microsoft Azure にて最も人気のある機能の 1 つに「仮想マシン」があります。仮想マシンは、VHD のデータ保存にストレージを利用したり、データ通信があったりとするため、どこでどの課金が発生するかについては、事前に仕組みを知っている必要があります。本トピックでは、仮想マシンをご利用の際に発生する課金について説明をいたします。 仮想マシンを構成する要素まず、仮想マシンの各要素説明すると">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2015-01-08T18:41:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T10:26:53.992Z">
+<meta property="article:modified_time" content="2022-05-10T05:13:14.620Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Virtual Machine">
@@ -37,7 +37,7 @@
   
 <link rel="stylesheet" href="../../css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -55,7 +55,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -101,9 +101,9 @@
 </a>
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+aefe488f-6652-5bcc-bfb0-925c8cb97af7%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109a%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109a.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+aefe488f-6652-5bcc-bfb0-925c8cb97af7%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/" data-id="cknogeiva000foop440cshi7l" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/" data-id="cl2zp61c3000c0ml6ceri528p" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -111,38 +111,38 @@
         <p>Microsoft Azure にて最も人気のある機能の 1 つに「仮想マシン」があります。仮想マシンは、VHD のデータ保存にストレージを利用したり、データ通信があったりとするため、どこでどの課金が発生するかについては、事前に仕組みを知っている必要があります。本トピックでは、仮想マシンをご利用の際に発生する課金について説明をいたします。</p>
 <h2 id="仮想マシンを構成する要素"><a href="#仮想マシンを構成する要素" class="headerlink" title="仮想マシンを構成する要素"></a>仮想マシンを構成する要素</h2><p>まず、仮想マシンの各要素説明すると、仮想マシンは下記のような組み合わせで構成されています。</p>
 <ul>
-<li>コンピュート要素 (CPU, メモリ , ハードウェア要素)</li>
-<li>ディスク要素</li>
-<li>ネットワーク要素</li>
+<li>  コンピュート要素 (CPU, メモリ , ハードウェア要素)</li>
+<li>  ディスク要素</li>
+<li>  ネットワーク要素</li>
 </ul>
 <p>これらが組み合わさり、仮想マシン機能を構築していますが、各要素について、順番に課金の仕組みについて説明をします。</p>
 <h2 id="コンピュート要素について"><a href="#コンピュート要素について" class="headerlink" title="コンピュート要素について"></a>コンピュート要素について</h2><p>コンピュートについては、 CPU やメモリを割り当てた時点から課金が発生するもので、課金料金は下記の通りです。</p>
 <ul>
-<li><a href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/" target="_blank" rel="noopener">Virtual Machines の料金詳細</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/">Virtual Machines の料金詳細</a></li>
 </ul>
 <p>コンピュート部分の課金の基本的な考え方は、「 CPU やメモリなどリソースを割り当てて動作」がベースとなります。そのため、リソースを割り当てている限りは課金は発生し続けます。課金で、Windows と Linux で料金が異なるのは、Windows は Windows 自体のライセンス料が含まれるためです。仮想マシンの課金は時間ごとに課金され、割り当てがされている時間の分だけ課金が発生します。課金を停止するにはポータルから停止し、「割り当て解除済み」状態にすることで、 CPU およびメモリが解放され課金を停止することができます。</p>
 <p>また、SQL Server が既にインストールされた仮想マシンも作成できますが、こちらは仮想マシン自身の料金とは別に SQL Server の課金も発生します。課金のページでは、下記の通り SQL Server の料金のページがあります。</p>
 <ul>
-<li><a href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/#Sql" target="_blank" rel="noopener">Virtual Machines の料金詳細 – SQL Server</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/#Sql">Virtual Machines の料金詳細 – SQL Server</a></li>
 </ul>
 <p>ここに表示される料金は、SQL Server 自体の課金 (ライセンス料) であり Windows サーバーの料金は含まれていないので注意してください。SQL Server が含まれたイメージから仮想マシンを作成した場合には、以下のような課金が発生します。</p>
 <ul>
-<li>Windows 仮想マシンの課金料金</li>
-<li>SQL Server のライセンス使用料金</li>
+<li>  Windows 仮想マシンの課金料金</li>
+<li>  SQL Server のライセンス使用料金</li>
 </ul>
 <p>こちらは、くれぐれも注意してご活用ください。</p>
 <p>※注意点１</p>
 <p>A0 ～ A4 をご利用の際には、利用料レポートには A1 の利用量をベースとして記載されます。例えば、A3 を 3 日間利用した場合には、コア数 4 個使うため、以下の計算式で A1 インスタンス分に換算されて利用料が計上されます。</p>
 <ul>
-<li>24 (時間) x 3 (日間) x 4 (コア)  = 288 (A1 インスタンス時間)</li>
+<li>  24 (時間) x 3 (日間) x 4 (コア)  = 288 (A1 インスタンス時間)</li>
 </ul>
 <h2 id="ディスク要素について"><a href="#ディスク要素について" class="headerlink" title="ディスク要素について"></a>ディスク要素について</h2><p>仮想マシンの OS イメージが保存されたディスクは、C ドライブに割り当てがされ、仮想ディスクファイル (*.VHD ファイル) が利用されています。そしてその実体は、作成時に指定するストレージサービスに保存がされております。例を挙げると、各仮想マシンには、以下のような VHD ディスクへのパスの設定がされており、各ディスクの情報がストレージサービス上に保存がされています。</p>
 <ul>
-<li><a href="https://xxx.blob.core.windows.net/vhds/xxx-xxx-2014-05-01.vhd" target="_blank" rel="noopener">https://xxx.blob.core.windows.net/vhds/xxx-xxx-2014-05-01.vhd</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://xxx.blob.core.windows.net/vhds/xxx-xxx-2014-05-01.vhd">https://xxx.blob.core.windows.net/vhds/xxx-xxx-2014-05-01.vhd</a></li>
 </ul>
 <p>VHD ディスクはストレージ上に保存されているため、ディスクの利用料金はストレージ料金として別途計上されることになります。料金については、以下のページをご参照ください。</p>
 <ul>
-<li><a href="http://azure.microsoft.com/ja-jp/pricing/details/storage/" target="_blank" rel="noopener">Storage (ストレージ サービス) の料金詳細</a><br>「ページ BLOB とディスク」の表をご参照ください</li>
+<li><a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/storage/">Storage (ストレージ サービス) の料金詳細</a><br>  「ページ BLOB とディスク」の表をご参照ください</li>
 </ul>
 <p>また、ストレージサービスにアクセスすると、トランザクション量も発生するので、その分も課金が発生します。</p>
 <p>※注意点 1</p>
@@ -151,12 +151,12 @@
 <p>仮想マシンを作成すると、自動でもう一つ一時ディスク (Windows の場合には D ドライブ、Linux の場合には /dev/sdb) が作成されます。このディスクは一時ディスクであり、ストレージ上に実体を持っていません。一時ディスクに永続的なデータを保存しないでください。このディスクは、アプリケーションとプロセス用の一時的な利用のためのストレージを提供し、ページ ファイルやスワップ ファイルなどの一時的なデータを保存するために使用されます。 </p>
 <h2 id="ネットワーク要素について"><a href="#ネットワーク要素について" class="headerlink" title="ネットワーク要素について"></a>ネットワーク要素について</h2><p>仮想マシンで外部インターネット環境を通して通信をした際に、以下の 2 つの種類の通信が発生します。</p>
 <ul>
-<li>インバウンド通信 (外部から Azure 内部へ)</li>
-<li>アウトバウンド通信 ( Azure 内部から外部へ)</li>
+<li>  インバウンド通信 (外部から Azure 内部へ)</li>
+<li>  アウトバウンド通信 ( Azure 内部から外部へ)</li>
 </ul>
 <p>インバウンドについては Microsoft Azure では無料となりますが、アウトバウンドについては利用量に応じて課金が発生します。これは、通信総量のバイト単位で課金が発生します。詳細については下記のデータ通信量のドキュメントをご参考ください。</p>
 <ul>
-<li><a href="http://azure.microsoft.com/ja-jp/pricing/details/data-transfers/" target="_blank" rel="noopener">データ転送の料金詳細</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/data-transfers/">データ転送の料金詳細</a></li>
 </ul>
 <p>--<br>Microsoft Azure サポートチーム</p>
 
@@ -275,7 +275,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Japan<br>
+      &copy; 2022 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

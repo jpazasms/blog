@@ -15,7 +15,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109b/1172.image_39BECDE1.png">
 <meta property="article:published_time" content="2015-01-08T18:06:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T10:26:53.992Z">
+<meta property="article:modified_time" content="2022-05-10T05:13:14.620Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Network">
@@ -39,7 +39,7 @@
   
 <link rel="stylesheet" href="../../css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -57,7 +57,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" href="https://cssjpn.github.io/" target="_blank" rel="noopener">サポート情報</a>
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -103,9 +103,9 @@
 </a>
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0D%0A---%0D%0A%0D%0A%23%23%23%23+Document+Details%0D%0A%0D%0A%E2%9A%A0+*Do+not+edit+this+section.%0D%0A%0D%0A*+ID%3A+20826d74-8250-53fa-9943-5cd187a8fa4a%0D%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BA%88%E7%B4%84%E6%B8%88%E3%81%BF+IP+%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%AE%E6%96%99%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109b%2F%29%0D%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109b.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109b.md%29%0D%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+20826d74-8250-53fa-9943-5cd187a8fa4a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BA%88%E7%B4%84%E6%B8%88%E3%81%BF+IP+%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%AE%E6%96%99%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109b%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109b.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109b.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109b/" data-id="cknogeivg000hoop4df7r7xyp" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109b/" data-id="cl2zp61c5000f0ml613fofylp" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -114,22 +114,22 @@
 <h2 id="予約済み-IP-アドレスの概要"><a href="#予約済み-IP-アドレスの概要" class="headerlink" title="予約済み IP アドレスの概要"></a>予約済み IP アドレスの概要</h2><p>「予約済み IP アドレス」 とは、仮想マシン・クラウドサービスの配置に割り当てることのできる、事前取得した静的な IP アドレスです。通常、仮想マシン・クラウドサービスに割り当てられるインターネットに公開される仮想 IP アドレスは、Azure 上にプールされている IP アドレスプールから自動的に割り当てがされます。そのため、仮想マシン・クラウドサービスの配置を削除すると、この仮想 IP アドレスは解放されてしまいます。しかし、この「予約済み IP アドレス」をつかうことで、Azure 上でパブリックな仮想 IP アドレス（ VIP ）を前もって予約しておき、仮想マシン・クラウドサービスを配置する際に設定することで、事前に予約しておいた 仮想 IP を割り当てることができます。</p>
 <p>現在、予約済み IP アドレスは 仮想 IP にのみ使用でき、規定では、サブスクリプションあたり最大 5 個の 予約済み IP アドレスをご利用可能です。また、予約済み IP アドレスは固定ですが、一度クラウドサービスと関連付けると、関連付けを解除しない限り変更されません。なお、仮想マシンのシナリオでは、クラウドサービスのすべての VM が停止/割り当て解除された場合でも、予約済み IP アドレスはクラウド サービスと関連付けられたままです。</p>
 <p>予約済み IP アドレスは、上記の通り既定ではサブスクリプションあたり 5 個が設定されていますが、5 個以上のご利用をしたい場合には、Microsoft Azure サポートサービスの課金サポートまでご相談ください。ご要望の際に提出いただく内容次第となりますが、審査をしたうえで、増加することも可能です。（ただし、審査の結果、増加できない場合もございますのでご了承ください）</p>
-<p><img src="/blog/AzureSubscriptionManagement/20150109b/1172.image_39BECDE1.png" alt=""></p>
+<p><img src="/blog/AzureSubscriptionManagement/20150109b/1172.image_39BECDE1.png"></p>
 <h2 id="予約済み-IP-の料金について"><a href="#予約済み-IP-の料金について" class="headerlink" title="予約済み IP の料金について"></a>予約済み IP の料金について</h2><p>予約済み IP アドレスは、割り当てがされている仮想マシン・クラウドサービスの状態が「使用／実行中」の場合にのみ 「最初の５つまでは無料」です。仮想マシンの状態が「”停止済みかつ割り当て解除済み” の状態である場合」は、予約済み IP アドレスは「未使用」状態として、１時間単位で、少額の料金が課金されます。</p>
 <ul>
-<li><p>例１：予約済み IP アドレスを 1 つ割り当て、それを稼働中のクラウドサービスに割り当て<br>⇒ この場合割り当てた１つの予約済み IP アドレスは無料です。</p>
+<li><p>  例１：予約済み IP アドレスを 1 つ割り当て、それを稼働中のクラウドサービスに割り当て<br>⇒ この場合割り当てた１つの予約済み IP アドレスは無料です。</p>
 </li>
-<li><p>例２：予約済み IP アドレスを 3 つ割り当て、それを稼働中の仮想マシン２台に割り当て、１つの予約済み IP アドレスは未使用<br>⇒ 稼働中の仮想マシンに割り当てた 2 つの予約済み IP アドレスは無料。割り当てられていない予約済み IP アドレスには課金 (未使用時の予約料金) が発生します。</p>
+<li><p>  例２：予約済み IP アドレスを 3 つ割り当て、それを稼働中の仮想マシン２台に割り当て、１つの予約済み IP アドレスは未使用<br>⇒ 稼働中の仮想マシンに割り当てた 2 つの予約済み IP アドレスは無料。割り当てられていない予約済み IP アドレスには課金 (未使用時の予約料金) が発生します。</p>
 </li>
-<li><p>例３：予約済み IP アドレスを 3 つ割り当て、それを稼働中の仮想マシン２台に割り当て、停止済み（割り当て解除済み）の仮想マシン１台に割り当てる<br>⇒ 稼働中の仮想マシンに割り当てた 2 つの予約済み IP アドレスは無料。停止済み仮想マシンに割り当てられた予約済み IP アドレスには、課金（未使用時の予約料金）が発生します。</p>
+<li><p>  例３：予約済み IP アドレスを 3 つ割り当て、それを稼働中の仮想マシン２台に割り当て、停止済み（割り当て解除済み）の仮想マシン１台に割り当てる<br>⇒ 稼働中の仮想マシンに割り当てた 2 つの予約済み IP アドレスは無料。停止済み仮想マシンに割り当てられた予約済み IP アドレスには、課金（未使用時の予約料金）が発生します。</p>
 </li>
 </ul>
-<p>基本的な考え方として、IP リソースには限りがありますので、利用されていないものに関しては課金をさせていただいております。価格の詳細については、予約済み IP アドレスの<a href="http://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/" target="_blank" rel="noopener">料金詳細</a>をご参照ください。仮想マシンの状態は、Microsoft Azure 管理ポータルの [仮想マシン] の状態、または VM ダッシュボードで確認できます。</p>
-<p>◆補足: <a href="http://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/" target="_blank" rel="noopener">料金詳細</a>ページの「その他の予約済み IP アドレス」の記述について◆</p>
+<p>基本的な考え方として、IP リソースには限りがありますので、利用されていないものに関しては課金をさせていただいております。価格の詳細については、予約済み IP アドレスの<a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/">料金詳細</a>をご参照ください。仮想マシンの状態は、Microsoft Azure 管理ポータルの [仮想マシン] の状態、または VM ダッシュボードで確認できます。</p>
+<p>◆補足: <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/">料金詳細</a>ページの「その他の予約済み IP アドレス」の記述について◆</p>
 <p>予約済み IP の料金テーブルにある「その他の予約済み IP アドレス」の文言は以下を示しています。</p>
 <ul>
-<li><strong>予約済み</strong> <strong>IP</strong> <strong>アドレス</strong>:  6 個目以降の予約済み IP アドレス</li>
-<li><strong>IP</strong> <strong>アドレスリマップ:</strong> 101 個目以降の IP アドレス リマップ</li>
+<li>  <strong>予約済み</strong> <strong>IP</strong> <strong>アドレス</strong>:  6 個目以降の予約済み IP アドレス</li>
+<li>  <strong>IP</strong> <strong>アドレスリマップ:</strong> 101 個目以降の IP アドレス リマップ</li>
 </ul>
 <p>--<br>Windows Azure サポートチーム</p>
 
@@ -248,7 +248,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Japan<br>
+      &copy; 2022 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
