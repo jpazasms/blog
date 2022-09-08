@@ -15,7 +15,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/strage-image01.png">
 <meta property="article:published_time" content="2019-02-25T16:21:00.000Z">
-<meta property="article:modified_time" content="2022-05-13T00:57:21.230Z">
+<meta property="article:modified_time" content="2022-09-08T02:43:14.361Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Storage Account">
@@ -105,7 +105,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+526291a3-06c2-59e8-a025-3ae07337d619%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8+%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20190226c%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20190226c.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20190226c.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/" data-id="cl33qcje200240mqoay5w50du" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226c/" data-id="cl7sg37k600240mobfgx3ca2a" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -162,7 +162,7 @@
 </ol>
 <p>さらにストレージ アカウントを作成した際に選択した項目（ストレージ アカウントの種類、リージョン、アクセス層、冗長性）によって、データ保存量や転送量に対する基本料金が変わったり、追加の料金が発生することがあります（ 例 ： XX リージョンでのクール アクセス層は 10 円/GB だが OO リージョンでのホット アクセス層は 20 円 /GB など）。</p>
 <p>冗長性も GRS や RA-GRS などのリージョン間のレプリケーションが必須となるものを選択すると、その分の追加のデータ転送料金が発生します。</p>
-<h4 id="2-各種課金対象の使用量の算出の考え方について"><a href="#2-各種課金対象の使用量の算出の考え方について" class="headerlink" title="2.各種課金対象の使用量の算出の考え方について"></a><strong>2.各種課金対象の使用量の算出の考え方について</strong></h4><h5 id="a-データ保存量"><a href="#a-データ保存量" class="headerlink" title="a) データ保存量"></a>a) データ保存量</h5><p>Standard ストレージアカウントの場合は、実際に保存されているデータの利用状況を日割り（どの月であっても 1 か月 = 31 日）で算出します。またデータ保存量に増減があった場合、その日の内の最大保存量が対象となります。</p>
+<h4 id="2-各種課金対象の使用量の算出の考え方について"><a href="#2-各種課金対象の使用量の算出の考え方について" class="headerlink" title="2.各種課金対象の使用量の算出の考え方について"></a><strong>2.各種課金対象の使用量の算出の考え方について</strong></h4><h5 id="a-データ保存量"><a href="#a-データ保存量" class="headerlink" title="a) データ保存量"></a>a) データ保存量</h5><p>Standard ストレージアカウントの場合は、実際に保存されているデータの利用状況を日割りで算出します。またデータ保存量に増減があった場合、その日の内の最大保存量が対象となります。</p>
 <p>例えば、あるストレージに 10 日間 100 GB のデータを置いておいた場合は、1 か月で考えると 10 日間 100 GB を保存し、21 日間 0 GB を保存していたことになります。そのため一日あたりの平均利用量は ( 100 GB * 10 日 / 31 日+ 0GB * 21 日 / 31 日) = 32.25806GB になります。それにより実際の料金は (32.25806 * 1 か月分の料金 ) となります。</p>
 <p>ただし、Premium ストレージアカウントに保存されたディスクの使用料金は、実際の利用料ではなくディスクのサイズにより決定されます。（ 例 ： 128 GB のディスクの 10 GB のデータが保存されている場合、Premium ストレージアカウントでは 128 GB 分の課金が発生します。Standard ストレージアカウントでは 10 GB 分の課金となります。）</p>
 <p>※Premium ストレージアカウントの使用料金については、管理ディスクの記事を参考にしてください。</p>
