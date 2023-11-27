@@ -108,6 +108,14 @@ feed:
   path: atom.xml
   limit: 20
 
+ # https://hexo.io/docs/helpers#toc
+toc:
+  # if true, toc will be auto display in all article which has more than one h2 tag
+  enabled: false
+  min_depth: 1
+  max_depth: 4
+  list_number: false
+
 # show disclaimer in all article by default. disableDisclaimer of article's option set true hide.
 # ex) 
 # ---
