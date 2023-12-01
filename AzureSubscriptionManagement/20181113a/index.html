@@ -6,12 +6,12 @@
   
   <title>Azure REST API を使ってみよう | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure REST API について以下をご案内させていただきます。 ご参考になりましたら幸いです。    本記事の目的   Azure REST API とは   事前の準備   「Try It」を使用する方法   「PowerShell」を使用する方法   関連する弊社公開情報  本記事の目的 本記事では、簡">
+  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。Azure REST API についてご案内させていただきます。ご参考になりましたら幸いです。 本記事の目的本記事では、簡単に Azure REST API を使用する方法をご案内いたします。Azure REST API を使用することで、Azure の様々な情報を参照・更新することができます。本来、何かしらのプログ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Azure REST API を使ってみよう">
 <meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure REST API について以下をご案内させていただきます。 ご参考になりましたら幸いです。    本記事の目的   Azure REST API とは   事前の準備   「Try It」を使用する方法   「PowerShell」を使用する方法   関連する弊社公開情報  本記事の目的 本記事では、簡">
+<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。Azure REST API についてご案内させていただきます。ご参考になりましたら幸いです。 本記事の目的本記事では、簡単に Azure REST API を使用する方法をご案内いたします。Azure REST API を使用することで、Azure の様々な情報を参照・更新することができます。本来、何かしらのプログ">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/0013.jpg">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/0023.jpg">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/007.jpg">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/008.jpg">
 <meta property="article:published_time" content="2018-11-12T22:03:00.000Z">
-<meta property="article:modified_time" content="2023-11-28T03:00:14.789Z">
+<meta property="article:modified_time" content="2023-12-01T05:31:09.769Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Azure REST API">
@@ -115,47 +115,33 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+60bf5208-31fc-5cb4-908d-e17cc2642e11%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+REST+API+%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20181113a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20181113a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20181113a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/" data-id="clphr307v001s0ns83v149wfg" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/" data-id="clpm6snab001p0nsc8tfg9u5d" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
-<p>Azure REST API について以下をご案内させていただきます。</p>
-<p>ご参考になりましたら幸いです。</p>
-<ul>
-<li>  本記事の目的</li>
-<li>  Azure REST API とは</li>
-<li>  事前の準備</li>
-<li>  「Try It」を使用する方法</li>
-<li>  「PowerShell」を使用する方法</li>
-<li>  関連する弊社公開情報</li>
-</ul>
-<h3 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h3><hr>
-<p>本記事では、簡単に Azure REST API を使用する方法をご案内いたします。</p>
-<p>Azure REST API を使用することで、Azure の様々な情報を参照・更新することができます。</p>
-<p>本来、何かしらのプログラムから Azure REST API を呼び出し、お客様独自のシステムを構築するために用意されているものとなります。</p>
+        
+        <div class="toc-wrapper">
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E8%A8%98%E4%BA%8B%E3%81%AE%E7%9B%AE%E7%9A%84"><span class="toc-text">本記事の目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-REST-API-%E3%81%A8%E3%81%AF"><span class="toc-text">Azure REST API とは</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8CTry-It%E3%80%8D%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-text">「Try It」を使用する方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8CPowerShell%E3%80%8D%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-text">「PowerShell」を使用する方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%A2%E9%80%A3%E3%81%99%E3%82%8B%E5%BC%8A%E7%A4%BE%E5%85%AC%E9%96%8B%E6%83%85%E5%A0%B1"><span class="toc-text">関連する弊社公開情報</span></a></li></ol>
+        </div>
+          
+        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。<br>Azure REST API についてご案内させていただきます。<br>ご参考になりましたら幸いです。</p>
+<h2 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h2><p>本記事では、簡単に Azure REST API を使用する方法をご案内いたします。<br>Azure REST API を使用することで、Azure の様々な情報を参照・更新することができます。<br>本来、何かしらのプログラムから Azure REST API を呼び出し、お客様独自のシステムを構築するために用意されているものとなります。</p>
 <p>例えば・・・</p>
 <ul>
 <li>  Azure VM の操作に特化した社内用 Web サイトを作りたい</li>
 <li>  自社ビジネスに合った使用状況・課金管理のツールを作りたい</li>
 </ul>
-<p>このような時に、.NET や Java、その他様々なフレームワークを使用して Azure REST API の呼び出し、その結果の加工などを同フレームワークを使用して行っていただき、上記のような仕組みを独自に実装してもらうものとなります。</p>
-<p>開発環境の用意や要件定義を伴うこと、また、呼び出し方法やデータの加工などはご利用いただくフレームワークにより様々なため、なかなか Azure REST API 自体の使用方法やどのような結果が得られるものかなどについてイメージをしにくい側面があります。</p>
-<p>本記事では、まずは簡単に Azure REST API をご利用いただきそのイメージを掴んでいただくための簡易な方法をご案内することを目的としています。</p>
-<p>上記のようなお客様独自のシステムを構築する際に採用をしていただける現実的な方法ではないものとなりますが、「ちょっと Azure REST API の動作を試したい」「Azure REST API の呼び出し方を事前に勉強しておきたい」などの時にお役に立てば幸いです。</p>
-<p><strong>!! 注意事項 !!</strong></p>
-<p>Azure REST API について全てをご案内するものではありません。</p>
-<p>是非、関連する弊社公開情報も併せてご参照いただけたら幸いです。</p>
-<h3 id="Azure-REST-API-とは"><a href="#Azure-REST-API-とは" class="headerlink" title="Azure REST API とは"></a>Azure REST API とは</h3><hr>
-<p>Azure REST API とは、Azure の各サービスごとに用意されている REST API です。</p>
-<p>その総称を Azure REST API と呼んでいます。</p>
-<p>例えば、お客様社内で以下のようなアプリケーションの構築をご検討いただいているとします。</p>
+<p>このような時に、.NET や Java、その他様々なフレームワークを使用して Azure REST API の呼び出し、その結果の加工などを同フレームワークを使用して行っていただき、上記のような仕組みを独自に実装してもらうものとなります。<br>開発環境の用意や要件定義を伴うこと、また、呼び出し方法やデータの加工などはご利用いただくフレームワークにより様々なため、なかなか Azure REST API 自体の使用方法やどのような結果が得られるものかなどについてイメージをしにくい側面があります。</p>
+<p>本記事では、まずは簡単に Azure REST API をご利用いただきそのイメージを掴んでいただくための簡易な方法をご案内することを目的としています。<br>上記のようなお客様独自のシステムを構築する際に採用をしていただける現実的な方法ではないものとなりますが、「ちょっと Azure REST API の動作を試したい」「Azure REST API の呼び出し方を事前に勉強しておきたい」などの時にお役に立てば幸いです。</p>
+<p>なお例として「Usage Details」を使用しておりますが、実行するアカウントは対象サブスクリプションに対して権限を有している事が前提となりますので、ご承知おき下さい。（関連するドキュメント：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes">スコープを理解して使用する</a>）</p>
+<div class="alert is-info"><p class="alert-title">Note</p><p>Azure REST API について全てをご案内するものではありません。 是非、関連する弊社公開情報も併せてご参照いただけたら幸いです。</p></div>
+<h2 id="Azure-REST-API-とは"><a href="#Azure-REST-API-とは" class="headerlink" title="Azure REST API とは"></a>Azure REST API とは</h2><p>Azure REST API とは、Azure の各サービスごとに用意されている REST API です。<br>その総称を Azure REST API と呼んでいます。<br>例えば、お客様社内で以下のようなアプリケーションの構築をご検討いただいているとします。</p>
 <ul>
 <li>  自社ビジネスに合った Azure の使用状況・課金管理のツール</li>
 </ul>
-<p>一例ではありますが、このアプリケーションを構成するものには以下のようなものが考えられます。</p>
-<p>(あくまで一例です)</p>
+<p>一例ではありますが、このアプリケーションを構成するものには以下のようなものが考えられます。 (あくまで一例です)</p>
 <ul>
 <li>  画面</li>
 <li>  データベース</li>
@@ -164,110 +150,69 @@
 <li>  Azure データの制御ロジック</li>
 <li>  その他</li>
 </ul>
-<p>一般的にこの中の「Azure データの制御ロジック」内で、適切な Azure REST API の呼び出しを行っていただくものとなります。</p>
-<p>つまり、Azure REST API のみで何かを実現できるものではなく、お客様にご検討をいただいている独自の仕組みの中の一部としてご利用をご検討いただくものが Azure REST API になります。</p>
-<p>全 Azure REST API は以下の弊社公開情報からご確認をいただけます。</p>
-<p>Azure REST API Reference</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/azure/">https://docs.microsoft.com/en-us/rest/api/azure/</a></p>
+<p>一般的にこの中の「Azure データの制御ロジック」内で、適切な Azure REST API の呼び出しを行っていただくものとなります。<br>つまり、Azure REST API のみで何かを実現できるものではなく、お客様にご検討をいただいている独自の仕組みの中の一部としてご利用をご検討いただくものが Azure REST API になります。<br>各種Azure REST API は以下の弊社公開情報からご確認をいただけます。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/azure/">Azure REST API Reference</a></p>
 <p>このページの画面左に、全ての Azure REST API がツリー形式で表示されます。</p>
 <p><img src="/blog/AzureSubscriptionManagement/20181113a/0013.jpg"> </p>
-<p>例えば、Azure の課金に関する API である、「Consumption」を見てみましょう。</p>
-<p>画面左から「Consumption」を展開します。</p>
-<p>すると、更にその配下に様々な API (Aggregated Cost、Balances、Budgets など) が存在していることが確認できます。</p>
-<p>その中の「Usage Details」を展開すると、更に細かいオペレーション (List、List By Billing Account など) が確認できます。</p>
+<p>例えば、Azure の課金に関する API である、「Consumption」を見てみましょう。<br>画面左から「Consumption」を展開します。</p>
+<p>すると、更にその配下に様々な API (Aggregated Cost、Balances、Budgets など) が存在していることが確認できます。<br>その中の「Usage Details」を展開すると、更に細かいオペレーション (List、List By Billing Account など) が確認できます。</p>
 <p><img src="/blog/AzureSubscriptionManagement/20181113a/0023.jpg"></p>
-<p>Azure REST API はこのように体系的に管理されています。</p>
-<p>この中からお客様が検討されている独自のシステムを実現するための Azure REST API を見つけていただきます。</p>
-<p>それぞれの API やオペレーションについて、各ページに詳細をご案内していますので併せてご参照いただければと思います。</p>
-<h3 id="事前の準備"><a href="#事前の準備" class="headerlink" title="事前の準備"></a>事前の準備</h3><hr>
-<p>Azure REST API を簡単にご利用いただくための事前準備についてご案内します。</p>
-<p>この後に「Try It」「PowerShell」を使用した 2 つの方法をご案内しますが、その前の事前準備になります。</p>
-<p>どちらの方法を使用するにしても、事前にこの準備をしておいてください。</p>
-<p>以下の手順で、Azure REST API を実行するアカウントを作っておきましょう。</p>
+<p>Azure REST API はこのように体系的に管理されています。<br>この中からお客様が検討されている独自のシステムを実現するための Azure REST API を見つけていただきます。<br>それぞれの API やオペレーションについて、各ページに詳細をご案内していますので併せてご参照いただければと思います。</p>
+<h2 id="「Try-It」を使用する方法"><a href="#「Try-It」を使用する方法" class="headerlink" title="「Try It」を使用する方法"></a>「Try It」を使用する方法</h2><p>「Try It」を使用して、Azure REST API を簡単に試す方法をご案内します。<br>ここでは、[Consumption] - [Usage Details] API の [List] オペレーションで手順をご案内します。<br>以下の手順を実施してください。</p>
 <ol>
-<li>以下の弊社公開情報に沿って、組織アカウントを 1 つ作成する ※ 「新しいユーザーを追加するには」の手順に沿って作成してください。 ※ 作成するアカウントは初期ドメインの「<a href="mailto:&#120;&#120;&#120;&#x40;&#120;&#x78;&#120;&#x2e;&#x6f;&#110;&#x6d;&#x69;&#99;&#x72;&#x6f;&#115;&#x6f;&#102;&#x74;&#46;&#99;&#x6f;&#x6d;">&#120;&#120;&#120;&#x40;&#120;&#x78;&#120;&#x2e;&#x6f;&#110;&#x6d;&#x69;&#99;&#x72;&#x6f;&#115;&#x6f;&#102;&#x74;&#46;&#99;&#x6f;&#x6d;</a>」で結構です。</li>
-<li>以下の弊社公開情報に沿って、上記 1. で作成したアカウントを所有者に設定する ※ 「Azure portal でサブスクリプションの RBAC 所有者を追加する」の手順に沿って設定をしてください。</li>
-</ol>
-<p>以上で事前準備は終了です。</p>
-<p>このアカウントを使用して、Azure REST API を試すことになります。</p>
-<h3 id="「Try-It」を使用する方法"><a href="#「Try-It」を使用する方法" class="headerlink" title="「Try It」を使用する方法"></a>「Try It」を使用する方法</h3><hr>
-<p>「Try It」を使用して、Azure REST API を簡単に試す方法をご案内します。</p>
-<p>ここでは、[Consumption] - [Usage Details] API の [List] オペレーションで手順をご案内します。</p>
-<p>上記「事前の準備」を済ませてから、以下の手順を実施してください。</p>
-<ol>
-<li><p>ブラウザーをすべて閉じる</p>
-<p> 意図しないアカウントでサインインしてしまうことを避けるために、必ずすべてのブラウザーを閉じて下さい。</p>
+<li><p>ブラウザーをすべて閉じる<br> 意図しないアカウントでサインインしてしまうことを避けるために、必ずすべてのブラウザーを閉じて下さい。</p>
 </li>
-<li><p>InPrivate ブラウザーを起動する</p>
-<p> 同様に、意図しないアカウントでサインインしてしまうことを避けるために、必ず InPrivate ブラウザーで実施してください。</p>
+<li><p>InPrivate ブラウザーを起動する<br> 同様に、意図しないアカウントでサインインしてしまうことを避けるために、必ず InPrivate ブラウザーで実施してください。</p>
 </li>
-<li><p>以下の URL にアクセスをする</p>
-<p> Usage Details - List<br> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/consumption/usagedetails/list">https://docs.microsoft.com/en-us/rest/api/consumption/usagedetails/list</a></p>
+<li><p>以下の URL にアクセスをする<br> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/consumption/usage-details/list?view=rest-consumption-2023-05-01&tabs=HTTP">Usage Details - List</a></p>
 </li>
-<li><p>「Tri It」をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181113a/0034.jpg"></p>
+<li><p>「Tri It」をクリックする<br> <img src="/blog/AzureSubscriptionManagement/20181113a/0034.jpg"></p>
 </li>
-<li><p>「Sign in」をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181113a/0043.jpg"> </p>
+<li><p>「Sign in」をクリックする<br> <img src="/blog/AzureSubscriptionManagement/20181113a/0043.jpg"> </p>
 </li>
-<li><p>「事前の準備」で作成をしたアカウントでサインインをする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181113a/0051.jpg"> </p>
+<li><p>ご利用のアカウントでサインインをする<br> <img src="/blog/AzureSubscriptionManagement/20181113a/0051.jpg"> </p>
 </li>
-<li><p>「Run」をクリックする</p>
+<li><p>Usage Detailsの取得対象のスコープ（ サブスクリプションスコープであれば、&lt;/subscriptions/{subscriptionId}&gt; の形式にて、{subscriptionId}の部分を対象のサブスクリプションIDにご記入下さい。）を入力し、「Run」をクリックする<br> ※ 関連：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/get-subscription-tenant-id">Azure portal でサブスクリプションとテナントの ID を取得する</a></p>
 <p> <img src="/blog/AzureSubscriptionManagement/20181113a/006.jpg"></p>
 </li>
-<li><p>この API が実行されて、結果が表示されることを確認する</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181113a/007.jpg"></p>
+<li><p>この API が実行されて、結果が表示されることを確認する<br> <img src="/blog/AzureSubscriptionManagement/20181113a/007.jpg"></p>
 </li>
 </ol>
-<p>以上で「Try It」を使用した Azure REST API の呼び出しは終了です。</p>
-<p>上記 7. の画面からも分かる通り、「Try It」でも様々なパラメーターを設定して Azure REST API を呼び出せます。</p>
+<p>以上で「Try It」を使用した Azure REST API の呼び出しは終了です。<br>上記 7. の画面からも分かる通り、「Try It」でも様々なパラメーターを設定して Azure REST API を呼び出せます。</p>
 <p>是非、色々お試しいただければと思います。</p>
-<h3 id="「PowerShell」を使用する方法"><a href="#「PowerShell」を使用する方法" class="headerlink" title="「PowerShell」を使用する方法"></a>「PowerShell」を使用する方法</h3><hr>
-<p>次に「PowerShell」を使用して、Azure REST API を簡単に試す方法をご案内します。</p>
-<p>上記「Try It」でも様々お試しいただけますが、よりプログラミングからの使用をイメージしやすい方法となります。</p>
-<p>同様に、[Consumption] - [Usage Details] API の [List] オペレーションで手順をご案内します。</p>
-<p>上記「事前の準備」を済ませてから、以下の手順を実施してください。</p>
+<h2 id="「PowerShell」を使用する方法"><a href="#「PowerShell」を使用する方法" class="headerlink" title="「PowerShell」を使用する方法"></a>「PowerShell」を使用する方法</h2><p>次に「PowerShell」を使用して、Azure REST API を簡単に試す方法をご案内します。<br>上記「Try It」でも様々お試しいただけますが、よりプログラミングからの使用をイメージしやすい方法となります。<br>同様に、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/consumption/usage-details/list?view=rest-consumption-2023-05-01&tabs=HTTP">Usage Details - List</a>オペレーションで手順をご案内します。<br>以下の手順を実施してください。なおAzure PowerShellのインストールが必要となりますので、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/powershell/azure/install-azure-powershell?view=azps-11.0.0">Azure PowerShell をインストールする方法</a> ご参照の上、ご用意くださればと思います。</p>
 <ol>
-<li>以下の弊社公開情報に沿って、PowerShell のモジュールをインストールする Azure PowerShell インストール手順<br> <a target="_blank" rel="noopener" href="https://blogs.technet.microsoft.com/jpaztech/2017/05/02/azure-powershell-3-8-0-install/">https://blogs.technet.microsoft.com/jpaztech/2017/05/02/azure-powershell-3-8-0-install/</a> ※ 「リソース マネージャー デプロイ モデルの Azure PowerShell」をインストールします。</li>
-<li> PowerShell を管理者として起動する</li>
-<li>以下のコマンドを実行する Login-AzureRmAccount -Subscription “＜サブスクリプション ID ＞” サブスクリプション ID は、以下の弊社公開情報の手順でご確認いただけます。 ※ 「■ サブスクリプション ID の確認方法」の項目をご参照ください。 例) Login-AzureRmAccount -Subscription “8124xxxx-e3xx-4dxx-9fxx-9533e462xxxx”</li>
-<li>認証画面が表示されるので、「事前の準備」で作成をしたアカウントでサインインをする <img src="/blog/AzureSubscriptionManagement/20181113a/008.jpg"></li>
-<li>以下のコマンドを実行して、SubscriptionID、TenantID、AccountID を取得する $subscriptionid = (Get-AzureRmContext).Subscription.Id $tenantid = (Get-AzureRmContext).Tenant.Id $accountid = (Get-AzureRmContext).Account.Id ※ ここで取得した各値は後で使用します。</li>
-<li>以下のコマンドを実行して Token を取得する $token = (Get-AzureRmContext).TokenCache.ReadItems() | where {($_.TenantId -eq $tenantid) -and ($_.DisplayableId -eq $accountid)} ※ ここで取得した Token を使用して、Azure REST API を呼びます。 ※ つまり、上記 3. - 4. の PowerShell からのサインインの際に発行された Token を流用して Azure REST API を使用します。</li>
-<li>以下のコマンドを実行して、Azure REST API を呼び出すための URL を作成する $url = “<a target="_blank" rel="noopener" href="https://management.azure.com/subscriptions/&quot;">https://management.azure.com/subscriptions/&quot;</a> + $subscriptionId + “/providers/Microsoft.Consumption/usageDetails?api-version=2018-10-01” ※ この URL の詳細は、以下弊社公開情報をご参照ください。<br> Usage Details - List<br> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/consumption/usagedetails/list">https://docs.microsoft.com/en-us/rest/api/consumption/usagedetails/list</a></li>
-<li>以下のコマンドを実行して、Azure REST API を呼び出すためのその他の情報を作成する $method = “GET” $headers = @{“Authorization” = “Bearer “ + $token[0].AccessToken} $contenttype = “application/json”</li>
-<li>以下のコマンドを実行して、Azure REST API を呼び出し、その結果を取得する $responce = Invoke-WebRequest -Uri $url -Method $method -Headers $headers -ContentType $contenttype</li>
-<li> 以下のコマンドを実行して、Azure REST API の結果を表示する</li>
+<li>対象のサブスクリプションIDを修正し、以下のコマンドを実行する<br> ※ 関連：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/get-subscription-tenant-id">Azure portal でサブスクリプションとテナントの ID を取得する</a></li>
 </ol>
-<pre><code>ConvertFrom-Json $responce | ConvertTo-Json
-</code></pre>
-<p>以上で「PowerShell」を使用した Azure REST API の呼び出しは終了です。</p>
-<p>上記 7. で作成している URL に様々なパラメーターを設定して Azure REST API を呼び出せます。</p>
-<p>是非、色々お試しいただければと思います。</p>
-<h3 id="関連する弊社公開情報"><a href="#関連する弊社公開情報" class="headerlink" title="関連する弊社公開情報"></a>関連する弊社公開情報</h3><hr>
-<p>Azure REST API について、弊社の様々な公開情報を以下にご案内します。</p>
-<p>併せてご利用ください。</p>
-<p>Azure REST API Reference</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/azure/">https://docs.microsoft.com/en-us/rest/api/azure/</a></p>
-<p>REST API ブラウザー</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/rest/api/">https://docs.microsoft.com/ja-jp/rest/api/</a></p>
-<p>REST API を使用して Azure リソースの使用状況を確認する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/billing/billing-review-service-usage-api">https://docs.microsoft.com/ja-jp/azure/billing/billing-review-service-usage-api</a></p>
-<p>Azure 監視 REST API のチュートリアル</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough">https://docs.microsoft.com/ja-jp/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough</a></p>
-<p>SSH 認証を使用する Linux 仮想マシンを REST API で作成する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/virtual-machines/linux/create-vm-rest-api">https://docs.microsoft.com/ja-jp/azure/virtual-machines/linux/create-vm-rest-api</a></p>
-<p>REST API を使用して仮想マシンの使用状況のメトリックを取得する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/virtual-machines/linux/metrics-vm-usage-rest">https://docs.microsoft.com/ja-jp/azure/virtual-machines/linux/metrics-vm-usage-rest</a></p>
-<p>RBAC と REST API を使用してアクセスを管理する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/role-based-access-control/role-assignments-rest">https://docs.microsoft.com/ja-jp/azure/role-based-access-control/role-assignments-rest</a></p>
-<p>Azure REST API を使用して Security Center のコンプライアンス結果を確認する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/security-center/security-center-compliance-rest-api">https://docs.microsoft.com/ja-jp/azure/security-center/security-center-compliance-rest-api</a></p>
-<p>Azure REST API を使用して Hadoop クラスターを作成する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-curl-rest">https://docs.microsoft.com/ja-jp/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-curl-rest</a></p>
-<p>REST API で Azure Blueprint を定義して割り当てる</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/governance/blueprints/create-blueprint-rest-api">https://docs.microsoft.com/ja-jp/azure/governance/blueprints/create-blueprint-rest-api</a></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Connect-AzAccount</span> <span class="literal">-tenant</span> <span class="string">&quot;＜テナント ID ＞&quot;</span> <span class="literal">-Subscription</span> <span class="string">&quot;＜サブスクリプション ID ＞&quot;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>認証画面が表示されるので、ご利用のアカウントでサインインをする</p>
+<p> <img src="/blog/AzureSubscriptionManagement/20181113a/008.jpg"></p>
+</li>
+<li><p> 以下のコマンドを実行して、SubscriptionID を取得する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$subscriptionid</span> = (<span class="built_in">Get-AzContext</span>).Subscription.Id</span><br></pre></td></tr></table></figure></li>
+<li><p>以下のコマンドを実行して Token を取得する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$getaccess</span> = <span class="built_in">Get-AzAccessToken</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p> 以下のコマンドを実行して、Azure REST API を呼び出すための URL を作成する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://management.azure.com/subscriptions/&quot;</span> + <span class="variable">$subscriptionId</span> + <span class="string">&quot;/providers/Microsoft.Consumption/usageDetails?api-version=2023-05-01&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 以下のコマンドを実行して、Azure REST API を呼び出すためメソッド、Bearerトークン、コンテンツタイプを指定する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$method</span> = <span class="string">&quot;GET&quot;</span></span><br><span class="line"><span class="variable">$authHeader</span> = <span class="string">&quot;Bearer &quot;</span> + <span class="variable">$getaccess</span>.Token </span><br><span class="line"><span class="variable">$requestHeader</span> = <span class="selector-tag">@</span>&#123;Authorization = <span class="variable">$authHeader</span>&#125;</span><br><span class="line"><span class="variable">$contenttype</span> = <span class="string">&quot;application/json&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 以下のコマンドを実行して、Azure REST API を呼び出し、その結果を取得する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$response</span> = <span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-Method</span> <span class="variable">$method</span> <span class="literal">-Headers</span> <span class="variable">$requestHeader</span> <span class="literal">-ContentType</span> <span class="variable">$contenttype</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 以下のコマンドを実行して、Azure REST API の結果を表示する</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ConvertFrom-Json</span> <span class="variable">$response</span> | <span class="built_in">ConvertTo-Json</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>以上で「PowerShell」を使用した Azure REST API の呼び出しは終了です。<br>是非、色々お試しいただければと思います。</p>
+<h2 id="関連する弊社公開情報"><a href="#関連する弊社公開情報" class="headerlink" title="関連する弊社公開情報"></a>関連する弊社公開情報</h2><p>Azure REST API について、弊社の様々な公開情報を以下にご案内します。<br>併せてご利用ください。</p>
+<p>Azure REST API Reference<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/rest/api/azure/">https://docs.microsoft.com/en-us/rest/api/azure/</a></p>
+<p>REST API ブラウザー<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/rest/api/">https://docs.microsoft.com/ja-jp/rest/api/</a></p>
+<p>REST API を使用して Azure リソースの使用状況を確認する<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/billing/billing-review-service-usage-api">https://docs.microsoft.com/ja-jp/azure/billing/billing-review-service-usage-api</a></p>
+<p>Azure 監視 REST API のチュートリアル<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough">https://docs.microsoft.com/ja-jp/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough</a></p>
+<p>RBAC と REST API を使用してアクセスを管理する<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/role-based-access-control/role-assignments-rest">https://docs.microsoft.com/ja-jp/azure/role-based-access-control/role-assignments-rest</a></p>
+<p>Azure REST API を使用して Security Center のコンプライアンス結果を確認する<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/security-center/security-center-compliance-rest-api">https://docs.microsoft.com/ja-jp/azure/security-center/security-center-compliance-rest-api</a></p>
+<p>Azure REST API を使用して Hadoop クラスターを作成する<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-curl-rest">https://docs.microsoft.com/ja-jp/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-curl-rest</a></p>
+<p>REST API で Azure Blueprint を定義して割り当てる<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/governance/blueprints/create-blueprint-rest-api">https://docs.microsoft.com/ja-jp/azure/governance/blueprints/create-blueprint-rest-api</a></p>
 <p>以上の通りご案内いたします。</p>
 <p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
 <p>よろしくお願いします。</p>
@@ -355,7 +300,7 @@
     <h3 class="widget-title">タグ</h3>
     <div class="widget">
       <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Visual-Studio/" rel="tag">Visual Studio</a></li></ul>  -->
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">37</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">36</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Visual-Studio">Visual Studio</a><span class="tag-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -375,7 +320,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">タグクラウド</h3>
     <div class="widget tagcloud">
-      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 11.67px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 11.67px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 10px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 13.33px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 11.67px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 10px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 10px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 10px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 13.33px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 11.67px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a> <a href="../../tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a>
     </div>
   </div>
 
