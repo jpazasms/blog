@@ -4,21 +4,26 @@
   <meta charset="utf-8">
   
   
-  <title>Azure Import/Export にかかる日数について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <title>料金計算ツールにて Enterprise Agreement の価格を表示する方法 | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure Import&#x2F;Export にかかる日数について以下をご案内させていただきます。 ご参考になりましたら幸いです。   本記事の目的  Azure Import&#x2F;Export にかかる日数について  Azure Import&#x2F;Export についての各種情報  1. 本記事の目的 Azure Import">
+  <meta name="description" content="はじめにEnterprise Agreement (EA)にてAzureをご利用されているお客様が、料金計算ツールをご利用された際に、実際のコストと金額表示が異なる事があるかもしれません。料金計算ツールは、デフォルトで Microsoft Customer Agreement (MCA)と言うWebから直接Azureにサインアップされた従量課金サブスクリプション向けの価格が表示されます。この様な事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Azure Import&#x2F;Export にかかる日数について">
-<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180710a/index.html">
+<meta property="og:title" content="料金計算ツールにて Enterprise Agreement の価格を表示する方法">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 Azure Import&#x2F;Export にかかる日数について以下をご案内させていただきます。 ご参考になりましたら幸いです。   本記事の目的  Azure Import&#x2F;Export にかかる日数について  Azure Import&#x2F;Export についての各種情報  1. 本記事の目的 Azure Import">
+<meta property="og:description" content="はじめにEnterprise Agreement (EA)にてAzureをご利用されているお客様が、料金計算ツールをご利用された際に、実際のコストと金額表示が異なる事があるかもしれません。料金計算ツールは、デフォルトで Microsoft Customer Agreement (MCA)と言うWebから直接Azureにサインアップされた従量課金サブスクリプション向けの価格が表示されます。この様な事">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2018-07-09T16:36:00.000Z">
-<meta property="article:modified_time" content="2023-12-08T05:43:25.526Z">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereFAQ.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereToLogin.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereProgramRevised.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereSelectEA.png">
+<meta property="article:published_time" content="2023-12-07T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-08T05:43:25.546Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
-<meta property="article:tag" content="Storage Account">
+<meta property="article:tag" content="Enterprise Agreement">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereFAQ.png">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
   
@@ -81,7 +86,7 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-AzureSubscriptionManagement/20180710a" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20231208a" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -90,7 +95,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Azure Import/Export にかかる日数について
+      料金計算ツールにて Enterprise Agreement の価格を表示する方法
     </h1>
   
 
@@ -98,75 +103,28 @@
       <div class="article-share">
         Published: 
         <a href="" class="article-date-single">
-  <time datetime="2018-07-09T16:36:00.000Z" itemprop="datePublished">2018-07-10</time>
+  <time datetime="2023-12-07T15:00:00.000Z" itemprop="datePublished">2023-12-08</time>
 </a>
         
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+0f385eaf-9742-5cee-9eaf-7d6d7527e5ed%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+Import%2FExport+%E3%81%AB%E3%81%8B%E3%81%8B%E3%82%8B%E6%97%A5%E6%95%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20180710a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20180710a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20180710a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+9fb96251-08f7-5dba-9794-c2ff6c947054%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%96%99%E9%87%91%E8%A8%88%E7%AE%97%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AB%E3%81%A6+Enterprise+Agreement+%E3%81%AE%E4%BE%A1%E6%A0%BC%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20231208a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20231208a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20231208a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180710a/" data-id="clpw7bd97001b0omq92n74l3v" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/" data-id="clpw7bd9h00220omqfolnh4tz" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
-<p>Azure Import/Export にかかる日数について以下をご案内させていただきます。</p>
-<p>ご参考になりましたら幸いです。</p>
-<ol>
-<li> 本記事の目的</li>
-<li> Azure Import/Export にかかる日数について</li>
-<li> Azure Import/Export についての各種情報</li>
-</ol>
-<h3 id="1-本記事の目的"><a href="#1-本記事の目的" class="headerlink" title="1. 本記事の目的"></a>1. 本記事の目的</h3><hr>
-<p>Azure Import/Export は、弊社データセンターに物理的なハードディスクを送付することで、大量のデータのインポートとエクスポートを莫大なコストをかけることなく行えるサービスです。</p>
-<p>このサービスの性質上、お客様から「どれくらいの時間がかかるものか」というご質問を良くいただきます。</p>
-<p>この点についてお客様に本ブログを通して改めてお知らせすることを目的としています。</p>
-<p><strong>!! 注意事項 !!</strong></p>
-<p>本ブログで Azure Import/Export のすべてをご案内するものではありません。</p>
-<p>必ず、後述の 3. Azure Import/Export についての各種情報 を併せてご参照ください。</p>
-<h3 id="2-Azure-Import-Export-にかかる日数について"><a href="#2-Azure-Import-Export-にかかる日数について" class="headerlink" title="2. Azure Import/Export にかかる日数について"></a>2. Azure Import/Export にかかる日数について</h3><hr>
-<p>申し訳ございません。</p>
-<p>Azure Import/Export では、それにかかる日数について SLA を設けておりません。</p>
-<p>Azure Import/Export にかかる日数についてお約束をさせていただくことが叶わないのですが、弊社データセンターにハードディスクが届いてから 7 日から 10 日以内にデータのコピーが完了するように努めております。</p>
-<p>以下にこれを示す弊社公開情報も念のため併せてご案内します。</p>
-<p>Azure Import/Export ジョブの状態を表示する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-view-drive-status">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-view-drive-status</a></p>
-<blockquote>
-<p><strong>ジョブの処理の所要時間</strong></p>
-<p>インポート/エクスポート ジョブの処理にかかる時間は、次のような多くの要因によって異なります。</p>
-<p>•発送時刻</p>
-<p>•データ センターでの負荷</p>
-<p>•ジョブの種類とコピーされているデータのサイズ</p>
-<p>•ジョブに含まれるディスクの数</p>
-<p>Import/Export サービスに SLA はありませんが、ディスクの到着後 7 日から 10 日以内にコピーが完了するよう努力しております。 Azure Portal に掲載される状態に加え、REST API を使用してジョブの進行状況を追跡できます。 List Jobs 操作 API 呼び出しの達成率パラメーターでは、コピーの進捗率が示されます。</p>
-</blockquote>
-<h3 id="3-Azure-Import-Export-についての各種情報"><a href="#3-Azure-Import-Export-についての各種情報" class="headerlink" title="3. Azure Import/Export についての各種情報"></a>3. Azure Import/Export についての各種情報</h3><hr>
-<p>Azure Import/Export について、弊社の様々な公開情報を以下にご案内します。</p>
-<p>併せてご利用ください。</p>
-<p>Azure Import/Export サービスとは</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-service">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-service</a></p>
-<p>Azure Import/Export のシステム要件</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-requirements">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-requirements</a></p>
-<p>Azure Import/Export サービスを使用して Azure Blob Storage にデータをインポートする</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-to-blobs">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-to-blobs</a></p>
-<p>Azure Import/Export サービスを使用してデータを Azure Files にインポートする</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-to-files">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-to-files</a></p>
-<p>Azure Import/Export サービスを使用して Azure Blob Storage からデータをエクスポートする</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-from-blobs">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-data-from-blobs</a></p>
-<p>Azure Import/Export ジョブの状態を表示する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-view-drive-status">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-view-drive-status</a></p>
-<p>コピー ログ ファイルによる Azure Import/Export ジョブの状態の確認</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-reviewing-job-status-v1">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-reviewing-job-status-v1</a></p>
-<p>Import ジョブの修復</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-repairing-an-import-job-v1">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-repairing-an-import-job-v1</a></p>
-<p>Export ジョブの修復</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-repairing-an-export-job-v1">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-tool-repairing-an-export-job-v1</a></p>
-<p>Azure Import/Export サービス: よく寄せられる質問</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-service-faq">https://docs.microsoft.com/ja-jp/azure/storage/common/storage-import-export-service-faq</a></p>
-<p>以上の通りご案内いたします。</p>
-<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
-<p>よろしくお願いします。</p>
+        <h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>Enterprise Agreement (EA)にてAzureをご利用されているお客様が、<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>をご利用された際に、実際のコストと金額表示が異なる事があるかもしれません。<br>料金計算ツールは、デフォルトで Microsoft Customer Agreement (MCA)と言うWebから直接Azureにサインアップされた従量課金サブスクリプション向けの価格が表示されます。<br>この様な事から EA での価格を料金計算ツールで表示させるためにはどのようにすればいいのかをご紹介いたします。</p>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>Enterprise Agreement (EA) の金額を表示させるためには権限を有したアカウントより確認される必要がございます。<br>多くの日本のお客様は、<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご購入される「間接 Enterprise Agreement」をご利用されており、この場合、EAロールのエンタープライズ管理者、部門管理者、アカウント所有者のどれかを保有している必要がございます。<br>※ EAロールに関する関連ドキュメント：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">エンタープライズ契約のロール</a></p>
+<p>上記説明は、以下<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>の「よくあるご質問」からもご確認できますので、併せてご参照下さい。</p>
+<p><img src="CalWhereFAQ.png"></p>
+<h2 id="Enterprise-Agreement-の価格を表示する方法"><a href="#Enterprise-Agreement-の価格を表示する方法" class="headerlink" title="Enterprise Agreement の価格を表示する方法"></a>Enterprise Agreement の価格を表示する方法</h2><p>続いて以下1. - 3. にて<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>での手順をご紹介いたします。<br>※ 2023 年 12 月時点での画面を元に作成しております。最新の画面とは異なる可能性もございます事ご了承下さい。</p>
+<h3 id="１-料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。"><a href="#１-料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。" class="headerlink" title="１.料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。"></a>１.料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。</h3><p><img src="CalWhereToLogin.png"></p>
+<h3 id="2-料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise-Agreement-EA-」をクリックして下さい。"><a href="#2-料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise-Agreement-EA-」をクリックして下さい。" class="headerlink" title="2.料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise Agreement (EA)」をクリックして下さい。"></a>2.料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise Agreement (EA)」をクリックして下さい。</h3><p><img src="CalWhereProgramRevised.png"></p>
+<h3 id="3-表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。"><a href="#3-表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。" class="headerlink" title="3.表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。"></a>3.表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。</h3><p><img src="CalWhereSelectEA.png"></p>
+<p>以上の操作より、料金計算ツールにてEAの価格を表示する事が出来ます。<br>是非、ご活用くださればと思います。</p>
+<p>※ 2023 年 12 月 08 日時点の内容となります。</p>
 
       
       
@@ -180,10 +138,10 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
 
         
-        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20180710a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20231208a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
         
     </footer>
   </div>
@@ -191,19 +149,10 @@
     
 <nav id="article-nav">
   
-    <a href="../20180910a/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">次の記事</strong>
-      <div class="article-nav-title">
-        
-          Azure の各サービスの使用量とクォータを確認する方法
-        
-      </div>
-    </a>
   
-  
-    <a href="../20180704a/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../20231205a/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前の記事</strong>
-      <div class="article-nav-title">Microsoft Azure サブスクリプション新規購入時のサポートプランの選択・購入方法について</div>
+      <div class="article-nav-title">節約プランと予約の違いや共通する点</div>
     </a>
   
 </nav>
@@ -222,7 +171,7 @@
       <ul>
         
           <li>
-            <a href="../20231208a/">料金計算ツールにて Enterprise Agreement の価格を表示する方法</a>
+            <a href="">料金計算ツールにて Enterprise Agreement の価格を表示する方法</a>
           </li>
         
           <li>
