@@ -25,6 +25,8 @@ url: https://jpazasms.github.io/blog/
 github:
   url: https://github.com/jpazasms/blog/
   posts_dir: articles
+##  default_branch: main
+##  show_additional_info: true
 
 skip_render:
   - '_data/*.png'
