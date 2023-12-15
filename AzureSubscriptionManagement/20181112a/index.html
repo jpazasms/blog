@@ -4,33 +4,23 @@
   <meta charset="utf-8">
   
   
-  <title>既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法 | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <title>既存の Microsoft Entra ID に紐づけて Azure サブスクリプションを作成する方法 | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法をご案内させていただきます。 ご参考になりましたら幸いです。    本記事の目的   従量課金の場合   EA の場合   CSP の場合   お困りの時は・・・  本記事の目的 お客様からよく「既に Office 365 は持ってい">
+  <meta name="description" content="既にMicrosoft 365をご利用されており、既存のMicrosoft Entra ID（旧称：Azure Active Directory）のテナントに紐づけた形で新規に Azure サブスクリプションを作成されたい場合（既存のAADに紐づけた形でAzureサブスクリプションを作成されたい場合）を想定し、本記事ではこの方法についてご案内いたします。 1. Webから直接ご契約される従量課金サ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法">
+<meta property="og:title" content="既存の Microsoft Entra ID に紐づけて Azure サブスクリプションを作成する方法">
 <meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="いつも大変お世話になります。Microsoft Azure サポート チームです。 既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法をご案内させていただきます。 ご参考になりましたら幸いです。    本記事の目的   従量課金の場合   EA の場合   CSP の場合   お困りの時は・・・  本記事の目的 お客様からよく「既に Office 365 は持ってい">
+<meta property="og:description" content="既にMicrosoft 365をご利用されており、既存のMicrosoft Entra ID（旧称：Azure Active Directory）のテナントに紐づけた形で新規に Azure サブスクリプションを作成されたい場合（既存のAADに紐づけた形でAzureサブスクリプションを作成されたい場合）を想定し、本記事ではこの方法についてご案内いたします。 1. Webから直接ご契約される従量課金サ">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0011.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0021.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0032.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0041.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0033.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0042.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/005.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0012.jpg">
-<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0022.jpg">
 <meta property="article:published_time" content="2018-11-11T16:43:00.000Z">
-<meta property="article:modified_time" content="2023-12-12T06:30:31.893Z">
+<meta property="article:modified_time" content="2023-12-15T04:18:10.074Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Azure AD">
 <meta property="article:tag" content="Enterprise Agreement">
 <meta property="article:tag" content="CSP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/0011.jpg">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
   
@@ -102,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法
+      既存の Microsoft Entra ID に紐づけて Azure サブスクリプションを作成する方法
     </h1>
   
 
@@ -115,108 +105,41 @@
         
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+cbc6db6f-e583-59a5-826e-1fb3371a4c2a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%97%A2%E5%AD%98%E3%81%AE+Azure+AD+%E3%81%AB%E7%B4%90%E3%81%A5%E3%81%91%E3%81%A6+Azure+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20181112a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20181112a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20181112a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+cbc6db6f-e583-59a5-826e-1fb3371a4c2a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%97%A2%E5%AD%98%E3%81%AE+Microsoft+Entra+ID+%E3%81%AB%E7%B4%90%E3%81%A5%E3%81%91%E3%81%A6+Azure+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20181112a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20181112a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20181112a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/" data-id="clq1yrdtb001h0nrx5p0vc0ar" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/" data-id="clq64cov4001h0onu62le7axu" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
-<p>既存の Azure AD に紐づけて Azure サブスクリプションを取得する方法をご案内させていただきます。</p>
-<p>ご参考になりましたら幸いです。</p>
-<ul>
-<li>  本記事の目的</li>
-<li>  従量課金の場合</li>
-<li>  EA の場合</li>
-<li>  CSP の場合</li>
-<li>  お困りの時は・・・</li>
-</ul>
-<h3 id="本記事の目的"><a href="#本記事の目的" class="headerlink" title="本記事の目的"></a>本記事の目的</h3><hr>
-<p>お客様からよく「既に Office 365 は持っているけど、その Azure AD に紐づけた形で新規に Azure サブスクリプションを取得したい」というお問い合わせをいただきます。</p>
-<p>本記事ではこの方法についてご案内いたします。</p>
-<p>Azure のサブスクリプションには様々な種類が存在しています。</p>
-<p>本記事では、特にご要望の多い以下 3 つの Azure サブスクリプションについてそれぞれ以降にご案内します。</p>
-<ul>
-<li>  従量課金の場合</li>
-<li>  EA の場合</li>
-<li>  CSP の場合</li>
-</ul>
-<h3 id="従量課金の場合"><a href="#従量課金の場合" class="headerlink" title="従量課金の場合"></a>従量課金の場合</h3><hr>
-<p>「既に Office 365 は持っているけど、その Azure AD に紐づけた形で新規に “<strong>従量課金</strong>“ の Azure サブスクリプションを取得したい」というご要望について、その対応手順をご案内します。</p>
-<p>この場合、以下の手順を実施すると、既存の Azure AD (Office 365) に紐づけた形で、<strong>従量課金</strong>の Azure サブスクリプションを取得できます。</p>
-<ol>
-<li><p>以下の弊社公開情報の手順で、これから取得する Azure サブスクリプションのアカウント管理者・サービス管理者にする予定の組織アカウントを、対象の Azure AD (Office 365) 内に 1 つ作成する</p>
-<p> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide</a><br> ※ Office 365 の管理者様の作業です。</p>
-<p> ※ Azure サブスクリプションのアカウント管理者・サービス管理者には、Azure についての各種お知らせのメールが配信されることがあります。そのため、ここでご用意をいただく組織アカウントには Exchange Online のライセンスを付与するなどして、メールの送受信が可能なアカウントにしておくことをお勧めします。</p>
-</li>
-<li><p>以下の URL から上記 1. で作成をした組織アカウントで Azure ポータルにサインインをする</p>
-<p> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</p>
-<p> ※ 意図しないアカウントでのサインインを避けるため、必ず InPrivate ブラウザーでご実施ください。</p>
-</li>
-<li><p>Azure ポータルへのサインイン後、[すべてのサービス] - [サブスクリプション] をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181112a/0011.jpg"> </p>
-<p> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</p>
-</li>
-<li><p>[+ 追加] をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181112a/0021.jpg"></p>
-<p> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</p>
-</li>
-<li><p>[従量課金] をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181112a/0032.jpg"></p>
-<p> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</p>
-</li>
-<li><p>本人確認、支払情報の入力、アグリーメントのチェックなどを済ませ、[サインアップ] をクリックする</p>
-<p> <img src="/blog/AzureSubscriptionManagement/20181112a/0041.jpg"></p>
-<p> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</p>
+        
+        <div class="toc-wrapper">
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Web%E3%81%8B%E3%82%89%E7%9B%B4%E6%8E%A5%E3%81%94%E5%A5%91%E7%B4%84%E3%81%95%E3%82%8C%E3%82%8B%E5%BE%93%E9%87%8F%E8%AA%B2%E9%87%91%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%A0%B4%E5%90%88"><span class="toc-text">1. Webから直接ご契約される従量課金サブスクリプションの場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Enterprise-Agreement%EF%BC%88EA%EF%BC%89%E3%81%AE%E5%A0%B4%E5%90%88"><span class="toc-text">2. Enterprise Agreement（EA）の場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Cloud-Solution-Provider-CSP-%E3%81%AE%E5%A0%B4%E5%90%88"><span class="toc-text">3. Cloud Solution Provider (CSP)の場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%94%E5%8F%82%E8%80%83%EF%BC%9A%E5%90%84%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E6%96%B9%E6%B3%95%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6"><span class="toc-text">ご参考：各ポータルのお問い合わせ方法に関して</span></a></li></ol>
+        </div>
+          
+        <p>既にMicrosoft 365をご利用されており、<strong>既存のMicrosoft Entra ID（旧称：Azure Active Directory）のテナント</strong>に紐づけた形で新規に Azure サブスクリプションを作成されたい場合（既存のAADに紐づけた形でAzureサブスクリプションを作成されたい場合）を想定し、本記事ではこの方法についてご案内いたします。</p>
+<h2 id="1-Webから直接ご契約される従量課金サブスクリプションの場合"><a href="#1-Webから直接ご契約される従量課金サブスクリプションの場合" class="headerlink" title="1. Webから直接ご契約される従量課金サブスクリプションの場合"></a>1. Webから直接ご契約される従量課金サブスクリプションの場合</h2><p>ご利用されるMicrosoft Entra IDの組織アカウントにて、<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/purchase-options/pay-as-you-go/?srcurl=https://azure.microsoft.com/free/">Azure アカウント作成</a>の　<strong>[始める]</strong> よりAzureにサイアップ下さい。<br>この際、ご住所、お電話番号、クレジットカード等をご用意される必要がございます事、予めご承知おき下さい。</p>
+<blockquote>
+<p>※ 事前にAzureにご利用される組織アカウントをご用意される必要がございます。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">ユーザーを追加</a>などの手順をご参照の上、ご準備下さい。<br>※ 意図しないアカウントでのサインアップを避けるため、<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/microsoft-edge/microsoft-edge-%E3%81%A7-inprivate-%E3%83%96%E3%83%A9%E3%82%A6%E3%82%BA%E3%82%92%E4%BD%BF%E3%81%86-cd2c9a48-0bc4-b98e-5e46-ac40c84e27e2">InPrivate ブラウザ</a>での実施をおすすめします。</p>
+</blockquote>
+<h2 id="2-Enterprise-Agreement（EA）の場合"><a href="#2-Enterprise-Agreement（EA）の場合" class="headerlink" title="2. Enterprise Agreement（EA）の場合"></a>2. Enterprise Agreement（EA）の場合</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-an-account-and-account-owner">こちらの手順</a>にて、エンタープライズ管理者（もしくは、部門管理者）より、ご利用されるMicrosoft Entra IDの組織アカウントを <strong>アカウント所有者</strong> として追加下さい。</li>
+<li><strong>アカウント所有者</strong> として追加した対象アカウントからAzureポータルにログインし、アカウントの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-confirm-account-ownership">アクティブ化</a>を実施下さい。</li>
+<li>アクティブ化完了後、対象アカウントより<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-a-subscription">サブスクリプション追加</a>を実施下さい。<blockquote>
+<p>※ EA のご契約を既にお持ちであることが前提となります。<br>※ 事前にAzureにご利用される組織アカウントをご用意される必要がございます。</p>
+</blockquote>
 </li>
 </ol>
-<p>以上で、既存の Azure AD (Office 365) に紐づけた形で、<strong>従量課金</strong>の Azure サブスクリプションを取得できます。</p>
-<h3 id="EA-の場合"><a href="#EA-の場合" class="headerlink" title="EA の場合"></a>EA の場合</h3><hr>
-<p>「既に Office 365 は持っているけど、その Azure AD に紐づけた形で新規に “<strong>EA</strong>“ の Azure サブスクリプションを取得したい」というご要望について、その対応手順をご案内します。</p>
-<p>この場合、以下の手順を実施すると、既存の Azure AD (Office 365) に紐づけた形で、<strong>EA</strong> の Azure サブスクリプションを取得できます。</p>
-<p>※ EA のご契約を既にお持ちであることが前提です。</p>
-<ol>
-<li>以下の弊社公開情報の手順で、これから取得する Azure サブスクリプションのアカウント管理者・サービス管理者にする予定の組織アカウントを、対象の Azure AD (Office 365) 内に 1 つ作成する <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide</a><br> ※ Office 365 の管理者様の作業です。<br> ※ Azure サブスクリプションのアカウント管理者・サービス管理者には、Azure についての各種お知らせのメールが配信されることがあります。そのため、ここでご用意をいただく組織アカウントには Exchange Online のライセンスを付与するなどして、メールの送受信が可能なアカウントにしておくことをお勧めします。</li>
-<li>以下の EA ヘルプの手順で、上記 1. で作成をした組織アカウントを、ご利用の EA ポータルにアカウント所有者として追加する <a target="_blank" rel="noopener" href="https://ea.azure.com/helpdocs/addNewAccount">https://ea.azure.com/helpdocs/addNewAccount</a><br> ※ EA の管理者様の作業です。<br> ※ 上記ページは EA ポータル内のヘルプのため、EA ポータルへのアクセス権が必要です。</li>
-<li>以下の URL から上記 1. で作成をした組織アカウントで EA ポータルにサインインをする <a target="_blank" rel="noopener" href="https://ea.azure.com/">https://ea.azure.com/</a><br> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。<br> ※ 一度 EA ポータルにサインインをすることで、上記 2. のアカウント所有者として追加する処理が完了します。そのため、上記 2. の後、必ず該当アカウントで EA ポータルにサインインをしてください。 ※ 意図しないアカウントでのサインインを避けるため、必ず InPrivate ブラウザーでご実施ください。</li>
-<li>EA ポータルへのサインイン後、[管理] - [サブスクリプション] - [+ サブスクリプションの追加] をクリックする <img src="/blog/AzureSubscriptionManagement/20181112a/0033.jpg"> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</li>
-<li>[Microsoft Azure エンタープライズ] をクリックする <img src="/blog/AzureSubscriptionManagement/20181112a/0042.jpg"> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</li>
-<li>[このサブスクリプションは Enterprise Agreement に準拠します] にチェックを入れて、[サインアップ] をクリックする <img src="/blog/AzureSubscriptionManagement/20181112a/005.jpg"> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</li>
+<h2 id="3-Cloud-Solution-Provider-CSP-の場合"><a href="#3-Cloud-Solution-Provider-CSP-の場合" class="headerlink" title="3. Cloud Solution Provider (CSP)の場合"></a>3. Cloud Solution Provider (CSP)の場合</h2><ol>
+<li><strong>CSP パートナー様</strong>より<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/request-a-relationship-with-a-customer">再販業者の関係を要請</a>を、パートナーセンターの「新しいリレーションシップ」より開始下さい。   </li>
+<li><strong>エンドユーザー様</strong>の対象Microsoft Entra IDの管理者より上記 1. にて発行した要請にあるURLよりサインイン後、各種内容をご確認の上、リレーションシップをご承諾下さい。</li>
+<li><strong>CSP パートナー様</strong>よりパートナーセンターにて<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/purchase-azure-plan">Azureプランをご購入</a>後、Azureポータルより<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/create-customer-subscription#create-a-subscription-as-a-partner-for-a-customer">Azureサブスクリプションを作成</a>下さい。</li>
 </ol>
-<p>以上で、既存の Azure AD (Office 365) に紐づけた形で、<strong>EA</strong> の Azure サブスクリプションを取得できます。</p>
-<h3 id="CSP-の場合"><a href="#CSP-の場合" class="headerlink" title="CSP の場合"></a>CSP の場合</h3><hr>
-<p>「既に Office 365 は持っているけど、その Azure AD に紐づけた形で新規に “<strong>CSP</strong>“ の Azure サブスクリプションを取得したい」というご要望について、その対応手順をご案内します。</p>
-<p>この場合、以下の手順を実施すると、既存の Azure AD (Office 365) に紐づけた形で、<strong>CSP</strong> の Azure サブスクリプションを取得できます。</p>
-<p>※ CSP のご契約を既にお持ちであることが前提です。</p>
-<ol>
-<li>以下の弊社公開情報の手順で、組織アカウントを対象の Azure AD (Office 365) 内に 1 つ作成する <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">https://docs.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide</a><br> ※ Office 365 の管理者様の作業です。<br> ※ 以降の CSP パートナー様の作業に伴い、このアカウントにメールが配信されます。そのため、ここでご用意をいただく組織アカウントには Exchange Online のライセンスを付与するなどして、メールの送受信が可能なアカウントにしておくことをお勧めします。</li>
-<li>以下の弊社公開情報の手順で、上記 1. で作成された組織アカウント宛に「relationship request」を送信する <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/partner-center/request-a-relationship-with-a-customer">https://docs.microsoft.com/en-us/partner-center/request-a-relationship-with-a-customer</a><br> ※ CSP パートナー様の作業です。<br> ※ URL 内の en-us を ja-jp に変更していただくことで、機械翻訳ですが日本語ページもご参照いただけます。</li>
-<li>上記 2. で送信された「relationship request」のメール内の URL にアクセスをして、上記 1. で作成した組織アカウントでサインインする ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。<br> ※ 意図しないアカウントでのサインインを避けるため、必ず InPrivate ブラウザーでご実施ください。</li>
-<li>サインイン後、以下の画面が表示されるので、「I consent to share my data ・・・」にチェックを入れて、[Accept] をクリックする <img src="/blog/AzureSubscriptionManagement/20181112a/0012.jpg"> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</li>
-<li>その後、以下の画面が表示されるので、「Yes, I have read and understand　・・・」にチェックを入れて、[Accept] をクリックする <img src="/blog/AzureSubscriptionManagement/20181112a/0022.jpg"> ※ 上記 1. で作成をした組織アカウントの持ち主様の作業です。</li>
-<li>以下の弊社公開情報の手順で、上記 3. - 5. で「relationship request」を承諾した該当顧客に対して Azure サブスクリプションを追加する <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/manage-customers/add-subscriptions">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/integration/manage-customers/add-subscriptions</a><br> ※ CSP パートナー様の作業です。</li>
-</ol>
-<p>以上で、既存の Azure AD (Office 365) に紐づけた形で、<strong>CSP</strong> の Azure サブスクリプションを取得できます。</p>
-<h3 id="お困りの時は・・・"><a href="#お困りの時は・・・" class="headerlink" title="お困りの時は・・・"></a>お困りの時は・・・</h3><hr>
-<p>上記内容についてお困りのことがございましたら、是非私たちサポート サービスがご支援をさせていただければと思います。</p>
-<p>上記ご説明の通り、そのシナリオによって、Office 365 ポータル、EA ポータル、CSP ポータル、Azure ポータルなど様々な操作が含まれています。</p>
-<p>それぞれの専門チームがお客様のお手伝いをさせていただきますので、その内容に応じて各担当窓口にご相談ください。</p>
-<p>窓口が複数ありお客様にはご不便をおかけしますが、どうぞよろしくお願いします。</p>
-<h4 id="Office-365-ポータル上の操作でお困りの時"><a href="#Office-365-ポータル上の操作でお困りの時" class="headerlink" title="Office 365 ポータル上の操作でお困りの時"></a>Office 365 ポータル上の操作でお困りの時</h4><p>以下の手順で私たちサポート サービスにお問い合わせください。</p>
-<p>ビジネス製品についてサポートに問い合わせる - 管理者ヘルプ</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/office365/admin/contact-support-for-business-products">https://docs.microsoft.com/ja-jp/office365/admin/contact-support-for-business-products</a></p>
-<h4 id="EA-ポータル上の操作でお困りの時"><a href="#EA-ポータル上の操作でお困りの時" class="headerlink" title="EA ポータル上の操作でお困りの時"></a>EA ポータル上の操作でお困りの時</h4><p>以下の URL から私たちサポート サービスにお問い合わせください。</p>
-<p><a target="_blank" rel="noopener" href="http://aka.ms/AzureEntSupport">http://aka.ms/AzureEntSupport</a></p>
-<h4 id="CSP-ポータル上の操作でお困りの時"><a href="#CSP-ポータル上の操作でお困りの時" class="headerlink" title="CSP ポータル上の操作でお困りの時"></a>CSP ポータル上の操作でお困りの時</h4><p>以下の手順で私たちサポート サービスにお問い合わせください。</p>
-<p>パートナー センターに関する問題の報告</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center">https://docs.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center</a></p>
-<h4 id="Azure-ポータル上の操作でお困りの時"><a href="#Azure-ポータル上の操作でお困りの時" class="headerlink" title="Azure ポータル上の操作でお困りの時"></a>Azure ポータル上の操作でお困りの時</h4><p>以下の手順で私たちサポート サービスにお問い合わせください。</p>
-<p>Azure サポート要求を作成する方法</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-supportability/how-to-create-azure-support-request">https://docs.microsoft.com/ja-jp/azure/azure-supportability/how-to-create-azure-support-request</a></p>
-<p>以上の通りご案内いたします。</p>
-<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
-<p>よろしくお願いします。</p>
+<p>以上より既存のMicrosoft Entra ID（旧称：Azure Active Directory）に紐づけた形で Azure サブスクリプションを作成できます。</p>
+<p>なおCSPサブスクリプションは関連付いたテナントを変更する事ができませんが、従量課金やEAサブスクリプションの場合は作成後でも <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory">Microsoft Entra テナントに Azure サブスクリプションを関連付ける</a>にて、サブスクリプションの関連付いたテナントを変更する事は可能でございます。ただし関連付き先のテナント変更によりRBAC設定が失われ、また既存のAzureサービスに影響を及ぼす可能性がございますので、ご注意下さい。</p>
+<h2 id="ご参考：各ポータルのお問い合わせ方法に関して"><a href="#ご参考：各ポータルのお問い合わせ方法に関して" class="headerlink" title="ご参考：各ポータルのお問い合わせ方法に関して"></a>ご参考：各ポータルのお問い合わせ方法に関して</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center">パートナー センターでサポートに問い合わせる</a><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/get-help-support?view=o365-worldwide">ビジネス向け Microsoft 365 のサポートを受ける</a></p>
+<p>以上の通りご案内いたします。<br>M365でご利用されている既存のMicrosoft Entra IDテナント（Azure ADテナント）に紐づけた形で、Azureサブスクリプションを作成されたい場合にお役に立てますと幸いです。<br>よろしくお願いします。</p>
 
       
       
