@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="はじめにAzureの請求とサブスクリプションに関するドキュメントには、”Microsoft Partner Agreement を持つパートナー”、”Enterprise Agreement サブスクリプション”、”従来の Azure オファー”などの言葉が用いられます。これは、課金アカウントの種類によってご提供されている機能が異なることがあり、それに伴って上記の様な文言を用いての説明がございます">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/index.html">
+<meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
+<meta property="og:description" content="はじめにAzureの請求とサブスクリプションに関するドキュメントには、”Microsoft Partner Agreement を持つパートナー”、”Enterprise Agreement サブスクリプション”、”従来の Azure オファー”などの言葉が用いられます。これは、課金アカウントの種類によってご提供されている機能が異なることがあり、それに伴って上記の様な文言を用いての説明がございます">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2023-12-26T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-27T04:42:55.936Z">
+<meta property="article:author" content="Japan">
+<meta property="article:tag" content="Subscription">
+<meta property="article:tag" content="Enterprise Agreement">
+<meta property="article:tag" content="CSP">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
+  
+
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <div id="ms-logo"></div>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSSフィード"></a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.bing.com/search" method="get" accept-charset="UTF-8" name="bing-search" onsubmit="var f=this;if(f['q'].value){var searchUrl =  'https://www.bing.com/search?q=' +  encodeURIComponent(f['q'].value + ' site:' + f['sitesearch'].value) ;window.open(searchUrl, 'blank') };return false;" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="検索"><button type="submit" id="nav-search-btn" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://jpazasms.github.io/blog"></form>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Japan Azure 課金 サブスクリプション サポート ブログ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">日本マイクロソフトの Azure 課金 サブスクリプション に関するサポート情報のブログです。</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20231227a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Published: 
+        <a href="" class="article-date-single">
+  <time datetime="2023-12-26T15:00:00.000Z" itemprop="datePublished">2023-12-27</time>
+</a>
+        
+        
+        
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+2b42e745-af53-50b6-88b0-d6c17dc68641%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+%E3%81%AE%E8%AA%B2%E9%87%91%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E7%A8%AE%E9%A1%9E%E3%81%A8%E8%AA%B2%E9%87%91%E9%96%A2%E9%80%A3%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E8%A6%8B%E6%96%B9%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20231227a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20231227a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20231227a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/" data-id="clqnairbi00230npfcygsdebq" class="article-share-link">共有</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <div class="toc-wrapper">
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E8%A8%98%E4%BA%8B%E3%81%A7%E5%88%86%E9%A1%9E%E3%81%97%E3%81%9F%E8%A1%A8"><span class="toc-text">本記事で分類した表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%86%E9%A1%9EA1%EF%BD%9EA7%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%99%E3%82%8B%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E4%BE%8B"><span class="toc-text">1. 分類A1～A7に関連するドキュメントの例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-A1-MOSP%E3%81%AE%E4%BE%8B"><span class="toc-text">1-1. A1 MOSPの例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-A2-A3-EA%E3%81%AE%E4%BE%8B"><span class="toc-text">1-2. A2 A3 EAの例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-A4-%E5%BE%93%E6%9D%A5%E3%81%AECSP%E3%81%AE%E4%BE%8B"><span class="toc-text">1-3. A4 従来のCSPの例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-A5-A6-MCA%E3%81%AE%E4%BE%8B"><span class="toc-text">1-4. A5 A6 MCAの例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-A7-MPA-%E3%81%AE%E4%BE%8B"><span class="toc-text">1-5. A7 MPA の例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%80%E8%A6%A7%E3%81%A7%E8%AA%AC%E6%98%8E%E3%81%8C%E3%81%82%E3%82%8B%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E4%BE%8B"><span class="toc-text">2. 一覧で説明があるドキュメントの例</span></a></li></ol>
+        </div>
+          
+        <h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>Azureの請求とサブスクリプションに関するドキュメントには、”Microsoft Partner Agreement を持つパートナー”、”Enterprise Agreement サブスクリプション”、”従来の Azure オファー”などの言葉が用いられます。<br>これは、課金アカウントの種類によってご提供されている機能が異なることがあり、それに伴って上記の様な文言を用いての説明がございます。</p>
+<p>また複数の種類がございますため、マイクロソフトドキュメントの探し方や見方に迷われることもあるかと思います。<br>この様なことから本記事では、各例を通してドキュメントの見方についてのご支援をさせて頂く事を目的としております。</p>
+<div class="alert is-info"><p class="alert-title">Note</p><p>あくまでも例のためドキュメントの内容を一部抜粋しております。 各内容の詳細確認が必要な場合は、リンク先のドキュメントにて内容をご確認下さい。</p></div>
+<h2 id="本記事で分類した表"><a href="#本記事で分類した表" class="headerlink" title="本記事で分類した表"></a>本記事で分類した表</h2><p>Azureでご提供されている課金アカウントとAzureサブスクリプションの種類を、<font color="Red"><strong>本記事での説明のために便宜上</strong></font>、以下A1 - A7に分類します。<br>この分類の意図としましては、後続のドキュメント例の通り、この分類でドキュメントに説明が載せられる事もあるためとなります。<br>実際には、A1 Webサイトから直接ご契約されたMOSPや、A3 LSP様からご購入されたEAをご利用されているなど、どれかの１つにてAzureをご利用されているかと存じます。<br>ただ他の課金アカウントの種類を把握されている事で、MOSPと書いてあるからEAではないなど。ドキュメントにてご利用の契約に該当するか否かを把握しやすくなる事もありますので、一覧として載せております。</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>開始時期</th>
+<th>ご契約窓口</th>
+<th>課金アカウントの種類</th>
+<th>主なAzureサブスクリプションの種類</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>従来</td>
+<td>Webサイト</td>
+<td>Microsoft Online Services Program (MOSP)</td>
+<td>従量課金制 (0003P)</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>従来</td>
+<td>MS</td>
+<td>Enterprise Agreement (EA)</td>
+<td>Microsoft Azure エンタープライズ (0017P)</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>従来</td>
+<td>LSP様</td>
+<td>Enterprise Agreement (EA)</td>
+<td>Microsoft Azure エンタープライズ (0017P)</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>従来</td>
+<td>CSP様</td>
+<td>クラウド ソリューション プロバイダー (CSP)</td>
+<td>Microsoft Azure (0145P)</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>新しい</td>
+<td>Webサイト</td>
+<td>Microsoft 顧客契約 (MCA)</td>
+<td>Azure プラン (0017G)</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>新しい</td>
+<td>MS</td>
+<td>Microsoft 顧客契約 (MCA)</td>
+<td>Azure プラン (0017G)</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>新しい</td>
+<td>CSP様</td>
+<td>Microsoft Partner Agreement (MPA)</td>
+<td>Azure プラン (0017G)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<blockquote>
+<p><strong>★各項目のご説明★</strong><br><strong>「No.」</strong><br>本記事の説明のために限って付与した番号となり、一般的には使用されない番号となります。<br><strong>「開始時期」</strong><br>ご提供が開始されたタイミング（ 「従来」：比較的従来からご提供がある。 「新しい」：比較的ご提供開始されたタイミングが新しい ）。 ドキュメントではこの表現が利用される事があるため、記載しております。<br><strong>「ご契約窓口」</strong><br>Azureのご契約を開始するためにご利用される窓口。（ Webサイト：Webサイトから直接ご契約される場合、 MS：マイクロソフトの担当者と直接ご契約手続きをされる場合、 LSP様：<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)様</a>からご購入される場合、CSP様：クラウド ソリューション プロバイダー (CSP) のパートナー様からご提供される場合 ）<br><strong>「課金アカウントの種類」</strong><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/view-all-accounts">こちら</a> にて説明ございます種別となります。<br><strong>「主なAzureサブスクリプションの種類」</strong><br>サブスクリプションの種類名とプランID。 主な種類のみとなり、該当の分類における全てのサブスクリプションタイプを記載しているわけではございません。<br><br></p>
+</blockquote>
+</blockquote>
+<h2 id="1-分類A1～A7に関連するドキュメントの例"><a href="#1-分類A1～A7に関連するドキュメントの例" class="headerlink" title="1. 分類A1～A7に関連するドキュメントの例"></a>1. 分類A1～A7に関連するドキュメントの例</h2><p>具体的な公開ドキュメントの例をご紹介をいたします。 種別ごとのドキュメントの見方をご紹介するためとなり、個別の詳細説明は省きます事、予めご了承下さい。</p>
+<h3 id="1-1-A1-MOSPの例"><a href="#1-1-A1-MOSPの例" class="headerlink" title="1-1. A1 MOSPの例"></a>1-1. A1 MOSPの例</h3><p>ドキュメントのタイトルや一行目の説明から、Microsoft Online Services Program の <strong>A1</strong> に該当する事がわかります。</p>
+<p>・ ドキュメント例：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/billing-subscription-transfer">MOSP Azure サブスクリプションの課金所有権を別のアカウントに譲渡する</a></p>
+<blockquote>
+<p>(MOSP) Microsoft Online Services Program (従量課金制の Azure サブスクリプションとも呼ばれます) の課金所有権を別の MOSP アカウントに移転するために必要な手順を示します。</p>
+</blockquote>
+<h3 id="1-2-A2-A3-EAの例"><a href="#1-2-A2-A3-EAの例" class="headerlink" title="1-2. A2 A3 EAの例"></a>1-2. A2 A3 EAの例</h3><p><strong>A2</strong>（マイクロソフトの担当者と直接ご契約される場合）はよく「<strong>直接</strong>」（もしくは <strong>ダイレクト</strong> ）と記載されます。<br><strong>A3</strong>（Licensing Solution Partner (LSP)からご購入される場合）は「<strong>間接</strong>」（もしくは <strong>インダイレクト</strong> ）と言う表現が用いられます。<br>以下例では、直接 EA（A2）と、間接EA（A3）とで機能のご提供状況に違いがある事が、説明されております。</p>
+<p>・ ドキュメント例：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/track-consumption-commitment?tabs=portal">Microsoft Azure Consumption Commitment (MACC) を追跡する</a></p>
+<blockquote>
+<p>Azure portal での MACC の機能は、直接 MCA と直接 EA のお客様だけが使用できます。 直接契約は、Microsoft とお客様の間の契約です。 間接契約は、お客様と Microsoft パートナーの間で取り交わされる契約です。</p>
+</blockquote>
+<h3 id="1-3-A4-従来のCSPの例"><a href="#1-3-A4-従来のCSPの例" class="headerlink" title="1-3. A4 従来のCSPの例"></a>1-3. A4 従来のCSPの例</h3><p>ここでの「従来の Azure オファー」について、このドキュメントがクラウド ソリューション プロバイダー (CSP)様向けのドキュメントとなり、「従来の Azure オファー」にて <strong>従来の</strong> と言う説明から <strong>A4</strong> と言う事がわかります。</p>
+<p>・ ドキュメント例：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/partner-earned-credit-troubleshoot">パートナー獲得クレジットに関するトラブルシューティング ガイド</a></p>
+<blockquote>
+<p>パートナー センターに関するドキュメント<br>・・・・・・・<br>パートナー獲得クレジットに関するトラブルシューティング ガイド<br>・・・・・・・<br><strong>前提条件</strong><br>・・・・・・・<br>オファーが対象であることを確認します (従来の Azure オファー、Azure 予約インスタンス、Azure Savings プラン、Azure SPOT VM、サード パーティ製品は対象外です)。</p>
+</blockquote>
+<h3 id="1-4-A5-A6-MCAの例"><a href="#1-4-A5-A6-MCAの例" class="headerlink" title="1-4. A5 A6 MCAの例"></a>1-4. A5 A6 MCAの例</h3><p>Microsoft 顧客契約 (MCA) のお客様から、 <strong>A5</strong> (Webサイトから直接ご契約される場合)もしくは、 <strong>A6</strong> (マイクロソフトの担当者と直接ご契約される場合)が想定されます。<br>後半の説明から、Microsoft 担当者を通じて Azure にサインアップした場合（ <strong>A6</strong> ）は、既定で”電信送金”（請求書払い）となるとの説明から、 「 <strong>A5</strong> (Webサイトから直接ご契約される場合)のお客様向け」 のドキュメントである事がわかります。</p>
+<p>・ ドキュメント例：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/pay-by-invoice">Azure サブスクリプションの電信送金による支払い</a></p>
+<blockquote>
+<p>この記事は次のお客様に適用されます。<br>・ Microsoft 顧客契約 (MCA) のお客様<br>・ Azure Web サイトを通じて (Microsoft Online Services プログラム アカウント (従量課金制アカウント) で) Azure にサインアップしたお客様。<br>Microsoft 担当者を通じて Azure にサインアップした場合は、既定の支払い方法として “電信送金” が既に設定されているため、これらのステップは不要です。</p>
+</blockquote>
+<h3 id="1-5-A7-MPA-の例"><a href="#1-5-A7-MPA-の例" class="headerlink" title="1-5. A7 MPA の例"></a>1-5. A7 MPA の例</h3><p>一行目の説明から、Microsoft Partner Agreement(MPA)の <strong>A7</strong> 向けのドキュメントである事がわかります。</p>
+<p>・ ドキュメント例：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/create-customer-subscription">パートナーの顧客のサブスクリプションを作成する</a></p>
+<blockquote>
+<p>この記事は、 Microsoft Partner Agreement を持つパートナーが、顧客のために、Microsoft 顧客契約 サブスクリプションを作成する際に役立ちます。</p>
+</blockquote>
+<h2 id="2-一覧で説明があるドキュメントの例"><a href="#2-一覧で説明があるドキュメントの例" class="headerlink" title="2. 一覧で説明があるドキュメントの例"></a>2. 一覧で説明があるドキュメントの例</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/subscription-transfer#product-transfer-support">製品譲渡のサポート</a> では、各ご契約間での製品譲渡について一覧でご説明しております。　<br>譲渡元と譲渡先のご契約項目では、”MAC-個人”や”WPA - エンタープライズ”と表現しており、こちらをマッピングすると以下の様になります。</p>
+<table>
+<thead>
+<tr>
+<th align="left">No.</th>
+<th align="left">製品譲渡のサポートにて、譲渡元と譲渡先で用いられている表現</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">A1</td>
+<td align="left">MOSP (PAYG)</td>
+</tr>
+<tr>
+<td align="left">A2</td>
+<td align="left">EA</td>
+</tr>
+<tr>
+<td align="left">A3</td>
+<td align="left">EA</td>
+</tr>
+<tr>
+<td align="left">A4</td>
+<td align="left">CSP での以前の Azure オファー</td>
+</tr>
+<tr>
+<td align="left">A5</td>
+<td align="left">MCA - 個人</td>
+</tr>
+<tr>
+<td align="left">A6</td>
+<td align="left">WPA - エンタープライズ</td>
+</tr>
+<tr>
+<td align="left">A7</td>
+<td align="left">MPA</td>
+</tr>
+</tbody></table>
+<p>※ <a href="#%E6%9C%AC%E8%A8%98%E4%BA%8B%E3%81%A7%E5%88%86%E9%A1%9E%E3%81%97%E3%81%9F%E8%A1%A8">冒頭の分類表</a> より再掲</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>開始時期</th>
+<th>ご契約窓口</th>
+<th>課金アカウントの種類</th>
+<th>主なAzureサブスクリプションの種類</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>従来</td>
+<td>Webサイト</td>
+<td>Microsoft Online Services Program (MOSP)</td>
+<td>従量課金制 (0003P)</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>従来</td>
+<td>MS</td>
+<td>Enterprise Agreement (EA)</td>
+<td>Microsoft Azure エンタープライズ (0017P)</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>従来</td>
+<td>LSP様</td>
+<td>Enterprise Agreement (EA)</td>
+<td>Microsoft Azure エンタープライズ (0017P)</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>従来</td>
+<td>CSP様</td>
+<td>クラウド ソリューション プロバイダー (CSP)</td>
+<td>Microsoft Azure (0145P)</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>新しい</td>
+<td>Webサイト</td>
+<td>Microsoft 顧客契約 (MCA)</td>
+<td>Azure プラン (MS-AZR-0017G)</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>新しい</td>
+<td>MS</td>
+<td>Microsoft 顧客契約 (MCA)</td>
+<td>Azure プラン (MS-AZR-0017G)</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>新しい</td>
+<td>CSP様</td>
+<td>Microsoft Partner Agreement (MPA)</td>
+<td>Azure プラン (MS-AZR-0017G)</td>
+</tr>
+</tbody></table>
+<p>以上、課金アカウントの種類や、例を用いたドキュメントの見方のご紹介となります。<br>Azureの課金に関するマイクロソフトのドキュメントを確認される際に、お役にたてますと幸いです。</p>
+<p>※ 2023 年 12 月 27 日時点の内容となります。</p>
+
+      
+      
+        <div class="article-disclaimer">
+        
+          <p>※本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+        
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+
+        
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20231227a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../20231212a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前の記事</strong>
+      <div class="article-nav-title">Generate Cost Details Report API を使ってみよう</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の投稿</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="">Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して</a>
+          </li>
+        
+          <li>
+            <a href="../20231212a/">Generate Cost Details Report API を使ってみよう</a>
+          </li>
+        
+          <li>
+            <a href="../20231208a/">料金計算ツールにて Enterprise Agreement の価格を表示する方法</a>
+          </li>
+        
+          <li>
+            <a href="../20231205a/">節約プランと予約の違いや共通する点</a>
+          </li>
+        
+          <li>
+            <a href="../20231110a/">Azure Marketplace製品のお問い合わせ先に関して</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグ</h3>
+    <div class="widget">
+      <!-- <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Account/" rel="tag">Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Marketplace/" rel="tag">Azure Marketplace</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-Portal/" rel="tag">Azure Portal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Azure-REST-API/" rel="tag">Azure REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Classic-Role/" rel="tag">Classic Role</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Invoice/" rel="tag">Invoice</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Network/" rel="tag">Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/PowerShell/" rel="tag">PowerShell</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Storage-Account/" rel="tag">Storage Account</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Support-Plan/" rel="tag">Support Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li></ul>  -->
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Subscription/">Subscription</a><span class="tag-list-count">36</span><ul><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Account">Account</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-AD">Azure AD</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Marketplace">Azure Marketplace</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-Portal">Azure Portal</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Azure-REST-API">Azure REST API</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/CSP">CSP</a><span class="tag-list-count">6</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Classic-Role">Classic Role</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Enterprise-Agreement">Enterprise Agreement</a><span class="tag-list-count">8</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Invoice">Invoice</a><span class="tag-list-count">3</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Network">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/PowerShell">PowerShell</a><span class="tag-list-count">2</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Storage-Account">Storage Account</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Support-Plan">Support Plan</a><span class="tag-list-count">4</span></li><li class="tag-list-item tag-list-item-child-tag"><a class="tag-list-link tag-list-link-child" href="../../tags/Subscription/Virtual-Machine">Virtual Machine</a><span class="tag-list-count">4</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/12/">2023 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/11/">2023 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019 / 02</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">2019 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/09/">2018 / 09</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/07/">2018 / 07</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/06/">2018 / 06</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/11/">2017 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2017/10/">2017 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">2016 / 12</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/03/">2016 / 03</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/11/">2015 / 11</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/10/">2015 / 10</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/08/">2015 / 08</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/05/">2015 / 05</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">2015 / 01</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/10/">2013 / 10</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">タグクラウド</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/Account/" style="font-size: 11.67px;">Account</a> <a href="../../tags/Azure-AD/" style="font-size: 13.33px;">Azure AD</a> <a href="../../tags/Azure-Marketplace/" style="font-size: 11.67px;">Azure Marketplace</a> <a href="../../tags/Azure-Portal/" style="font-size: 10px;">Azure Portal</a> <a href="../../tags/Azure-REST-API/" style="font-size: 11.67px;">Azure REST API</a> <a href="../../tags/CSP/" style="font-size: 16.67px;">CSP</a> <a href="../../tags/Classic-Role/" style="font-size: 10px;">Classic Role</a> <a href="../../tags/Enterprise-Agreement/" style="font-size: 18.33px;">Enterprise Agreement</a> <a href="../../tags/Invoice/" style="font-size: 13.33px;">Invoice</a> <a href="../../tags/Network/" style="font-size: 10px;">Network</a> <a href="../../tags/PowerShell/" style="font-size: 11.67px;">PowerShell</a> <a href="../../tags/Storage-Account/" style="font-size: 15px;">Storage Account</a> <a href="../../tags/Subscription/" style="font-size: 20px;">Subscription</a> <a href="../../tags/Support-Plan/" style="font-size: 15px;">Support Plan</a> <a href="../../tags/Virtual-Machine/" style="font-size: 15px;">Virtual Machine</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
+      <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
+      <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
+      &copy; 2023 Japan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
