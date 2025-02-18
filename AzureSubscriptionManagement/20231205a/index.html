@@ -14,7 +14,7 @@
 <meta property="og:description" content="本記事では、節約プランと予約のいずれかを選択するにて、ご説明されております様な節約プラン(Azure savings plans)と予約の違いと共通点に関して、主な点をご説明します。節約プランや予約の利用を、ご検討する際に参考になりましたら幸いです。 1.はじめにAzureの予約は、1年や3年などの長い期間のご利用されるリソース向けに、割引を提供している製品となります。節約プランも同様に、1年や3">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-12-04T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-02-12T05:01:56.318Z">
+<meta property="article:modified_time" content="2025-02-18T05:42:54.016Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta name="twitter:card" content="summary">
@@ -104,7 +104,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+f12e21d6-e185-5e75-9b2f-182fe217de41%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E7%AF%80%E7%B4%84%E3%83%97%E3%83%A9%E3%83%B3%E3%81%A8%E4%BA%88%E7%B4%84%E3%81%AE%E9%81%95%E3%81%84%E3%82%84%E5%85%B1%E9%80%9A%E3%81%99%E3%82%8B%E7%82%B9%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20231205a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20231205a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20231205a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231205a/" data-id="cm71g20va001u0nta9fp9e45o" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231205a/" data-id="cm7a25sxc001u0nlodpgyh7c1" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -132,7 +132,7 @@
 <div class="alert is-info"><p class="alert-title">Note</p><p>Virtual Machines向けの予約であるReserved Instance(RI)や節約プラン共に、”コンピューティング コスト”に対する割引製品となります。</p><p>Virtual Machinesをご利用される中で発生する他のコスト（ Windows OSのソフトウェアコスト、ネットワークコスト など）は対象外となりますので、ご注意下さい。</p></div>
 <h2 id="5-予約と節約プランのキャンセルに関して"><a href="#5-予約と節約プランのキャンセルに関して" class="headerlink" title="5.予約と節約プランのキャンセルに関して"></a>5.予約と節約プランのキャンセルに関して</h2><p>前述の通り、予約と節約プラン共に、1年や3年などの長い期間のご利用を前提とした製品となります。<br>ただ予約に関しては、12 か月の間で予約コミットメントのキャンセル額合計:50,000米国ドル以上はキャンセル出来ないなどの制限事項はございますが、条件内でございましたらキャンセル可能でございます。  (こちらの例外はございます *<strong>B</strong>)<br>一方、節約プランはキャンセルできませんので、ご注意下さい。</p>
 <p>※ご参考：ポリシーに関して<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations#cancel-exchange-and-refund-policies">予約のキャンセル、交換、払戻ポリシー</a><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/savings-plan/cancel-savings-plan">節約プランのキャンセル ポリシー</a></p>
-<div class="alert is-info"><p class="alert-title">Note</p><p>*<strong>B</strong> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/prepay-suse-software-charges#self-service-cancellation-and-exchanges-not-allowed">こちら</a>の通り、予約の内 SUSE または RedHat プランはキャンセルできません。</p></div>
+<div class="alert is-info"><p class="alert-title">Note</p><p>*<strong>B</strong> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations#reservation-exchange-policy-changes:~:text=%E3%81%AF%E6%9C%AA%E5%AE%9A%E3%81%A7%E3%81%99%E3%80%82-,%E6%AC%A1%E3%81%AE%E4%BA%88%E7%B4%84%E3%81%AF%E6%89%95%E3%81%84%E6%88%BB%E3%81%97%E3%81%AE%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82,-Azure%20Databricks%20%E3%81%AE">こちら</a>の通り、一部の種類の予約はキャンセルできません。</p></div>
 <h2 id="6-節約プランと予約の割引率に関して"><a href="#6-節約プランと予約の割引率に関して" class="headerlink" title="6.節約プランと予約の割引率に関して"></a>6.節約プランと予約の割引率に関して</h2><p>通常、予約の方が、節約プランより割引率が大きいものとなります。<br>割引率を比較する方法の１例として、<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/windows/">Virtual Machines価格ページ</a>の 「価格モデルと比較」 にて、 「1 年 (予約インスタンスと節約プラン)」もしくは、「3 年 (予約インスタンスと節約プラン)」をご選択されますと、価格表中に予約および節約プランの金額が表示されますので、こちらの項目を設定の上ご参照下さい。</p>
 <h2 id="7-参考情報（FAQなど）"><a href="#7-参考情報（FAQなど）" class="headerlink" title="7.参考情報（FAQなど）"></a>7.参考情報（FAQなど）</h2><p><a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180608a/">関連する過去の記事 Azure Reserved VM Instances (RIs) について</a><br><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/reserved-vm-instances/#:~:text=%E8%B3%BC%E5%85%A5%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%97%E3%82%87%E3%81%86%E3%81%8B">Azure Reserved Virtual Machine Instances の FAQ</a><br><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/offers/savings-plan-compute/#:~:text=%E3%82%88%E3%81%8F%E5%AF%84%E3%81%9B%E3%82%89%E3%82%8C%E3%82%8B%E8%B3%AA%E5%95%8F">Azure 節約プラン よく寄せられる質問</a></p>
 <p>※ 2023 年 12 月 05 日時点の内容となります。</p>
@@ -191,6 +191,10 @@
       <ul>
         
           <li>
+            <a href="../20250218a/">間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して</a>
+          </li>
+        
+          <li>
             <a href="../20250212a/">Azureにおける請求およびサブスクリプション管理 サポートの対応範囲</a>
           </li>
         
@@ -204,10 +208,6 @@
         
           <li>
             <a href="../20231212a/">Generate Cost Details Report API を使ってみよう</a>
-          </li>
-        
-          <li>
-            <a href="../20231208a/">料金計算ツールにて Enterprise Agreement の価格を表示する方法</a>
           </li>
         
       </ul>

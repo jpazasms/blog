@@ -4,21 +4,25 @@
   <meta charset="utf-8">
   
   
-  <title>CSP サブスクリプションに関する移行について | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <title>間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。 いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。 ご参考になりましたら幸いです。  CSP の概要に関する情報について オンプレミス ワークロードから CSP への移">
+  <meta name="description" content="1. はじめにLicensing Solution Partner (LSP)様からご契約された間接Enterprise Agreement (EA)にて、EA のご契約者よりAzureポータルからコストを確認した際を想定した内容となります。間接EA契約を含む各Azureの課金アカウントの概要については、Azure の課金アカウントの種類と課金関連ドキュメントの見方に関してをご参照下さい。 コスト">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSP サブスクリプションに関する移行について">
-<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180620a/index.html">
+<meta property="og:title" content="間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。 いつも大変お世話になります。Microsoft Azure サポート チームです。 CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。 ご参考になりましたら幸いです。  CSP の概要に関する情報について オンプレミス ワークロードから CSP への移">
+<meta property="og:description" content="1. はじめにLicensing Solution Partner (LSP)様からご契約された間接Enterprise Agreement (EA)にて、EA のご契約者よりAzureポータルからコストを確認した際を想定した内容となります。間接EA契約を含む各Azureの課金アカウントの概要については、Azure の課金アカウントの種類と課金関連ドキュメントの見方に関してをご参照下さい。 コスト">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2018-06-19T21:29:00.000Z">
-<meta property="article:modified_time" content="2025-02-18T05:42:53.988Z">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled001.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled002.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled004.png">
+<meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled003.png">
+<meta property="article:published_time" content="2025-02-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-18T05:42:54.018Z">
 <meta property="article:author" content="Japan">
-<meta property="article:tag" content="Subscription">
-<meta property="article:tag" content="CSP">
+<meta property="article:tag" content="Enterprise Agreement">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled001.png">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
   
@@ -81,7 +85,7 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-AzureSubscriptionManagement/20180620a" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20250218a" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -90,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSP サブスクリプションに関する移行について
+      間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して
     </h1>
   
 
@@ -98,68 +102,43 @@
       <div class="article-share">
         Published: 
         <a href="" class="article-date-single">
-  <time datetime="2018-06-19T21:29:00.000Z" itemprop="datePublished">2018-06-20</time>
+  <time datetime="2025-02-17T15:00:00.000Z" itemprop="datePublished">2025-02-18</time>
 </a>
         
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+feb65838-df7b-5b4c-8d09-6d4825e7cd64%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BCSP+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E7%A7%BB%E8%A1%8C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20180620a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20180620a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20180620a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+f39f4670-c8eb-5682-9c5c-e1e80e318afb%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E9%96%93%E6%8E%A5EA%E5%A5%91%E7%B4%84%E3%81%AE%E3%82%B3%E3%82%B9%E3%83%88%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84IndirectCostDisabled%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20250218a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20250218a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20250218a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20180620a/" data-id="cm7a25swz000x0nlo66zr7o3i" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/" data-id="cm7a25sxg00260nloduil67qw" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>※本トピックは 2018 年 6 月時点の情報です。将来的に情報が変わる可能性がありますのでご了承ください。</p>
-<p>いつも大変お世話になります。Microsoft Azure サポート チームです。</p>
-<p>CSP サブスクリプションに関する移行について、本記事で以下をご案内させていただきます。</p>
-<p>ご参考になりましたら幸いです。</p>
-<ol>
-<li>CSP の概要に関する情報について</li>
-<li>オンプレミス ワークロードから CSP への移行に関する情報について</li>
-<li>従量課金プランから CSP への移行について</li>
-<li>エンタープライズ アグリーメント（以下、EA ）から CSP への移行について</li>
-<li>参考情報</li>
-</ol>
-<h2 id="1-CSP-の概要に関する情報について"><a href="#1-CSP-の概要に関する情報について" class="headerlink" title="1. CSP の概要に関する情報について"></a>1. CSP の概要に関する情報について</h2><p>Azure CSP は、Microsoft パートナー向けのプログラムで、さまざまな Microsoft クラウド サービスへのライセンス チャネルでもあります。</p>
-<p>パートナー様が、お客様に付加価値を提供するための新しい方法であり、エンドツーエンドの関係を築いて、Azure を含むさまざまな Microsoft クラウド サービスの信頼できるアドバイザーになることができます。</p>
-<p>詳細については、以下のドキュメントをご参照ください。</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-overview">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/overview/azure-csp-overview</a></p>
-<h2 id="2-オンプレミス-ワークロードから-CSP-への移行に関する情報について"><a href="#2-オンプレミス-ワークロードから-CSP-への移行に関する情報について" class="headerlink" title="2. オンプレミス ワークロードから CSP への移行に関する情報について"></a>2. オンプレミス ワークロードから CSP への移行に関する情報について</h2><p>オンプレミス ワークロードから CSP への移行については、以下のドキュメントをご参照ください。</p>
-<p>オンプレミス ワークロードを Azure CSP に移行する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-on-premises-to-azure-csp">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-on-premises-to-azure-csp</a></p>
-<h2 id="3-従量課金プランから-CSP-への移行について"><a href="#3-従量課金プランから-CSP-への移行について" class="headerlink" title="3. 従量課金プランから CSP への移行について"></a>3. 従量課金プランから CSP への移行について</h2><p>すでにご利用中の従量課金プランから CSP に移行する場合、事前の評価や、必要に応じ Azure Resource Manager へのアップグレード作業を経て、リソースを移行いただく必要があります。</p>
-<p>詳細については、以下のドキュメントをご参照ください。</p>
-<p>※ Azure In Open から CSP の移行についても同様の手順となります。</p>
-<p>Azure サブスクリプションを従量課金から Azure CSP に移行する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-payg-to-csp">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-payg-to-csp</a></p>
-<p>※ 上記サイトに記載がございます「Azure サブスクリプションの所有権を別のアカウントに譲渡する」につきましては、移行元および移行先サブスクリプションに紐づくディレクトリを統一するための操作となります。</p>
-<h2 id="4-エンタープライズ-アグリーメント（以下、EA）からCSP-への移行について"><a href="#4-エンタープライズ-アグリーメント（以下、EA）からCSP-への移行について" class="headerlink" title="4. エンタープライズ アグリーメント（以下、EA）からCSP への移行について"></a>4. エンタープライズ アグリーメント（以下、EA）からCSP への移行について</h2><p>EA から CSP に移行する場合、対象 EA の種別によって、2 通りの方法がございます。</p>
-<p>また、共通の事項といたしまして、事前の評価や、必要に応じ Azure Resource Manager への</p>
-<p>アップグレード作業を経て、リソースを移行いただく必要があります。</p>
-<p>詳細については、以下のドキュメントをご参照ください。</p>
-<p>Enterprise Agreement から Cloud Solution Provider に Azure サブスクリプションを移行する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-ea-to-csp">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/migration-from-ea-to-csp</a></p>
-<p>パートナー EA から Azure CSP への Azure サブスクリプションの移行</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/partner-ea-to-csp">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/partner-ea-to-csp</a></p>
-<p>顧客の Enterprise Agreement から Azure CSP に Azure サブスクリプションを移行する</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/customer-ea-to-csp">https://docs.microsoft.com/ja-jp/azure/cloud-solution-provider/migration/ea-payg-to-azure-csp/customer-ea-to-csp</a><br>※ 上記 3 サイトに記載がございますサブスクリプション譲渡に関する内容につきましては、移行元および移行先サブスクリプションに紐づくディレクトリを統一するための操作となります。</p>
-<h2 id="5-参考情報"><a href="#5-参考情報" class="headerlink" title="5. 参考情報"></a>5. 参考情報</h2><p>各手順において不明点が生じた場合、お手数をおかけしますが、各担当窓口にお問い合わせくださいますようお願いいたします。</p>
-<p>■ パートナーセンターの操作に関するお問い合わせ</p>
-<p>以下のいずれかの方法でお問い合わせくださいますようお願いいたします。</p>
-<p>[1] パートナーセンターからの問い合わせ方法（電話もしくはメール対応希望の場合）</p>
-<p>1. パートナーセンター （ <a target="_blank" rel="noopener" href="http://partnercenter.microsoft.com)/">http://partnercenter.microsoft.com）</a> のダッシュボードに アクセスいただき、</p>
-<p>左側 [ サービスの要求 ] から [ パートナー センターの要求 ] を選択します。</p>
-<p>2. [ 新しい要求 ] をクリックし、リクエストの作成をお願いします。</p>
-<p>■ 移行対象の各サービスに関する問い合わせ方法</p>
-<p>Azure の管理ポータルより、技術の問い合わせを作成くださいますようお願いいたします。<br>事前の評価や、Azure Resource Manager へのアップグレード作業、各リソースにおける移行可否に関するご質問については技術の問い合わせとなります。</p>
-<p>サポートにお問い合わせする方法について - 4. ご契約後のお問い合わせ方法<br><a target="_blank" rel="noopener" href="https://blogs.msdn.microsoft.com/dsazurejp/2013/10/30/213/">https://blogs.msdn.microsoft.com/dsazurejp/2013/10/30/213/</a></p>
-<p>■ EA ポータルの操作に関する問い合わせ方法</p>
-<p>1. EA ポータル <a target="_blank" rel="noopener" href="https://ea.azure.com/">https://ea.azure.com</a> にサインインし、画面下部の [サポート] から、<br>[エンタープライズポータル] をクリックします。</p>
-<p>2. 画面に表示される内容に沿って、お問い合わせを作成します。</p>
-<p>以上の通りご案内いたします。</p>
-<p>引き続き弊社製品・サービスについてお客様のお役に立てる情報のご案内に努めさせていただきます。</p>
-<p>よろしくお願いします。</p>
+        
+        <div class="toc-wrapper">
+          <h2 id="toc-header" class="toc-header">この記事の内容</h2>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">1. はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%BE%E8%B1%A1%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC"><span class="toc-text">2. 対象のエラー</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%83%B3%E5%AE%9A%E3%81%95%E3%82%8C%E3%82%8B%E5%8E%9F%E5%9B%A0%E3%81%A8%E5%AF%BE%E5%BF%9C"><span class="toc-text">3. 想定される原因と対応</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E6%9C%89%E5%8A%B9%E5%BE%8C%E3%81%AE%E8%A3%9C%E8%B6%B3"><span class="toc-text">4. パートナーマークアップ有効後の補足</span></a></li></ol>
+        </div>
+          
+        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご契約された間接Enterprise Agreement (EA)にて、EA のご契約者よりAzureポータルからコストを確認した際を想定した内容となります。<br>間接EA契約を含む各Azureの課金アカウントの概要については、<a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/">Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して</a>をご参照下さい。</p>
+<p>コスト情報参照には、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes">スコープごとに必要となる権限</a>を保有している必要がございます。<br>表題のエラーに特記しますが、前提としてコスト情報を参照する権限は、利用するスコープに応じて必要となります事予めご了承ください。</p>
+<h2 id="2-対象のエラー"><a href="#2-対象のエラー" class="headerlink" title="2. 対象のエラー"></a>2. 対象のエラー</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/cost-management-error-codes#indirectcostdisabled">IndirectCostDisabled</a><br>Azureポータルの画面によっては、以下の様なメッセージが表示されます。</p>
+<blockquote>
+<p><strong>“Cost Management はプロバイダーによって有効にされていない。課金アカウント(加入契約)の価格を公開するには、プロバイダーにお問い合わせください。”</strong><br><img src="P05_IndirectCostDisabled001.png"></p>
+</blockquote>
+<blockquote>
+<p><strong>“価格は、この課金アカウント (加入契約) でパートナーによって公開されていないため、請求の詳細を表示できません。パートナーにお問い合わせください。”</strong><br><img src="P05_IndirectCostDisabled002.png"></p>
+</blockquote>
+<h2 id="3-想定される原因と対応"><a href="#3-想定される原因と対応" class="headerlink" title="3. 想定される原因と対応"></a>3. 想定される原因と対応</h2><p>間接EA契約の<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>が無効となっている事が想定されます。<br>この場合、間接EA契約のご契約先の<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">パートナー様</a> と <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を、パートナー管理者の権限を持つ方から確認と有効が可能かご相談下さい。<br>もし状況に相違なく<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を有効化できましたら対象エラーは解消されます。</p>
+<p>またご契約先のパートナー様は、EAロールのエンタープライズ管理者より<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセス</a>後、以下の様な[設定 - プロパティ]のパートナー名よりご確認する事が可能でございます。</p>
+<blockquote>
+<p>[設定 - プロパティ]のパートナー名<br><img src="P05_IndirectCostDisabled004.png"></p>
+</blockquote>
+<h2 id="4-パートナーマークアップ有効後の補足"><a href="#4-パートナーマークアップ有効後の補足" class="headerlink" title="4. パートナーマークアップ有効後の補足"></a>4. パートナーマークアップ有効後の補足</h2><p>パートナーマークアップのみ有効の場合、EAロールの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a> がコスト情報を閲覧できる状態となります。<br>Azureロールの所有者やEAロールのアカウント所有者でもコスト情報を確認出来る様にする場合は、EAロールのエンタープライズ管理者から<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセスし</a>、以下の様な<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/assign-access-acm-data#enable-ea-access-to-costs">アカウント所有者は料金を表示できる</a>を「オン」にする必要があります。</p>
+<blockquote>
+<p>ポリシー設定画面に関して<br><img src="P05_IndirectCostDisabled003.png"></p>
+</blockquote>
+<p>※ 2025 年 2 月 18 日時点の内容となります。</p>
 
       
       
@@ -173,10 +152,10 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/CSP/" rel="tag">CSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li></ul>
 
         
-        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20180620a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20250218a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
         
     </footer>
   </div>
@@ -184,19 +163,10 @@
     
 <nav id="article-nav">
   
-    <a href="../20180627a/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">次の記事</strong>
-      <div class="article-nav-title">
-        
-          CSP で Azure サブスクリプションを作成してから利用開始するまで
-        
-      </div>
-    </a>
   
-  
-    <a href="../20180614a/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../20250212a/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前の記事</strong>
-      <div class="article-nav-title">Azure の EA 契約で MC (Azure 年額コミットメント) とは別請求となるサービスについて</div>
+      <div class="article-nav-title">Azureにおける請求およびサブスクリプション管理 サポートの対応範囲</div>
     </a>
   
 </nav>
@@ -215,7 +185,7 @@
       <ul>
         
           <li>
-            <a href="../20250218a/">間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して</a>
+            <a href="">間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して</a>
           </li>
         
           <li>
