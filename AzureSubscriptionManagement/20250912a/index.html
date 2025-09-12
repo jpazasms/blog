@@ -4,20 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>仮想マシンの課金の仕組み | Japan Azure 課金 サブスクリプション サポート ブログ</title>
+  <title>Azure 間接EA契約 初期エンタープライズ管理者にてアクティブ化ができない問題と対応に関して | Japan Azure 課金 サブスクリプション サポート ブログ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Azure にて人気のあるサービスの 1 つに「仮想マシン」があります。本トピックでは、この様な仮想マシンをご利用の際に発生する課金について説明をいたします。 仮想マシンを構成する要素まず、仮想マシンの各要素説明すると、仮想マシンは下記のような組み合わせで構成されています。  コンピュート要素 (CPU, メモリ , ハードウェア要素) ディスク要素 ネットワーク要素  これらが組み合わさり、仮想">
+  <meta name="description" content="1. はじめにAzure の間接 EA 契約において初期 エンタープライズ管理者が、EA契約をアクティブ化ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の UPN（User Principal Name）が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。 2. 初期エンター">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仮想マシンの課金の仕組み">
-<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/index.html">
+<meta property="og:title" content="Azure 間接EA契約 初期エンタープライズ管理者にてアクティブ化ができない問題と対応に関して">
+<meta property="og:url" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250912a/index.html">
 <meta property="og:site_name" content="Japan Azure 課金 サブスクリプション サポート ブログ">
-<meta property="og:description" content="Azure にて人気のあるサービスの 1 つに「仮想マシン」があります。本トピックでは、この様な仮想マシンをご利用の際に発生する課金について説明をいたします。 仮想マシンを構成する要素まず、仮想マシンの各要素説明すると、仮想マシンは下記のような組み合わせで構成されています。  コンピュート要素 (CPU, メモリ , ハードウェア要素) ディスク要素 ネットワーク要素  これらが組み合わさり、仮想">
+<meta property="og:description" content="1. はじめにAzure の間接 EA 契約において初期 エンタープライズ管理者が、EA契約をアクティブ化ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の UPN（User Principal Name）が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。 2. 初期エンター">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2015-01-08T18:41:00.000Z">
-<meta property="article:modified_time" content="2025-09-12T07:50:08.683Z">
+<meta property="article:published_time" content="2025-09-11T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-12T07:50:08.722Z">
 <meta property="article:author" content="Japan">
-<meta property="article:tag" content="Subscription">
-<meta property="article:tag" content="Virtual Machine">
+<meta property="article:tag" content="Enterprise Agreement">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
@@ -81,7 +80,7 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-AzureSubscriptionManagement/20150109a" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AzureSubscriptionManagement/20250912a" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -90,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      仮想マシンの課金の仕組み
+      Azure 間接EA契約 初期エンタープライズ管理者にてアクティブ化ができない問題と対応に関して
     </h1>
   
 
@@ -98,14 +97,14 @@
       <div class="article-share">
         Published: 
         <a href="" class="article-date-single">
-  <time datetime="2015-01-08T18:41:00.000Z" itemprop="datePublished">2015-01-09</time>
+  <time datetime="2025-09-11T15:00:00.000Z" itemprop="datePublished">2025-09-12</time>
 </a>
         
         
         
-        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+aefe488f-6652-5bcc-bfb0-925c8cb97af7%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+a149fb86-b7b4-53e5-bb7e-fdc175d84e5a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+%E9%96%93%E6%8E%A5EA%E5%A5%91%E7%B4%84+%E5%88%9D%E6%9C%9F%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA%E7%AE%A1%E7%90%86%E8%80%85%E3%81%AB%E3%81%A6%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E5%8C%96%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C%E3%81%A8%E5%AF%BE%E5%BF%9C%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20250912a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20250912a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20250912a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/" data-id="cmfgjex5g00040np77s2iat53" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250912a/" data-id="cmfgjex6b00230np7fsp1bibn" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -113,35 +112,16 @@
         
         <div class="toc-wrapper">
           <h2 id="toc-header" class="toc-header">この記事の内容</h2>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0"><span class="toc-text">仮想マシンを構成する要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%88%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-text">1. コンピュート要素について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-text">2. ディスク要素について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-text">3. ネットワーク要素について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%94%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1"><span class="toc-text">ご参考情報</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">1. はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9D%E6%9C%9F%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA%E7%AE%A1%E7%90%86%E8%80%85%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6"><span class="toc-text">2. 初期エンタープライズ管理者に関して</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AA%A4%E3%81%A3%E3%81%9F%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%83%BBUPN%E3%81%8C%E3%81%AA%E3%81%84%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%97%E3%81%9F%E7%B5%90%E6%9E%9C%E3%80%81Azure-Portal-%E3%81%B8%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E6%99%82%E3%81%AB-EA-%E5%A5%91%E7%B4%84%E3%81%AE%E8%AA%B2%E9%87%91%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%9A%E3%80%81EA-%E5%A5%91%E7%B4%84%E3%81%8C%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%BF%9C"><span class="toc-text">3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応</span></a></li></ol>
         </div>
           
-        <p>Azure にて人気のあるサービスの 1 つに「仮想マシン」があります。<br>本トピックでは、この様な仮想マシンをご利用の際に発生する課金について説明をいたします。</p>
-<h2 id="仮想マシンを構成する要素"><a href="#仮想マシンを構成する要素" class="headerlink" title="仮想マシンを構成する要素"></a>仮想マシンを構成する要素</h2><p>まず、仮想マシンの各要素説明すると、仮想マシンは下記のような組み合わせで構成されています。</p>
-<ol>
-<li>コンピュート要素 (CPU, メモリ , ハードウェア要素)</li>
-<li>ディスク要素</li>
-<li>ネットワーク要素</li>
-</ol>
-<p>これらが組み合わさり、仮想マシン機能を構築していますが、各要素について、順番に課金の仕組みについて説明をします。</p>
-<h2 id="1-コンピュート要素について"><a href="#1-コンピュート要素について" class="headerlink" title="1. コンピュート要素について"></a>1. コンピュート要素について</h2><p>コンピュートについては、 CPU やメモリを割り当てた時点から課金が発生するもので料金は下記の通りです。</p>
-<p>・ <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/">Virtual Machines の料金詳細</a></p>
-<p>コンピュート部分の課金の基本的な考え方は、「 CPU やメモリなどリソースを割り当てて動作」がベースとなります。そのため、リソースを割り当てている限りは課金は発生し続けます。また課金で、Windows と CentOS で料金が異なるのは、Windows は Windows OSのライセンス料が含まれるためです。<br>仮想マシンの課金は時間ごとに課金され、割り当てがされている時間の分だけ課金が発生します。課金を停止するにはポータルから停止し、「割り当て解除済み」状態にすることで、 CPU およびメモリが解放され課金を停止することができます。<br>※ ご参考：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/states-billing#power-states-and-billing">電源の状態と課金</a></p>
-<p>また、SQL Server が既にインストールされた仮想マシンも作成できますが、こちらはコンピュートの料金とは別に SQL Server の課金も発生します。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/sql-server-enterprise/">SQL Server Enterprise Virtual Machines の料金</a></p>
-<h2 id="2-ディスク要素について"><a href="#2-ディスク要素について" class="headerlink" title="2. ディスク要素について"></a>2. ディスク要素について</h2><p>仮想マシンの OS イメージが保存されたディスクはドライブに割り当てがされ、仮想ディスクファイル (VHD ファイル) が利用されています。<br>VHD ディスクはストレージ上に保存されているため、ディスクの利用料金はストレージ料金として別途計上されることになります。料金については、以下のページをご参照ください。<br>なおマネージドディスクの課金は、仮想マシンが「割り当て解除済み」状態となっても発生し続けますので、ご注意下さい。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/">Managed Disks の価格</a>  </p>
-<h2 id="3-ネットワーク要素について"><a href="#3-ネットワーク要素について" class="headerlink" title="3. ネットワーク要素について"></a>3. ネットワーク要素について</h2><p>仮想マシンで外部インターネット環境を通して通信をした際に、以下の 2 つの種類の通信が発生します。</p>
-<ul>
-<li>  インバウンド通信 (外部から Azure 内部へ)</li>
-<li>  アウトバウンド通信 ( Azure 内部から外部へ)</li>
-</ul>
-<p>インバウンドについては Azure では無料となりますが、アウトバウンドについては利用量に応じて課金が発生します。<br>これは、通信総量のバイト単位で課金が発生します。詳細については下記のデータ通信量のドキュメントをご参考ください。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/bandwidth/">帯域幅 の価格</a></p>
-<p>またパブリックIPをご利用される際には、下記費用も発生いたします。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/">IP アドレス の価格</a></p>
-<h2 id="ご参考情報"><a href="#ご参考情報" class="headerlink" title="ご参考情報"></a>ご参考情報</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/vm-usage">Azure 仮想マシンの使用量について</a></p>
-<p>–<br>Azure サポートチーム</p>
+        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p>Azure の間接 EA 契約において初期 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a>が、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">EA契約をアクティブ化</a>ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/plan-connect-userprincipalname">UPN（User Principal Name）</a>が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。</p>
+<h2 id="2-初期エンタープライズ管理者に関して"><a href="#2-初期エンタープライズ管理者に関して" class="headerlink" title="2. 初期エンタープライズ管理者に関して"></a>2. 初期エンタープライズ管理者に関して</h2><p>前提として<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">Azure Enterprise Agreement ロール</a> は、UPNでの登録が必要となります。<br>基本的には、UPNは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/howto-troubleshoot-upn-changes#upns-in-microsoft-entra-id">ユーザーアカウントがAzureポータルにサインイン時に入力するもの</a>となります。<br>LSP様へのご連絡前に EntraID 管理者の方へご確認いただく事をお勧めします。</p>
+<p>Azure EA 契約ご利用開始時、EA 契約に登録された「Notices Contact and Online Admin」（SCE 契約など契約種別によっては「Azure Services Administrator」）が、初期エンタープライズ管理者として登録されます。</p>
+<p>問題なく登録されておりました場合、Azure ポータルの[コストの管理と請求]にて、該当<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">課金スコープ</a>を選択の上、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">アクティブ化</a>を実行いただきます。<br>この段階において、UPN が存在しないアカウントが 「Notices Contact and Online Admin」（SCE 契約など契約種別によっては「Azure Services Administrator」）登録されている場合、Azure Portal へログイン時に EA 契約の課金スコープが表示されない = EA 契約において Azure 利用開始ができないという状況となります。</p>
+<h2 id="3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応"><a href="#3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応" class="headerlink" title="3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応"></a>3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応</h2><p>UPN が存在するアカウントを準備いただきまして、お客様から間接 EA 契約を締結された<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様へ<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#if-your-enterprise-administrator-cant-help-you">連絡先情報変更要求 (CICR) プロセス</a>を使用して「Notices Contact and Online Admin」（SCE契約など契約種別によっては「Azure Services Administrator」）を適切なアカウントへ変更する申請をいただきます。</p>
+<p>そしてこの CICR プロセスによって、新しく読み取り専用のエンタープライズ管理者が登録されます。<br>この状態ではアカウント所有者追加などの操作が出来ませんので、Azure 課金サポートへご依頼いただいた後、読み取り専用ではないエンタープライズ管理者へ変更させて頂く対応となります。</p>
+<p>※ 2025 年 09 月 12 日時点の内容となります。</p>
 
       
       
@@ -155,10 +135,10 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Subscription/" rel="tag">Subscription</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Virtual-Machine/" rel="tag">Virtual Machine</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Enterprise-Agreement/" rel="tag">Enterprise Agreement</a></li></ul>
 
         
-        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20150109a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        <a href="https://github.com/jpazasms/blog/edit/master/articles/AzureSubscriptionManagement/20250912a.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
         
     </footer>
   </div>
@@ -166,19 +146,10 @@
     
 <nav id="article-nav">
   
-    <a href="../20150521a/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">次の記事</strong>
-      <div class="article-nav-title">
-        
-          オンライン契約からエンタープライズ契約（EA）への移行方法について
-        
-      </div>
-    </a>
   
-  
-    <a href="../20131030a/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../20250218a/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前の記事</strong>
-      <div class="article-nav-title">Azureサポートにお問い合わせする方法について</div>
+      <div class="article-nav-title">間接EA契約のコストが表示されないIndirectCostDisabledエラーに関して</div>
     </a>
   
 </nav>
@@ -197,7 +168,7 @@
       <ul>
         
           <li>
-            <a href="../20250912a/">Azure 間接EA契約 初期エンタープライズ管理者にてアクティブ化ができない問題と対応に関して</a>
+            <a href="">Azure 間接EA契約 初期エンタープライズ管理者にてアクティブ化ができない問題と対応に関して</a>
           </li>
         
           <li>
