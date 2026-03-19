@@ -14,10 +14,10 @@
 <meta property="og:description" content="小規模なコスト データセットを取得する にてご紹介されておりますGenerate Cost Details Reportに関して、ご検討開始時に、ご利用イメージを掴んで頂くため、クライアントからのPowerShellによる実行サンプルを用いてご紹介いたします。また上記ドキュメントに各種ご留意事項やパラメータの説明等が説明ございますので、併せてご参照下さい。 なお今回ご紹介させて頂くものはあくまでも">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-12-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.214Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.882Z">
 <meta property="article:author" content="Japan">
-<meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Azure REST API">
+<meta property="article:tag" content="Subscription">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -56,7 +56,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -105,7 +105,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+b01e776c-cdef-5c97-b97d-8f9906dd522e%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BGenerate+Cost+Details+Report+API+%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20231212a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20231212a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20231212a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231212a/" data-id="cmj6pli5j001r0nqp2giob45o" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231212a/" data-id="cuidOsjPfbxChXCo8dmdV5xEI" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -116,10 +116,10 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%82%B3%E3%82%B9%E3%83%88%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%81%AE%E8%A6%81%E6%B1%82"><span class="toc-text">1.コストレポート作成の要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E3%82%B3%E3%82%B9%E3%83%88%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%A0%BC%E7%B4%8D%E5%85%88%E3%81%AE%E7%A2%BA%E8%AA%8D"><span class="toc-text">2.コストレポート格納先の確認</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E3%82%B3%E3%82%B9%E3%83%88%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%A0%BC%E7%B4%8D%E5%85%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89"><span class="toc-text">3.コストレポート格納先のダウンロード</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%94%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1"><span class="toc-text">ご参考情報</span></a></li></ol>
         </div>
           
-        <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand">小規模なコスト データセットを取得する</a> にてご紹介されております<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP">Generate Cost Details Report</a>に関して、ご検討開始時に、ご利用イメージを掴んで頂くため、クライアントからのPowerShellによる実行サンプルを用いてご紹介いたします。<br>また上記ドキュメントに各種ご留意事項やパラメータの説明等が説明ございますので、併せてご参照下さい。</p>
+        <p><a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand">小規模なコスト データセットを取得する</a> にてご紹介されております<a href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP">Generate Cost Details Report</a>に関して、ご検討開始時に、ご利用イメージを掴んで頂くため、クライアントからのPowerShellによる実行サンプルを用いてご紹介いたします。<br>また上記ドキュメントに各種ご留意事項やパラメータの説明等が説明ございますので、併せてご参照下さい。</p>
 <p>なお今回ご紹介させて頂くものはあくまでもサンプルとなりますため、利用される際にはご要件に合わせて適宜修正の上、ご活用下さい。</p>
-<div class="alert is-info"><p class="alert-title">Note</p><p>従量課金制、Visual Studio サブスクリプションに関しては現状こちらの Generate Cost Details Report API はサポートされていません。 詳しくは、 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-usage-details-legacy-customer">従量課金制サブスクリプションのコスト詳細を取得する</a> をご参照下さい。 なおこちらのページに告知されております通り、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/consumption/usage-details/list?view=rest-consumption-2023-05-01&tabs=HTTP">Usage Details - List</a> に関して記事発行時点では未定となりますが、将来的な廃止が予告されております。</p></div>
-<div class="alert is-info"><p class="alert-title">Note</p><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand#chunk-your-requests">要求をチャンクにする</a>の通り、データが月単位で 2 GB (約 200 万行) を超える場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/tutorial-export-acm-data?tabs=azure-portal">エクスポート</a> の方法が推奨されております。</p></div>
+<div class="alert is-info"><p class="alert-title">Note</p><p>従量課金制、Visual Studio サブスクリプションに関しては現状こちらの Generate Cost Details Report API はサポートされていません。 詳しくは、 <a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-usage-details-legacy-customer">従量課金制サブスクリプションのコスト詳細を取得する</a> をご参照下さい。 なおこちらのページに告知されております通り、<a href="https://learn.microsoft.com/en-us/rest/api/consumption/usage-details/list?view=rest-consumption-2023-05-01&tabs=HTTP">Usage Details - List</a> に関して記事発行時点では未定となりますが、将来的な廃止が予告されております。</p></div>
+<div class="alert is-info"><p class="alert-title">Note</p><p><a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand#chunk-your-requests">要求をチャンクにする</a>の通り、データが月単位で 2 GB (約 200 万行) を超える場合、<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/tutorial-export-acm-data?tabs=azure-portal">エクスポート</a> の方法が推奨されております。</p></div>
 <h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>Generate Cost Details Report API は、以下の大きく3つのステップでご利用いたします。 </p>
 <ol>
 <li><p>コストレポート作成の要求<br>コスト取得対象のスコープを指定したURIに対して、要求内容をBodyとしてPOSTリクエストにより、コストレポート作成を要求します。</p>
@@ -130,8 +130,8 @@
 </li>
 </ol>
 <p>続いて各ステップごとの詳細をご紹介いたします。 こちらのサンプルでは、”サブスクリプション” スコープにて、実施した例をご紹介いたします。 </p>
-<div class="alert is-info"><p class="alert-title">Note</p><p>実行アカウントは、対象のサブスクリプションに対して、権限を有している事が前提となります。 権限に関しては、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes#azure-rbac-scopes">Azure RBAC のスコープ</a> をご参照下さい。</p></div>
-<h2 id="1-コストレポート作成の要求"><a href="#1-コストレポート作成の要求" class="headerlink" title="1.コストレポート作成の要求"></a>1.コストレポート作成の要求</h2><p>1-1. 対象のテナントとサブスクリプションIDを修正の上、以下コマンドにて Azure にアクセスします。<br>※ 関連：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/get-subscription-tenant-id">Azure portal でサブスクリプションとテナントの ID を取得する</a></p>
+<div class="alert is-info"><p class="alert-title">Note</p><p>実行アカウントは、対象のサブスクリプションに対して、権限を有している事が前提となります。 権限に関しては、<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes#azure-rbac-scopes">Azure RBAC のスコープ</a> をご参照下さい。</p></div>
+<h2 id="1-コストレポート作成の要求"><a href="#1-コストレポート作成の要求" class="headerlink" title="1.コストレポート作成の要求"></a>1.コストレポート作成の要求</h2><p>1-1. 対象のテナントとサブスクリプションIDを修正の上、以下コマンドにて Azure にアクセスします。<br>※ 関連：<a href="https://learn.microsoft.com/ja-jp/azure/azure-portal/get-subscription-tenant-id">Azure portal でサブスクリプションとテナントの ID を取得する</a></p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Connect-AzAccount</span> <span class="literal">-tenant</span> <span class="string">&quot;＜テナント ID ＞&quot;</span> <span class="literal">-Subscription</span> <span class="string">&quot;＜サブスクリプション ID ＞&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>1-2.  以下のコマンドにてリクエストための、サブスクリプションID、Bearerトークン、コンテンツタイプを指定します。</p>
@@ -139,7 +139,7 @@
 
 <p>1-3. Generate Cost Details Report API のスコープとして、サブスクリプションを指定します。</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$generateUrl</span> = <span class="string">&quot;https://management.azure.com/subscriptions/&quot;</span> + <span class="variable">$subscriptionId</span> + <span class="string">&quot;/providers/Microsoft.CostManagement/generateCostDetailsReport?api-version=2023-08-01&quot;</span></span><br></pre></td></tr></table></figure>
-<p>1-4. メソッドとしてPOSTを指定し、Bodyとして”ActualCost”, “timePeriod”（取得する対象の期間に修正下さい。）をJSON形式にて指定します。<br>※ 関連：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand#actual-cost-versus-amortized-cost">ActualCostとAmortizedCost に関して</a> 、 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP#costdetailstimeperiod">TimePeriodについて</a></p>
+<p>1-4. メソッドとしてPOSTを指定し、Bodyとして”ActualCost”, “timePeriod”（取得する対象の期間に修正下さい。）をJSON形式にて指定します。<br>※ 関連：<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/get-small-usage-datasets-on-demand#actual-cost-versus-amortized-cost">ActualCostとAmortizedCost に関して</a> 、 <a href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP#costdetailstimeperiod">TimePeriodについて</a></p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$generateMethod</span> = <span class="string">&quot;POST&quot;</span></span><br><span class="line"><span class="variable">$requestBody</span> = <span class="selector-tag">@</span>&#123;</span><br><span class="line">    <span class="string">&quot;metric&quot;</span>= <span class="string">&quot;ActualCost&quot;</span>;</span><br><span class="line">    <span class="string">&quot;timePeriod&quot;</span>= <span class="selector-tag">@</span>&#123;</span><br><span class="line">        <span class="string">&quot;start&quot;</span>= <span class="string">&quot;yyyy-mm-dd&quot;</span>;</span><br><span class="line">        <span class="string">&quot;end&quot;</span>= <span class="string">&quot;yyyy-mm-dd&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="variable">$requestBody</span> = <span class="variable">$requestBody</span> | <span class="built_in">ConvertTo-Json</span></span><br></pre></td></tr></table></figure>
 <p>1-5. 指定した各値を元に、コストレポート作成の要求します。</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$generateResponse</span> = <span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$generateUrl</span> <span class="literal">-Method</span> <span class="variable">$generateMethod</span> <span class="literal">-Headers</span> <span class="variable">$requestHeader</span> <span class="literal">-Body</span> <span class="variable">$requestBody</span> <span class="literal">-ContentType</span> <span class="variable">$contenttype</span></span><br></pre></td></tr></table></figure>
@@ -157,9 +157,9 @@
 <p>PowerShellで取得される場合は、ステップ2で取得したコストレポート格納先のURLを取得して、任意の&lt;パス&gt;（例：C:\Users&lt;ユーザ&gt;\CostRport.csv ）にコストレポートをダウンロードします。</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$downloadUrl</span> = <span class="built_in">Write-Output</span> <span class="variable">$operatioResponse</span>.manifest.blobs.blobLink</span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$downloadUrl</span> <span class="literal">-OutFile</span> <span class="string">&quot;&lt;パス&gt;&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>以上により、コストレポートを取得する事が出来ます。 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/understand-usage-details-fields">コストレポートの各フィールドの説明に関して</a> に取得されたコストレポートのフィールドの説明がございますので、必要に応じてご参照下さい。</p>
+<p>以上により、コストレポートを取得する事が出来ます。 <a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/automate/understand-usage-details-fields">コストレポートの各フィールドの説明に関して</a> に取得されたコストレポートのフィールドの説明がございますので、必要に応じてご参照下さい。</p>
 <p>課金サポートでは、大変恐れ入りますがお客様のご要件に合うようにスクリプトの作り込みはご対応しておりません事、予めご了承下さい。<br>関連ドキュメントの確認やAPIのエラー調査はご支援させて頂ければと思いますので、何卒ご理解とご協力の程お願い申し上げます。</p>
-<h2 id="ご参考情報"><a href="#ご参考情報" class="headerlink" title="ご参考情報"></a>ご参考情報</h2><p>・ 関連する過去記事 ：<a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/">Azure REST API を使ってみよう</a><br>・ 想定されるエラーに関して： <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP#generatecostdetailsreporterrorresponse">GenerateCostDetailsReportErrorResponse</a>、 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/get-operation-results?view=rest-cost-management-2023-08-01&tabs=HTTP#errorresponse">GetOperationResultsErrorResponse</a><br>・ <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/cost-management-error-codes">一般的な Cost Management のトラブルシューティング</a></p>
+<h2 id="ご参考情報"><a href="#ご参考情報" class="headerlink" title="ご参考情報"></a>ご参考情報</h2><p>・ 関連する過去記事 ：<a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181113a/">Azure REST API を使ってみよう</a><br>・ 想定されるエラーに関して： <a href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/create-operation?view=rest-cost-management-2023-08-01&tabs=HTTP#generatecostdetailsreporterrorresponse">GenerateCostDetailsReportErrorResponse</a>、 <a href="https://learn.microsoft.com/ja-jp/rest/api/cost-management/generate-cost-details-report/get-operation-results?view=rest-cost-management-2023-08-01&tabs=HTTP#errorresponse">GetOperationResultsErrorResponse</a><br>・ <a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/cost-management-error-codes">一般的な Cost Management のトラブルシューティング</a></p>
 <p>※ 2023 年 12 月 12 日時点の内容となります。</p>
 
       
@@ -280,7 +280,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

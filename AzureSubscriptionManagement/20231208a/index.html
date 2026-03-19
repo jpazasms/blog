@@ -18,10 +18,10 @@
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereProgramRevised.png">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereSelectEA.png">
 <meta property="article:published_time" content="2023-12-07T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.212Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.880Z">
 <meta property="article:author" content="Japan">
-<meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Enterprise Agreement">
+<meta property="article:tag" content="Subscription">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/CalWhereFAQ.png">
   
@@ -43,7 +43,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -61,7 +61,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -110,17 +110,17 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+9fb96251-08f7-5dba-9794-c2ff6c947054%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%96%99%E9%87%91%E8%A8%88%E7%AE%97%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AB%E3%81%A6+Enterprise+Agreement+%E3%81%AE%E4%BE%A1%E6%A0%BC%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20231208a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20231208a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20231208a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/" data-id="cmj6pli5i001p0nqpfr30gnuq" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/" data-id="cuidMVaCafHm2rM0Sj5S9Xfp0" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>Enterprise Agreement (EA)にてAzureをご利用されているお客様が、<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>をご利用された際に、実際のコストと金額表示が異なる事があるかもしれません。<br>料金計算ツールは、デフォルトで Microsoft Customer Agreement (MCA)と言うWebから直接Azureにサインアップされた従量課金サブスクリプション向けの価格が表示されます。<br>この様な事から EA での価格を料金計算ツールで表示させるためにはどのようにすればいいのかをご紹介いたします。</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>Enterprise Agreement (EA) の金額を表示させるためには権限を有したアカウントより確認される必要がございます。<br>多くの日本のお客様は、<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご購入される「間接 Enterprise Agreement」をご利用されており、この場合、EAロールのエンタープライズ管理者、部門管理者、アカウント所有者のどれかを保有している必要がございます。<br>※ EAロールに関する関連ドキュメント：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">エンタープライズ契約のロール</a></p>
-<p>またEnterprise Agreement ライセンス プログラム オプションを使用して見積もりを表示するには、DA ビューの料金と AO ビューの料金の両方を有効にする必要があります。設定の変更が有効になるまで、1 日から 2 日かかります。<br>※ DA / AO ビューに関する関連ドキュメント：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#view-and-manage-enrollment-policies">登録ポリシーを表示して管理する</a></p>
-<p>上記説明は、以下<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>の「よくあるご質問」からもご確認できますので、併せてご参照下さい。</p>
+        <h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>Enterprise Agreement (EA)にてAzureをご利用されているお客様が、<a href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>をご利用された際に、実際のコストと金額表示が異なる事があるかもしれません。<br>料金計算ツールは、デフォルトで Microsoft Customer Agreement (MCA)と言うWebから直接Azureにサインアップされた従量課金サブスクリプション向けの価格が表示されます。<br>この様な事から EA での価格を料金計算ツールで表示させるためにはどのようにすればいいのかをご紹介いたします。</p>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>Enterprise Agreement (EA) の金額を表示させるためには権限を有したアカウントより確認される必要がございます。<br>多くの日本のお客様は、<a href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご購入される「間接 Enterprise Agreement」をご利用されており、この場合、EAロールのエンタープライズ管理者、部門管理者、アカウント所有者のどれかを保有している必要がございます。<br>※ EAロールに関する関連ドキュメント：<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">エンタープライズ契約のロール</a></p>
+<p>またEnterprise Agreement ライセンス プログラム オプションを使用して見積もりを表示するには、DA ビューの料金と AO ビューの料金の両方を有効にする必要があります。設定の変更が有効になるまで、1 日から 2 日かかります。<br>※ DA &#x2F; AO ビューに関する関連ドキュメント：<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#view-and-manage-enrollment-policies">登録ポリシーを表示して管理する</a></p>
+<p>上記説明は、以下<a href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>の「よくあるご質問」からもご確認できますので、併せてご参照下さい。</p>
 <p><img src="CalWhereFAQ.png"></p>
-<h2 id="Enterprise-Agreement-の価格を表示する方法"><a href="#Enterprise-Agreement-の価格を表示する方法" class="headerlink" title="Enterprise Agreement の価格を表示する方法"></a>Enterprise Agreement の価格を表示する方法</h2><p>続いて以下1. - 3. にて<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>での手順をご紹介いたします。<br>※ 2023 年 12 月時点での画面を元に作成しております。最新の画面とは異なる可能性もございます事ご了承下さい。</p>
+<h2 id="Enterprise-Agreement-の価格を表示する方法"><a href="#Enterprise-Agreement-の価格を表示する方法" class="headerlink" title="Enterprise Agreement の価格を表示する方法"></a>Enterprise Agreement の価格を表示する方法</h2><p>続いて以下1. - 3. にて<a href="https://azure.microsoft.com/ja-jp/pricing/calculator/">料金計算ツール</a>での手順をご紹介いたします。<br>※ 2023 年 12 月時点での画面を元に作成しております。最新の画面とは異なる可能性もございます事ご了承下さい。</p>
 <h3 id="１-料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。"><a href="#１-料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。" class="headerlink" title="１.料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。"></a>１.料金計算ツールの上部の「ログイン」をクリックして、対象のアカウントよりログイン下さい。</h3><p><img src="CalWhereToLogin.png"></p>
 <h3 id="2-料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise-Agreement-EA-」をクリックして下さい。"><a href="#2-料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise-Agreement-EA-」をクリックして下さい。" class="headerlink" title="2.料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise Agreement (EA)」をクリックして下さい。"></a>2.料金計算ツールの下部の「プログラムおよびオファーを選択」より「Enterprise Agreement (EA)」をクリックして下さい。</h3><p><img src="CalWhereProgramRevised.png"></p>
 <h3 id="3-表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。"><a href="#3-表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。" class="headerlink" title="3.表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。"></a>3.表示される「契約を選ぶ」の画面から対象のご契約を選択下さい。</h3><p><img src="CalWhereSelectEA.png"></p>
@@ -245,7 +245,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

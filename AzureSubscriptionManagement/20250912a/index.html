@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. はじめにAzure の間接 EA 契約において初期 エンタープライズ管理者が、EA契約をアクティブ化ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の UPN（User Principal Name）が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。 2. 初期エンター">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2025-09-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.215Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.883Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Enterprise Agreement">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -55,7 +55,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -104,7 +104,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+a149fb86-b7b4-53e5-bb7e-fdc175d84e5a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+%E9%96%93%E6%8E%A5EA%E5%A5%91%E7%B4%84+%E5%88%9D%E6%9C%9F%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA%E7%AE%A1%E7%90%86%E8%80%85%E3%81%AB%E3%81%A6%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E5%8C%96%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%95%8F%E9%A1%8C%E3%81%A8%E5%AF%BE%E5%BF%9C%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20250912a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20250912a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20250912a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250912a/" data-id="cmj6pli5n00210nqphidr32pv" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250912a/" data-id="cuidRayQnT9l4whETNd9kaqF1" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -115,11 +115,11 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">1. はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9D%E6%9C%9F%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA%E7%AE%A1%E7%90%86%E8%80%85%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6"><span class="toc-text">2. 初期エンタープライズ管理者に関して</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AA%A4%E3%81%A3%E3%81%9F%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%83%BBUPN%E3%81%8C%E3%81%AA%E3%81%84%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%97%E3%81%9F%E7%B5%90%E6%9E%9C%E3%80%81Azure-Portal-%E3%81%B8%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E6%99%82%E3%81%AB-EA-%E5%A5%91%E7%B4%84%E3%81%AE%E8%AA%B2%E9%87%91%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%9A%E3%80%81EA-%E5%A5%91%E7%B4%84%E3%81%8C%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E5%BF%9C"><span class="toc-text">3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応</span></a></li></ol>
         </div>
           
-        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p>Azure の間接 EA 契約において初期 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a>が、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">EA契約をアクティブ化</a>ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/plan-connect-userprincipalname">UPN（User Principal Name）</a>が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。</p>
-<h2 id="2-初期エンタープライズ管理者に関して"><a href="#2-初期エンタープライズ管理者に関して" class="headerlink" title="2. 初期エンタープライズ管理者に関して"></a>2. 初期エンタープライズ管理者に関して</h2><p>前提として<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">Azure Enterprise Agreement ロール</a> は、UPNでの登録が必要となります。<br>基本的には、UPNは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/howto-troubleshoot-upn-changes#upns-in-microsoft-entra-id">ユーザーアカウントがAzureポータルにサインイン時に入力するもの</a>となります。<br>LSP様へのご連絡前に EntraID 管理者の方へご確認いただく事をお勧めします。</p>
+        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p>Azure の間接 EA 契約において初期 <a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a>が、<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">EA契約をアクティブ化</a>ができない場合、よくある原因として、職場または学校アカウントの Microsoft EntraID の <a href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/plan-connect-userprincipalname">UPN（User Principal Name）</a>が存在しないアカウントを登録している場合が大半となっております。本事象に関しまして主なポイントをご解説させていただきます。</p>
+<h2 id="2-初期エンタープライズ管理者に関して"><a href="#2-初期エンタープライズ管理者に関して" class="headerlink" title="2. 初期エンタープライズ管理者に関して"></a>2. 初期エンタープライズ管理者に関して</h2><p>前提として<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles">Azure Enterprise Agreement ロール</a> は、UPNでの登録が必要となります。<br>基本的には、UPNは<a href="https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/howto-troubleshoot-upn-changes#upns-in-microsoft-entra-id">ユーザーアカウントがAzureポータルにサインイン時に入力するもの</a>となります。<br>LSP様へのご連絡前に EntraID 管理者の方へご確認いただく事をお勧めします。</p>
 <p>Azure EA 契約ご利用開始時、EA 契約に登録された「Notices Contact and Online Admin」（SCE 契約など契約種別によっては「Azure Services Administrator」）が、初期エンタープライズ管理者として登録されます。</p>
-<p>問題なく登録されておりました場合、Azure ポータルの[コストの管理と請求]にて、該当<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">課金スコープ</a>を選択の上、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">アクティブ化</a>を実行いただきます。<br>この段階において、UPN が存在しないアカウントが 「Notices Contact and Online Admin」（SCE 契約など契約種別によっては「Azure Services Administrator」）登録されている場合、Azure Portal へログイン時に EA 契約の課金スコープが表示されない = EA 契約において Azure 利用開始ができないという状況となります。</p>
-<h2 id="3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応"><a href="#3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応" class="headerlink" title="3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応"></a>3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応</h2><p>UPN が存在するアカウントを準備いただきまして、お客様から間接 EA 契約を締結された<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様へ<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#if-your-enterprise-administrator-cant-help-you">連絡先情報変更要求 (CICR) プロセス</a>を使用して「Notices Contact and Online Admin」（SCE契約など契約種別によっては「Azure Services Administrator」）を適切なアカウントへ変更する申請をいただきます。</p>
+<p>問題なく登録されておりました場合、Azure ポータルの[コストの管理と請求]にて、該当<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">課金スコープ</a>を選択の上、<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#activate-your-enrollment">アクティブ化</a>を実行いただきます。<br>この段階において、UPN が存在しないアカウントが 「Notices Contact and Online Admin」（SCE 契約など契約種別によっては「Azure Services Administrator」）登録されている場合、Azure Portal へログイン時に EA 契約の課金スコープが表示されない &#x3D; EA 契約において Azure 利用開始ができないという状況となります。</p>
+<h2 id="3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応"><a href="#3-誤ったアカウント・UPNがないアカウントを登録した結果、Azure-Portal-へログイン時に-EA-契約の課金スコープが表示されず、EA-契約が有効化できない場合の対応" class="headerlink" title="3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応"></a>3. 誤ったアカウント・UPNがないアカウントを登録した結果、Azure Portal へログイン時に EA 契約の課金スコープが表示されず、EA 契約が有効化できない場合の対応</h2><p>UPN が存在するアカウントを準備いただきまして、お客様から間接 EA 契約を締結された<a href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様へ<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#if-your-enterprise-administrator-cant-help-you">連絡先情報変更要求 (CICR) プロセス</a>を使用して「Notices Contact and Online Admin」（SCE契約など契約種別によっては「Azure Services Administrator」）を適切なアカウントへ変更する申請をいただきます。</p>
 <p>そしてこの CICR プロセスによって、新しく読み取り専用のエンタープライズ管理者が登録されます。<br>この状態ではアカウント所有者追加などの操作が出来ませんので、Azure 課金サポートへご依頼いただいた後、読み取り専用ではないエンタープライズ管理者へ変更させて頂く対応となります。</p>
 <p>※ 2025 年 09 月 12 日時点の内容となります。</p>
 
@@ -232,7 +232,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

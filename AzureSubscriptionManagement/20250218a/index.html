@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled004.png">
 <meta property="og:image" content="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/P05_IndirectCostDisabled003.png">
 <meta property="article:published_time" content="2025-02-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.214Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.882Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Enterprise Agreement">
 <meta name="twitter:card" content="summary">
@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -60,7 +60,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -109,7 +109,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+f39f4670-c8eb-5682-9c5c-e1e80e318afb%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E9%96%93%E6%8E%A5EA%E5%A5%91%E7%B4%84%E3%81%AE%E3%82%B3%E3%82%B9%E3%83%88%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84IndirectCostDisabled%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20250218a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20250218a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20250218a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/" data-id="cmj6pli5m001y0nqp2jsy3igu" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250218a/" data-id="cuidXpDAdXWjaXKzj4RuTksxs" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -120,21 +120,21 @@
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-text">1. はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%BE%E8%B1%A1%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC"><span class="toc-text">2. 対象のエラー</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%83%B3%E5%AE%9A%E3%81%95%E3%82%8C%E3%82%8B%E5%8E%9F%E5%9B%A0%E3%81%A8%E5%AF%BE%E5%BF%9C"><span class="toc-text">3. 想定される原因と対応</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E6%9C%89%E5%8A%B9%E5%BE%8C%E3%81%AE%E8%A3%9C%E8%B6%B3"><span class="toc-text">4. パートナーマークアップ有効後の補足</span></a></li></ol>
         </div>
           
-        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご契約された間接Enterprise Agreement (EA)にて、EA のご契約者よりAzureポータルからコストを確認した際を想定した内容となります。<br>間接EA契約を含む各Azureの課金アカウントの概要については、<a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/">Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して</a>をご参照下さい。</p>
-<p>コスト情報参照には、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes">スコープごとに必要となる権限</a>を保有している必要がございます。<br>表題のエラーに特記しますが、前提としてコスト情報を参照する権限は、利用するスコープに応じて必要となります事予めご了承ください。</p>
-<h2 id="2-対象のエラー"><a href="#2-対象のエラー" class="headerlink" title="2. 対象のエラー"></a>2. 対象のエラー</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/cost-management-error-codes#indirectcostdisabled">IndirectCostDisabled</a><br>Azureポータルの画面によっては、以下の様なメッセージが表示されます。</p>
+        <h2 id="1-はじめに"><a href="#1-はじめに" class="headerlink" title="1. はじめに"></a>1. はじめに</h2><p><a href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">Licensing Solution Partner (LSP)</a>様からご契約された間接Enterprise Agreement (EA)にて、EA のご契約者よりAzureポータルからコストを確認した際を想定した内容となります。<br>間接EA契約を含む各Azureの課金アカウントの概要については、<a href="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/">Azure の課金アカウントの種類と課金関連ドキュメントの見方に関して</a>をご参照下さい。</p>
+<p>コスト情報参照には、<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/understand-work-scopes">スコープごとに必要となる権限</a>を保有している必要がございます。<br>表題のエラーに特記しますが、前提としてコスト情報を参照する権限は、利用するスコープに応じて必要となります事予めご了承ください。</p>
+<h2 id="2-対象のエラー"><a href="#2-対象のエラー" class="headerlink" title="2. 対象のエラー"></a>2. 対象のエラー</h2><p><a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/cost-management-error-codes#indirectcostdisabled">IndirectCostDisabled</a><br>Azureポータルの画面によっては、以下の様なメッセージが表示されます。</p>
 <blockquote>
 <p><strong>“Cost Management はプロバイダーによって有効にされていない。課金アカウント(加入契約)の価格を公開するには、プロバイダーにお問い合わせください。”</strong><br><img src="P05_IndirectCostDisabled001.png"></p>
 </blockquote>
 <blockquote>
 <p><strong>“価格は、この課金アカウント (加入契約) でパートナーによって公開されていないため、請求の詳細を表示できません。パートナーにお問い合わせください。”</strong><br><img src="P05_IndirectCostDisabled002.png"></p>
 </blockquote>
-<h2 id="3-想定される原因と対応"><a href="#3-想定される原因と対応" class="headerlink" title="3. 想定される原因と対応"></a>3. 想定される原因と対応</h2><p>間接EA契約の<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>が無効となっている事が想定されます。<br>この場合、間接EA契約のご契約先の<a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">パートナー様</a> と <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を、パートナー管理者の権限を持つ方から確認と有効が可能かご相談下さい。<br>もし状況に相違なく<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を有効化できましたら対象エラーは解消されます。</p>
-<p>またご契約先のパートナー様は、EAロールのエンタープライズ管理者より<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセス</a>後、以下の様な[設定 - プロパティ]のパートナー名よりご確認する事が可能でございます。</p>
+<h2 id="3-想定される原因と対応"><a href="#3-想定される原因と対応" class="headerlink" title="3. 想定される原因と対応"></a>3. 想定される原因と対応</h2><p>間接EA契約の<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>が無効となっている事が想定されます。<br>この場合、間接EA契約のご契約先の<a href="https://www.microsoft.com/ja-jp/Licensing/how-to-buy/LSP">パートナー様</a> と <a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を、パートナー管理者の権限を持つ方から確認と有効が可能かご相談下さい。<br>もし状況に相違なく<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/ea-portal-agreements#partner-markup">パートナー マークアップ</a>を有効化できましたら対象エラーは解消されます。</p>
+<p>またご契約先のパートナー様は、EAロールのエンタープライズ管理者より<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセス</a>後、以下の様な[設定 - プロパティ]のパートナー名よりご確認する事が可能でございます。</p>
 <blockquote>
 <p>[設定 - プロパティ]のパートナー名<br><img src="P05_IndirectCostDisabled004.png"></p>
 </blockquote>
-<h2 id="4-パートナーマークアップ有効後の補足"><a href="#4-パートナーマークアップ有効後の補足" class="headerlink" title="4. パートナーマークアップ有効後の補足"></a>4. パートナーマークアップ有効後の補足</h2><p>パートナーマークアップのみ有効の場合、EAロールの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a> がコスト情報を閲覧できる状態となります。<br>Azureロールの所有者やEAロールのアカウント所有者でもコスト情報を確認出来る様にする場合は、EAロールのエンタープライズ管理者から<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセスし</a>、以下の様な<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/assign-access-acm-data#enable-ea-access-to-costs">アカウント所有者は料金を表示できる</a>を「オン」にする必要があります。</p>
+<h2 id="4-パートナーマークアップ有効後の補足"><a href="#4-パートナーマークアップ有効後の補足" class="headerlink" title="4. パートナーマークアップ有効後の補足"></a>4. パートナーマークアップ有効後の補足</h2><p>パートナーマークアップのみ有効の場合、EAロールの<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/understand-ea-roles#enterprise-administrator">エンタープライズ管理者</a> がコスト情報を閲覧できる状態となります。<br>Azureロールの所有者やEAロールのアカウント所有者でもコスト情報を確認出来る様にする場合は、EAロールのエンタープライズ管理者から<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#select-a-billing-scope">該当のEA契約にアクセスし</a>、以下の様な<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/costs/assign-access-acm-data#enable-ea-access-to-costs">アカウント所有者は料金を表示できる</a>を「オン」にする必要があります。</p>
 <blockquote>
 <p>ポリシー設定画面に関して<br><img src="P05_IndirectCostDisabled003.png"></p>
 </blockquote>
@@ -258,7 +258,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

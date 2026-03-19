@@ -14,12 +14,12 @@
 <meta property="og:description" content="既にMicrosoft 365をご利用されており、既存のMicrosoft Entra ID（旧称：Azure Active Directory）のテナントに紐づけた形で新規に Azure サブスクリプションを作成されたい場合（既存のAADに紐づけた形でAzureサブスクリプションを作成されたい場合）を想定し、本記事ではこの方法についてご案内いたします。 1. Webから直接ご契約される従量課金サ">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2018-11-11T16:43:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.198Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.866Z">
 <meta property="article:author" content="Japan">
-<meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Azure AD">
-<meta property="article:tag" content="Enterprise Agreement">
 <meta property="article:tag" content="CSP">
+<meta property="article:tag" content="Enterprise Agreement">
+<meta property="article:tag" content="Subscription">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure 課金 サブスクリプション サポート ブログ" type="application/atom+xml">
@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -58,7 +58,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -107,7 +107,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+cbc6db6f-e583-59a5-826e-1fb3371a4c2a%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%97%A2%E5%AD%98%E3%81%AE+Microsoft+Entra+ID+%E3%81%AB%E7%B4%90%E3%81%A5%E3%81%91%E3%81%A6+Azure+%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20181112a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20181112a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20181112a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/" data-id="cmj6pli5d001a0nqpgirsbrja" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20181112a/" data-id="cuidF7deQwRSr3gIe0oheKnnU" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -119,26 +119,26 @@
         </div>
           
         <p>既にMicrosoft 365をご利用されており、<strong>既存のMicrosoft Entra ID（旧称：Azure Active Directory）のテナント</strong>に紐づけた形で新規に Azure サブスクリプションを作成されたい場合（既存のAADに紐づけた形でAzureサブスクリプションを作成されたい場合）を想定し、本記事ではこの方法についてご案内いたします。</p>
-<h2 id="1-Webから直接ご契約される従量課金サブスクリプションの場合"><a href="#1-Webから直接ご契約される従量課金サブスクリプションの場合" class="headerlink" title="1. Webから直接ご契約される従量課金サブスクリプションの場合"></a>1. Webから直接ご契約される従量課金サブスクリプションの場合</h2><p>ご利用されるMicrosoft Entra IDの組織アカウントにて、<a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/purchase-options/pay-as-you-go/?srcurl=https://azure.microsoft.com/free/">Azure アカウント作成</a>の　<strong>[始める]</strong> よりAzureにサイアップ下さい。<br>この際、ご住所、お電話番号、クレジットカード等をご用意される必要がございます事、予めご承知おき下さい。</p>
+<h2 id="1-Webから直接ご契約される従量課金サブスクリプションの場合"><a href="#1-Webから直接ご契約される従量課金サブスクリプションの場合" class="headerlink" title="1. Webから直接ご契約される従量課金サブスクリプションの場合"></a>1. Webから直接ご契約される従量課金サブスクリプションの場合</h2><p>ご利用されるMicrosoft Entra IDの組織アカウントにて、<a href="https://azure.microsoft.com/ja-jp/pricing/purchase-options/pay-as-you-go/?srcurl=https://azure.microsoft.com/free/">Azure アカウント作成</a>の　<strong>[始める]</strong> よりAzureにサイアップ下さい。<br>この際、ご住所、お電話番号、クレジットカード等をご用意される必要がございます事、予めご承知おき下さい。</p>
 <blockquote>
-<p>※ 事前にAzureにご利用される組織アカウントをご用意される必要がございます。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">ユーザーを追加</a>などの手順をご参照の上、ご準備下さい。<br>※ 意図しないアカウントでのサインアップを避けるため、<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/microsoft-edge/microsoft-edge-%E3%81%A7-inprivate-%E3%83%96%E3%83%A9%E3%82%A6%E3%82%BA%E3%82%92%E4%BD%BF%E3%81%86-cd2c9a48-0bc4-b98e-5e46-ac40c84e27e2">InPrivate ブラウザ</a>での実施をおすすめします。</p>
+<p>※ 事前にAzureにご利用される組織アカウントをご用意される必要がございます。<a href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/add-users/add-users?view=o365-worldwide">ユーザーを追加</a>などの手順をご参照の上、ご準備下さい。<br>※ 意図しないアカウントでのサインアップを避けるため、<a href="https://support.microsoft.com/ja-jp/microsoft-edge/microsoft-edge-%E3%81%A7-inprivate-%E3%83%96%E3%83%A9%E3%82%A6%E3%82%BA%E3%82%92%E4%BD%BF%E3%81%86-cd2c9a48-0bc4-b98e-5e46-ac40c84e27e2">InPrivate ブラウザ</a>での実施をおすすめします。</p>
 </blockquote>
 <h2 id="2-Enterprise-Agreement（EA）の場合"><a href="#2-Enterprise-Agreement（EA）の場合" class="headerlink" title="2. Enterprise Agreement（EA）の場合"></a>2. Enterprise Agreement（EA）の場合</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-an-account-and-account-owner">こちらの手順</a>にて、エンタープライズ管理者（もしくは、部門管理者）より、ご利用されるMicrosoft Entra IDの組織アカウントを <strong>アカウント所有者</strong> として追加下さい。</li>
-<li><strong>アカウント所有者</strong> として追加した対象アカウントからAzureポータルにログインし、アカウントの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-confirm-account-ownership">アクティブ化</a>を実施下さい。</li>
-<li>アクティブ化完了後、対象アカウントより<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-a-subscription">サブスクリプション追加</a>を実施下さい。<blockquote>
+<li><a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-an-account-and-account-owner">こちらの手順</a>にて、エンタープライズ管理者（もしくは、部門管理者）より、ご利用されるMicrosoft Entra IDの組織アカウントを <strong>アカウント所有者</strong> として追加下さい。</li>
+<li><strong>アカウント所有者</strong> として追加した対象アカウントからAzureポータルにログインし、アカウントの<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-confirm-account-ownership">アクティブ化</a>を実施下さい。</li>
+<li>アクティブ化完了後、対象アカウントより<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/direct-ea-administration#to-add-a-subscription">サブスクリプション追加</a>を実施下さい。<blockquote>
 <p>※ EA のご契約を既にお持ちであることが前提となります。<br>※ 事前にAzureにご利用される組織アカウントをご用意される必要がございます。</p>
 </blockquote>
 </li>
 </ol>
 <h2 id="3-Cloud-Solution-Provider-CSP-の場合"><a href="#3-Cloud-Solution-Provider-CSP-の場合" class="headerlink" title="3. Cloud Solution Provider (CSP)の場合"></a>3. Cloud Solution Provider (CSP)の場合</h2><ol>
-<li><strong>CSP パートナー様</strong>より<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/request-a-relationship-with-a-customer">再販業者の関係を要請</a>を、パートナーセンターの「新しいリレーションシップ」より開始下さい。   </li>
+<li><strong>CSP パートナー様</strong>より<a href="https://learn.microsoft.com/ja-jp/partner-center/request-a-relationship-with-a-customer">再販業者の関係を要請</a>を、パートナーセンターの「新しいリレーションシップ」より開始下さい。   </li>
 <li><strong>エンドユーザー様</strong>の対象Microsoft Entra IDの管理者より上記 1. にて発行した要請にあるURLよりサインイン後、各種内容をご確認の上、リレーションシップをご承諾下さい。</li>
-<li><strong>CSP パートナー様</strong>よりパートナーセンターにて<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/purchase-azure-plan">Azureプランをご購入</a>後、Azureポータルより<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/create-customer-subscription#create-a-subscription-as-a-partner-for-a-customer">Azureサブスクリプションを作成</a>下さい。</li>
+<li><strong>CSP パートナー様</strong>よりパートナーセンターにて<a href="https://learn.microsoft.com/ja-jp/partner-center/purchase-azure-plan">Azureプランをご購入</a>後、Azureポータルより<a href="https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/create-customer-subscription#create-a-subscription-as-a-partner-for-a-customer">Azureサブスクリプションを作成</a>下さい。</li>
 </ol>
 <p>以上より既存のMicrosoft Entra ID（旧称：Azure Active Directory）に紐づけた形で Azure サブスクリプションを作成できます。</p>
-<p>なおCSPサブスクリプションは関連付いたテナントを変更する事ができませんが、従量課金やEAサブスクリプションの場合は作成後でも <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory">Microsoft Entra テナントに Azure サブスクリプションを関連付ける</a>にて、サブスクリプションの関連付いたテナントを変更する事は可能でございます。ただし関連付き先のテナント変更によりRBAC設定が失われ、また既存のAzureサービスに影響を及ぼす可能性がございますので、ご注意下さい。</p>
-<h2 id="ご参考：各ポータルのお問い合わせ方法に関して"><a href="#ご参考：各ポータルのお問い合わせ方法に関して" class="headerlink" title="ご参考：各ポータルのお問い合わせ方法に関して"></a>ご参考：各ポータルのお問い合わせ方法に関して</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center">パートナー センターでサポートに問い合わせる</a><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/get-help-support?view=o365-worldwide">ビジネス向け Microsoft 365 のサポートを受ける</a></p>
+<p>なおCSPサブスクリプションは関連付いたテナントを変更する事ができませんが、従量課金やEAサブスクリプションの場合は作成後でも <a href="https://learn.microsoft.com/ja-jp/entra/fundamentals/how-subscriptions-associated-directory">Microsoft Entra テナントに Azure サブスクリプションを関連付ける</a>にて、サブスクリプションの関連付いたテナントを変更する事は可能でございます。ただし関連付き先のテナント変更によりRBAC設定が失われ、また既存のAzureサービスに影響を及ぼす可能性がございますので、ご注意下さい。</p>
+<h2 id="ご参考：各ポータルのお問い合わせ方法に関して"><a href="#ご参考：各ポータルのお問い合わせ方法に関して" class="headerlink" title="ご参考：各ポータルのお問い合わせ方法に関して"></a>ご参考：各ポータルのお問い合わせ方法に関して</h2><p><a href="https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a><br><a href="https://learn.microsoft.com/ja-jp/partner-center/report-problems-with-partner-center">パートナー センターでサポートに問い合わせる</a><br><a href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/get-help-support?view=o365-worldwide">ビジネス向け Microsoft 365 のサポートを受ける</a></p>
 <p>以上の通りご案内いたします。<br>M365でご利用されている既存のMicrosoft Entra IDテナント（Azure ADテナント）に紐づけた形で、Azureサブスクリプションを作成されたい場合にお役に立てますと幸いです。<br>よろしくお願いします。</p>
 
       
@@ -259,7 +259,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

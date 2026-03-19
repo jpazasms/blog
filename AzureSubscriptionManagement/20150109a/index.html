@@ -14,7 +14,7 @@
 <meta property="og:description" content="Azure にて人気のあるサービスの 1 つに「仮想マシン」があります。本トピックでは、この様な仮想マシンをご利用の際に発生する課金について説明をいたします。 仮想マシンを構成する要素まず、仮想マシンの各要素説明すると、仮想マシンは下記のような組み合わせで構成されています。  コンピュート要素 (CPU, メモリ , ハードウェア要素) ディスク要素 ネットワーク要素  これらが組み合わさり、仮想">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2015-01-08T18:41:00.000Z">
-<meta property="article:modified_time" content="2025-12-15T05:24:21.178Z">
+<meta property="article:modified_time" content="2026-03-19T04:40:58.846Z">
 <meta property="article:author" content="Japan">
 <meta property="article:tag" content="Subscription">
 <meta property="article:tag" content="Virtual Machine">
@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -56,7 +56,7 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
-        <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        <a class="main-nav-link" href="https://cssjpn.github.io/">サポート情報</a>
       </nav>
       <nav id="sub-nav">
         
@@ -105,7 +105,7 @@
         
         <a href="https://github.com/jpazasms/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+aefe488f-6652-5bcc-bfb0-925c8cb97af7%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%AE%E8%AA%B2%E9%87%91%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%5D%28https%3A%2F%2Fjpazasms.github.io%2Fblog%2FAzureSubscriptionManagement%2F20150109a%2F%29%0A*+Content+Source%3A+%5Barticles%2FAzureSubscriptionManagement%2F20150109a.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazasms%2Fblog%2Fblob%2Fmaster%2Farticles%2FAzureSubscriptionManagement%2F20150109a.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/" data-id="cmj6pli4t00040nqp77pr5hw2" class="article-share-link">共有</a>
+        <a data-url="https://jpazasms.github.io/blog/AzureSubscriptionManagement/20150109a/" data-id="cuidCW5jijOjoHGMeJtLQJS_Z" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -125,22 +125,22 @@
 </ol>
 <p>これらが組み合わさり、仮想マシン機能を構築していますが、各要素について、順番に課金の仕組みについて説明をします。</p>
 <h2 id="1-コンピュート要素について"><a href="#1-コンピュート要素について" class="headerlink" title="1. コンピュート要素について"></a>1. コンピュート要素について</h2><p>コンピュートについては、 CPU やメモリを割り当てた時点から課金が発生するもので料金は下記の通りです。</p>
-<p>・ <a target="_blank" rel="noopener" href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/">Virtual Machines の料金詳細</a></p>
-<p>コンピュート部分の課金の基本的な考え方は、「 CPU やメモリなどリソースを割り当てて動作」がベースとなります。そのため、リソースを割り当てている限りは課金は発生し続けます。また課金で、Windows と CentOS で料金が異なるのは、Windows は Windows OSのライセンス料が含まれるためです。<br>仮想マシンの課金は時間ごとに課金され、割り当てがされている時間の分だけ課金が発生します。課金を停止するにはポータルから停止し、「割り当て解除済み」状態にすることで、 CPU およびメモリが解放され課金を停止することができます。<br>※ ご参考：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/states-billing#power-states-and-billing">電源の状態と課金</a></p>
+<p>・ <a href="http://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/">Virtual Machines の料金詳細</a></p>
+<p>コンピュート部分の課金の基本的な考え方は、「 CPU やメモリなどリソースを割り当てて動作」がベースとなります。そのため、リソースを割り当てている限りは課金は発生し続けます。また課金で、Windows と CentOS で料金が異なるのは、Windows は Windows OSのライセンス料が含まれるためです。<br>仮想マシンの課金は時間ごとに課金され、割り当てがされている時間の分だけ課金が発生します。課金を停止するにはポータルから停止し、「割り当て解除済み」状態にすることで、 CPU およびメモリが解放され課金を停止することができます。<br>※ ご参考：<a href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/states-billing#power-states-and-billing">電源の状態と課金</a></p>
 <p>また、SQL Server が既にインストールされた仮想マシンも作成できますが、こちらはコンピュートの料金とは別に SQL Server の課金も発生します。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/sql-server-enterprise/">SQL Server Enterprise Virtual Machines の料金</a></p>
+<p>・ <a href="https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/sql-server-enterprise/">SQL Server Enterprise Virtual Machines の料金</a></p>
 <h2 id="2-ディスク要素について"><a href="#2-ディスク要素について" class="headerlink" title="2. ディスク要素について"></a>2. ディスク要素について</h2><p>仮想マシンの OS イメージが保存されたディスクはドライブに割り当てがされ、仮想ディスクファイル (VHD ファイル) が利用されています。<br>VHD ディスクはストレージ上に保存されているため、ディスクの利用料金はストレージ料金として別途計上されることになります。料金については、以下のページをご参照ください。<br>なおマネージドディスクの課金は、仮想マシンが「割り当て解除済み」状態となっても発生し続けますので、ご注意下さい。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/">Managed Disks の価格</a>  </p>
+<p>・ <a href="https://azure.microsoft.com/ja-jp/pricing/details/managed-disks/">Managed Disks の価格</a>  </p>
 <h2 id="3-ネットワーク要素について"><a href="#3-ネットワーク要素について" class="headerlink" title="3. ネットワーク要素について"></a>3. ネットワーク要素について</h2><p>仮想マシンで外部インターネット環境を通して通信をした際に、以下の 2 つの種類の通信が発生します。</p>
 <ul>
-<li>  インバウンド通信 (外部から Azure 内部へ)</li>
-<li>  アウトバウンド通信 ( Azure 内部から外部へ)</li>
+<li>インバウンド通信 (外部から Azure 内部へ)</li>
+<li>アウトバウンド通信 ( Azure 内部から外部へ)</li>
 </ul>
 <p>インバウンドについては Azure では無料となりますが、アウトバウンドについては利用量に応じて課金が発生します。<br>これは、通信総量のバイト単位で課金が発生します。詳細については下記のデータ通信量のドキュメントをご参考ください。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/bandwidth/">帯域幅 の価格</a></p>
+<p>・ <a href="https://azure.microsoft.com/ja-jp/pricing/details/bandwidth/">帯域幅 の価格</a></p>
 <p>またパブリックIPをご利用される際には、下記費用も発生いたします。</p>
-<p>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/">IP アドレス の価格</a></p>
-<h2 id="ご参考情報"><a href="#ご参考情報" class="headerlink" title="ご参考情報"></a>ご参考情報</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/vm-usage">Azure 仮想マシンの使用量について</a></p>
+<p>・ <a href="https://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/">IP アドレス の価格</a></p>
+<h2 id="ご参考情報"><a href="#ご参考情報" class="headerlink" title="ご参考情報"></a>ご参考情報</h2><p><a href="https://learn.microsoft.com/ja-jp/azure/virtual-machines/vm-usage">Azure 仮想マシンの使用量について</a></p>
 <p>–<br>Azure サポートチーム</p>
 
       
@@ -261,7 +261,7 @@
       <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel=”noopener”>Privacy & Cookies</a> |  
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/copyright" target="_blank" rel=”noopener”>Terms of use</a> |
       <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank" rel=”noopener”>Trademarks</a> |
-      &copy; 2025 Japan<br>
+      &copy; 2026 Japan<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
