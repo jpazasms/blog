@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231212a/</loc>
+    
+    <lastmod>2026-07-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/</loc>
+    
+    <lastmod>2026-07-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20250212a/</loc>
     
     <lastmod>2026-07-30</lastmod>
@@ -29,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231212a/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -38,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231227a/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -66,24 +84,6 @@
   
   <url>
     <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231205a/</loc>
-    
-    <lastmod>2026-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20231208a/</loc>
-    
-    <lastmod>2026-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20190226b/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20161212a/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309c/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309c/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20161212a/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309b/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309a/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309a/</loc>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20160309b/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
@@ -290,15 +290,6 @@
   </url>
   
   <url>
-    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20131030a/</loc>
-    
-    <lastmod>2026-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20130626a/</loc>
     
     <lastmod>2026-07-30</lastmod>
@@ -309,6 +300,15 @@
   
   <url>
     <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20131002b/</loc>
+    
+    <lastmod>2026-07-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jpazasms.github.io/blog/AzureSubscriptionManagement/20131030a/</loc>
     
     <lastmod>2026-07-30</lastmod>
     
